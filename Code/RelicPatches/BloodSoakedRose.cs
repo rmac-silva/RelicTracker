@@ -1,0 +1,71 @@
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Relics;
+
+[HarmonyPatch(typeof(BloodSoakedRose), nameof(BloodSoakedRose.ModifyMaxEnergy))]
+public static class BloodSoakedRoseEnergyPatch
+{
+    private static int roundCounter = 0;
+
+    static void Postfix(BloodSoakedRose __instance, Player player, decimal amount)
+    {
+        if (player != __instance.Owner)
+        {
+            return;
+        }
+
+        if (player.Creature.CombatState.RoundNumber != roundCounter)
+        {
+            roundCounter = player.Creature.CombatState.RoundNumber;
+            RelicStatCache.RecordCustomStat(
+                __instance.Id.Entry,
+                "Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.",
+                new List<int> { 1, 0 }
+            );
+        }
+    }
+}
+
+[HarmonyPatch(typeof(Enthralled), nameof(Enthralled.ShouldPlay))]
+public static class EnthralledPatch
+{
+    // Static variable to remember the last round we processed
+    private static int _lastProcessedRound = -1;
+
+    static void Postfix(Enthralled __instance, CardModel card, AutoPlayType autoPlayType)
+    {
+        int currentRound = __instance.Owner.Creature.CombatState.RoundNumber;
+
+        if (card.Owner != __instance.Owner)
+        {
+            return;
+        }
+        CardPile? pile = __instance.Pile;
+        if (pile == null || pile.Type != PileType.Hand)
+        {
+            return;
+        }
+        if (card is Enthralled)
+        {
+            return;
+        }
+        if (autoPlayType != AutoPlayType.None)
+        {
+            return;
+        }
+
+        if (currentRound != _lastProcessedRound)
+        {
+            _lastProcessedRound = currentRound;
+
+            RelicStatCache.RecordCustomStat(
+                "BLOOD_SOAKED_ROSE",
+                "Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.",
+                new List<int> { 0, 1 }
+            );
+        }
+    }
+}

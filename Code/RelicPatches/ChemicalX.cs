@@ -1,0 +1,23 @@
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Relics;
+
+[HarmonyPatch(typeof(ChemicalX), nameof(ChemicalX.ModifyXValue))]
+public static class ChemicalXPatch
+{
+    static void Postfix(
+        ChemicalX __instance,
+        CardModel card, int originalValue
+    )
+    {
+        if (card.Owner == __instance.Owner)
+        {
+
+            RelicStatCache.RecordCustomStat(
+                __instance.Id.Entry,
+                "Increased `[blue]X[/blue] value by [blue]{0}[/blue].",
+                new List<int> { 2 }
+            );
+        }
+    }
+}

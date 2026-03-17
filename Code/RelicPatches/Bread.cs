@@ -1,0 +1,53 @@
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Models.Relics;
+
+[HarmonyPatch(typeof(Bread), nameof(Bread.ModifyMaxEnergy))]
+public static class BreadMaxEnergyPatch
+{
+    private static int roundCounter = 0;
+    static void Postfix(Bread __instance, Player player, decimal amount)
+    {
+
+        if (player != __instance.Owner)
+        {
+            return;
+        }
+
+        CombatState? combatState = player.Creature.CombatState;
+        int currentRound = combatState.RoundNumber;
+
+        if (combatState != null && combatState.RoundNumber > 1 && currentRound != roundCounter)
+        {
+            roundCounter = currentRound;
+            RelicStatCache.RecordCustomStat(
+                __instance.Id.Entry,
+                "Lost [blue]{0}[/blue] [gold]energy[/gold].\nGained [blue]{1}[/blue] [gold]energy[/gold].",
+                new List<int> { 0, 2 }
+            );
+        }
+    }
+}
+
+[HarmonyPatch(typeof(Bread), nameof(Bread.AfterSideTurnStart))]
+public static class BreadEnergyLossPatch
+{
+    static void Postfix(Bread __instance, CombatSide side, CombatState combatState)
+    {
+
+        if (side != __instance.Owner.Creature.Side)
+        {
+            return;
+        }
+
+        if (combatState != null && combatState.RoundNumber == 1)
+        {
+            RelicStatCache.RecordCustomStat(
+                __instance.Id.Entry,
+                "Lost [blue]{0}[/blue] energy.\nGained [blue]{1}[/blue] energy.",
+                new List<int> { 2, 0 }
+            );
+        }
+    }
+}
