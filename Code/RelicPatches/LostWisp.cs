@@ -9,9 +9,9 @@ public static class LostWispPatch
 {
     static void Postfix(LostWisp __instance, PlayerChoiceContext context, CardPlay cardPlay)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (
             cardPlay.Card.Owner == __instance.Owner
-            && CombatManager.Instance.IsInProgress
             && cardPlay.Card.Type == CardType.Power
         )
         {

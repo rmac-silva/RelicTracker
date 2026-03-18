@@ -7,6 +7,7 @@ public static class PaelsTearsPatch
 {
     static void Postfix(PaelsTears __instance, CombatSide side, CombatState combatState)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         var field = AccessTools.Field(typeof(PaelsTears), "_hadLeftoverEnergy");
         bool HadLeftoverEnergy = (bool)field.GetValue(__instance);
 

@@ -17,7 +17,7 @@ public static class RegalPillowPatch
 			
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Healed [blue]{0}[/blue] HP.",
+                "Healed [blue]{0}[/blue] [gold]HP[/gold].",
                 new List<int> { __instance.DynamicVars.Heal.IntValue }
             );
 		

@@ -9,6 +9,7 @@ public static class FestivePopperPatch
 {
     static void Postfix(FestivePopper __instance, PlayerChoiceContext choiceContext, Player player)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (player == __instance.Owner)
         {
             CombatState combatState = player.Creature.CombatState;

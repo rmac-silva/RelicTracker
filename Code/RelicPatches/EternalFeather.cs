@@ -1,5 +1,4 @@
 using HarmonyLib;
-using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rooms;
@@ -9,7 +8,7 @@ public static class EternalFeatherPatch
 {
     static void Postfix(EternalFeather __instance, AbstractRoom room)
     {
-        if (room is RestSiteRoom && LocalContext.IsMe(__instance.Owner))
+        if (room is RestSiteRoom)
         {
             int numCards = PileType.Deck.GetPile(__instance.Owner).Cards.Count / __instance.DynamicVars.Cards.IntValue;
 

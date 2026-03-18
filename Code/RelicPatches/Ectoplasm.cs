@@ -8,6 +8,7 @@ public static class EctoplasmPatch
 private static int roundCounter = 0;
     static void Postfix(Ectoplasm __instance, Player player, decimal amount)
     {
+        
         if (player == __instance.Owner && player.Creature.CombatState.RoundNumber != roundCounter)
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
@@ -26,6 +27,7 @@ public static class EctoplasmMoneyPatch
 
     static void Postfix(Ectoplasm __instance, decimal amount, Player player)
     {
+        
         if (player == __instance.Owner)
         {
             

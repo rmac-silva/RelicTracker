@@ -9,6 +9,7 @@ public static class SozuPatch
     private static int roundCounter = 0;
     static void Postfix(Sozu __instance, Player player, decimal amount)
     {
+        
         if (player != __instance.Owner)
         {
             return;

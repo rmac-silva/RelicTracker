@@ -21,8 +21,6 @@ public static class BurningSticksPatch
         bool causedByEthereal
     )
     {
-
-        ModLog.Warning($"Burning Sticks exhausted card. Card: {card.Id.Entry}");
         if (card.Owner != __instance.Owner)
         {
             return;
@@ -30,12 +28,10 @@ public static class BurningSticksPatch
 
         if (WasUsedField == null)
         {
-            ModLog.Error("Could not find field _wasUsedThisCombat on BurningSticks", new System.Exception("Field not found"));
             return;
         }
 
         bool usedThisCombat = (bool)WasUsedField.GetValue(__instance);
-        ModLog.Warning($"Burning Sticks exhausted card. Used this combat: {usedThisCombat}. Card: {card.Id.Entry}");
         
 
         if (!usedThisCombat && card.Type == CardType.Skill)

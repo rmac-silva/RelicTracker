@@ -23,6 +23,7 @@ public static class DivineDestinyPatch
 {
     static void Postfix(DivineDestiny __instance, CombatSide side, CombatState combatState)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1) {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,

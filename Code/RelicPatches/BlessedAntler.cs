@@ -10,6 +10,7 @@ public static class BlessedAntlerEnergyPatch
     private static int roundCounter = 0;
     static void Postfix(BlessedAntler __instance, Player player, decimal amount)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (player != __instance.Owner)
         {
             return;
@@ -17,7 +18,8 @@ public static class BlessedAntlerEnergyPatch
 
         if(player.Creature.CombatState.RoundNumber != roundCounter)
         {
-            roundCounter = player.Creature.CombatState.RoundNumber;
+            roundCounter = player.Creature.CombatState.
+            RoundNumber;
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue]{1}[/blue] [gold]dazed[/gold] cards.",
@@ -38,6 +40,7 @@ public static class BlessedAntlerDazedPatch
         CombatState combatState
     )
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (player != __instance.Owner)
         {
             return;

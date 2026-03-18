@@ -14,7 +14,7 @@ public static class IntimidatingHelmetPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]block[/gold].",
+                "Gained [blue]{0}[/blue] [gold]Block[/gold].",
                 new List<int> { __instance.DynamicVars.Block.IntValue }
             );
         }

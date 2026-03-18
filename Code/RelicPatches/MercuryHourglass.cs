@@ -12,6 +12,7 @@ public static class MercuryHourglassPatch
     )
     
     {
+
         if (player == __instance.Owner)
         {
             RelicStatCache.RecordCustomStat(

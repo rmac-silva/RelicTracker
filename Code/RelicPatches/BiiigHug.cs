@@ -8,6 +8,7 @@ public static class BiiigHugPatch
 {
     static void Postfix(BiiigHug __instance, PlayerChoiceContext choiceContext, Player shuffler)
     {
+        
         if (shuffler != __instance.Owner)
         {
             return;

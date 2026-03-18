@@ -13,11 +13,12 @@ public static class RedMaskPatch
         CombatState combatState
     )
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Applied [`gold]Weak[/gold] to [blue]{0}[/blue] enemies.",
+                "Applied [gold]Weak[/gold] to [blue]{0}[/blue] enemies.",
                 new List<int> { combatState.HittableEnemies.Count() }
             );
         }

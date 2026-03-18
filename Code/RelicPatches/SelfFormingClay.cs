@@ -22,7 +22,7 @@ public static class SelfFormingClayPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] block.",
+                "Gained [blue]{0}[/blue] Block.",
                 new List<int> { __instance.DynamicVars["BlockNextTurn"].IntValue }
             );
         }

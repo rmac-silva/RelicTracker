@@ -10,6 +10,7 @@ public static class BagOfPreparationPatch
         Player player, decimal count
     )
     {
+        
         if (player != __instance.Owner)
         {
             return;

@@ -9,9 +9,10 @@ using MegaCrit.Sts2.Core.ValueProps;
 [HarmonyPatch(typeof(StrikeDummy), nameof(StrikeDummy.ModifyDamageAdditive))]
 public static class StrikeDummyPatch
 {
-
-    private static List<CardModel> upgradedStrikesThisTurn = new List<CardModel>();
+    private static Dictionary<CardModel, Action> activeHandlers =
+        new Dictionary<CardModel, Action>();
     private static int currentRound = -1;
+    private static StrikeDummy? _localInstance;
 
     static void Postfix(
         StrikeDummy __instance,
@@ -39,20 +40,60 @@ public static class StrikeDummyPatch
             return;
         }
 
-        currentRound = __instance.Owner.Creature.CombatState.RoundNumber;
-
-        if(upgradedStrikesThisTurn.Contains(cardSource))
+        if(__instance.Owner?.Creature?.CombatState == null)
         {
+            return;
+        }
+
+        if (_localInstance == null)
+        {
+            _localInstance = __instance;
+        }
+
+        if (currentRound != __instance.Owner.Creature.CombatState.RoundNumber)
+        {
+            foreach (var kvp in activeHandlers)
+            {
+                kvp.Key.Played -= kvp.Value;
+            }
+            activeHandlers.Clear();
+            currentRound = __instance.Owner.Creature.CombatState.RoundNumber;
+        }
+
+        //If already handled, ignore it
+        if (activeHandlers.ContainsKey(cardSource))
+            return;
+
+        Action handler = null;
+        handler = () =>
+        {
+            cardSource.Played -= handler; // Unsubscribe to itself
+            activeHandlers.Remove(cardSource); // Self-remove from active handlers
+            RegisterCardDamage(); //Call the function to register the damage increase
+        };
+
+        activeHandlers.Add(cardSource, handler);
+        cardSource.Played += handler;
+    }
+
+    private static void RegisterCardDamage()
+    {
+        if(_localInstance == null)
+        {
+            RelicStatCache.RecordCustomStat(
+            "STRIKE_DUMMY",
+            "Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].",
+            new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
+        );
             return;
         } else
         {
-            upgradedStrikesThisTurn.Add(cardSource);
+            RelicStatCache.RecordCustomStat(
+                _localInstance.Id.Entry,
+                "Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].",
+                new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
+            );
         }
 
-        RelicStatCache.RecordCustomStat(
-            __instance.Id.Entry,
-            "Increased [gold]Strike[/gold] damage by [blue]{0}[/blue] (including unplayed cards).",
-            new List<int> { __instance.DynamicVars["ExtraDamage"].IntValue }
-        );
     }
 }

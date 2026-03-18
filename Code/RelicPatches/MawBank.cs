@@ -14,7 +14,7 @@ public static class MawBankPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]gold[/gold].",
+                "Gained [blue]{0}[/blue] [gold]Gold[/gold].",
                 new List<int> { __instance.DynamicVars.Gold.IntValue }
             );
         }

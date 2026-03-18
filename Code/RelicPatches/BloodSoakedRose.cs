@@ -12,6 +12,7 @@ public static class BloodSoakedRoseEnergyPatch
 
     static void Postfix(BloodSoakedRose __instance, Player player, decimal amount)
     {
+
         if (player != __instance.Owner)
         {
             return;

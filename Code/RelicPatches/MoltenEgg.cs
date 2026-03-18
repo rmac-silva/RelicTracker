@@ -6,7 +6,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 [HarmonyPatch(typeof(MoltenEgg), nameof(MoltenEgg.TryModifyCardBeingAddedToDeck))]
 public static class MoltenEggPatch
 {
-    static void Postfix(MoltenEgg __instance, CardModel card)
+    static void Prefix(MoltenEgg __instance, CardModel card)
     {
         if (card.Owner != __instance.Owner)
         {

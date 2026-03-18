@@ -12,9 +12,9 @@ public static class LetterOpenerPatch
         AccessTools.Field(typeof(LetterOpener), "SkillsPlayedThisTurn");
     static void Postfix(LetterOpener __instance, PlayerChoiceContext context, CardPlay cardPlay)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (
             cardPlay.Card.Owner == __instance.Owner
-            && CombatManager.Instance.IsInProgress
             && cardPlay.Card.Type == CardType.Skill
         )
         {

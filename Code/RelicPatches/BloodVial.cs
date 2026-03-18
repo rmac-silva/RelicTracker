@@ -8,6 +8,7 @@ public static class BloodVialPatch
 {
     static void Postfix(BloodVial __instance, PlayerChoiceContext choiceContext, Player player)
     {
+        
         if (player == __instance.Owner && player.Creature.CombatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(

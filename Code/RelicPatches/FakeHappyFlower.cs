@@ -5,12 +5,17 @@ using MegaCrit.Sts2.Core.Models.Relics;
 [HarmonyPatch(typeof(FakeHappyFlower), nameof(FakeHappyFlower.AfterSideTurnStart))]
 public static class FakeHappyFlowerPatch
 {
+    private static readonly System.Reflection.FieldInfo TurnsSeenField = AccessTools.Field(
+        typeof(FakeHappyFlower),
+        "_turnsSeen"
+    );
     static void Postfix(FakeHappyFlower __instance, CombatSide side, CombatState combatState)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (side == __instance.Owner.Creature.Side)
         {
-            var field = AccessTools.Field(typeof(FakeHappyFlower), "TurnsSeen");
-            int turnsSeen = (int)field.GetValue(__instance);
+           
+            int turnsSeen = (int)TurnsSeenField.GetValue(__instance);
 
             if (turnsSeen == 0)
             {

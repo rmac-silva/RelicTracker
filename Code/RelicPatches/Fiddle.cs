@@ -7,6 +7,7 @@ public static class FiddlePatch
 {
     static void Postfix(Fiddle __instance, Player player, decimal count)
     {
+        
         if (player != __instance.Owner)
         {
             return;

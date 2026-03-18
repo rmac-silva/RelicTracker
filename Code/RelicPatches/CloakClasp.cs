@@ -18,7 +18,7 @@ public static class CloakClaspPatch
             IReadOnlyList<CardModel> cards = PileType.Hand.GetPile(__instance.Owner).Cards;
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]block[/gold].",
+                "Gained [blue]{0}[/blue] [gold]Block[/gold].",
                 new List<int> { 1 * cards.Count }
             );
         }

@@ -8,6 +8,7 @@ public static class LunarPastryPatch
 {
     static void Postfix(LunarPastry __instance, PlayerChoiceContext choiceContext, CombatSide side)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (side == __instance.Owner.Creature.Side)
         {
             RelicStatCache.RecordCustomStat(

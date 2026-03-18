@@ -13,6 +13,7 @@ public static class PaelsEyePatch
 
     static void Postfix(PaelsEye __instance, Player player)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (player != __instance.Owner)
         {
             return;
@@ -38,7 +39,8 @@ public static class PaelsEyeExhaustedCardsPatch
     );
     static void Prefix(PaelsEye __instance, PlayerChoiceContext choiceContext, CombatSide side)
     {
-            bool UsedThisCombat = (bool)UsedThisCombatField.GetValue(__instance);
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
+        bool UsedThisCombat = (bool)UsedThisCombatField.GetValue(__instance);
             bool AnyCardsPlayedThisTurn = (bool)CardsPlayedThisTurnField    .GetValue(__instance);
         
         if (UsedThisCombat || AnyCardsPlayedThisTurn || side != CombatSide.Player)

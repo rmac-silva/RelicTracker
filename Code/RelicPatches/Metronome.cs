@@ -19,6 +19,7 @@ public static class MetronomePatch
         OrbModel orb
     )
     {
+
         if (player == __instance.Owner)
         {
             int OrbsChanneled = (int)OrbsChanneledField.GetValue(__instance);

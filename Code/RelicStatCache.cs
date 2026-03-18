@@ -38,7 +38,7 @@ public static class RelicStatCache
                 _cache[key] = "1";
         }
 
-        SaveToDebugCache();
+        
     }
 
     public static void RecordCustomStat(string id, string stringFormat, List<int> values)
@@ -72,7 +72,7 @@ public static class RelicStatCache
                 }
             }
         }
-        SaveToDebugCache();
+        
     }
 
     public static bool HasStatsForRelic(string id)
@@ -121,15 +121,6 @@ public static class RelicStatCache
         }
     }
 
-    private static void SaveToDebugCache()
-    {
-        Directory.CreateDirectory(
-            Path.GetDirectoryName(Path.Combine(SavePath, $"run_{_currentRunId}")) ?? SavePath
-        );
-        string json = JsonSerializer.Serialize(_cache);
-        File.WriteAllText(Path.Combine(SavePath, $"run_{_currentRunId}.json"), json);
-    }
-
     public static int SetRunId(int newRunId)
     {
         _currentRunId = newRunId;
@@ -145,7 +136,6 @@ public static class RelicStatCache
 
 
         _cache = new Dictionary<string, string>();
-        SaveToDebugCache();
     }
 
     public static void WipeOldCache()
@@ -188,24 +178,10 @@ public static class RelicStatCache
         }
     }
 
-    private static void LoadCacheFromDebugFile()
-    {
-        string filePath = Path.Combine(SavePath, $"run_{_currentRunId}.json");
-        if (File.Exists(filePath))
-        {
-            string json = File.ReadAllText(filePath);
-            _cache = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? new Dictionary<string, string>();
-        }
-        else
-        {
-            ModLog.Error($"Debug cache file not found at {filePath}. Starting with an empty cache.",new FileNotFoundException("Debug cache file not found"));
-            _cache = new Dictionary<string, string>();
-        }
-    }
+    
 
     public static void SaveCache(bool multiplayerSave)
     {
-        LoadCacheFromDebugFile();
         
         string fileName = multiplayerSave ? "multiplayer_save.json" : "singleplayer_save.json";
         Directory.CreateDirectory(SavePath);

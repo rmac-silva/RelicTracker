@@ -9,14 +9,8 @@ public static class MummifiedHandPatch
 {
     static void Postfix(MummifiedHand __instance, PlayerChoiceContext context, CardPlay cardPlay)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (cardPlay.Card.Owner != __instance.Owner)
-        {
-            return;
-        }
-        if (!CombatManager.Instance.IsInProgress)
-        {
-            return;
-        }
         if (cardPlay.Card.Type != CardType.Power)
         {
             return;

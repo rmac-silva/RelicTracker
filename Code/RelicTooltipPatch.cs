@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Unlocks;
-using MegaCrit.Sts2.Core.Context;
 
 [HarmonyPatch(typeof(RelicModel), nameof(RelicModel.Flash), new Type[0])]
 public static class RelicFlashPatch
@@ -15,12 +14,6 @@ public static class RelicFlashPatch
 
         // Additional hail mary check
         if (!__instance.IsMutable) 
-        {
-            return;
-        }
-
-        //Checks if we own the relic
-        if (__instance.Owner != null && !LocalContext.IsMe(__instance.Owner))
         {
             return;
         }
@@ -68,7 +61,7 @@ public static class RelicTooltipPatch
             {
                 int triggerCount = RelicStatCache.GetTriggeredCount(__instance.Id.Entry);
                 string extraText =
-                    $"\n\n[red][Relic Tracker][/red]\n[gold]Times Triggered:[/gold] {triggerCount}";
+                    $"\n\n[red][Relic Tracker][/red]\n[gold]Times Triggered:[/gold] [blue]{triggerCount}[/blue]";
                 newDescription = __result.Description + extraText;
             }
         }
@@ -77,7 +70,7 @@ public static class RelicTooltipPatch
             //No data yet. Just add a note about that.
             newDescription =
                 __result.Description
-                + "\n\n[red][Relic Tracker][/red]\n[gold]No data yet...[/gold]";
+                + "\n\n[red][Relic Tracker][/red]\n[gold]No data to display...[/gold]";
         }
 
         //Box the struct into an object so Reflection can modify it

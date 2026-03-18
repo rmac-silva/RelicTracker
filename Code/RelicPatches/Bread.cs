@@ -9,6 +9,7 @@ public static class BreadMaxEnergyPatch
     private static int roundCounter = 0;
     static void Postfix(Bread __instance, Player player, decimal amount)
     {
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
 
         if (player != __instance.Owner)
         {
