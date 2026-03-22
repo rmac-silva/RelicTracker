@@ -22,7 +22,7 @@ public static class FakeHappyFlowerPatch
                 RelicStatCache.RecordCustomStat(
                     __instance.Id.Entry,
                     "Generated [blue]{0}[/blue] [gold]energy[/gold].",
-                    new List<int> { 1 }
+                    new List<int> { __instance.DynamicVars.Energy.IntValue }
                 );
             }
         }

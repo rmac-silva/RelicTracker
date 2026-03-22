@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 [HarmonyPatch(typeof(BlessedAntler), nameof(BlessedAntler.ModifyMaxEnergy))]
 public static class BlessedAntlerEnergyPatch
 {
+    private static int _lastCombatId = -1;
     private static int roundCounter = 0;
     static void Postfix(BlessedAntler __instance, Player player, decimal amount)
     {
@@ -16,14 +17,20 @@ public static class BlessedAntlerEnergyPatch
             return;
         }
 
+        if (CombatStartManager.IsNewCombat(ref _lastCombatId))
+        {
+            roundCounter = -1; // Reset for the new fight
+            _lastCombatId = CombatStartManager._currentCombatId;
+
+        }
+
         if(player.Creature.CombatState.RoundNumber != roundCounter)
         {
-            roundCounter = player.Creature.CombatState.
-            RoundNumber;
+            roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue]{1}[/blue] [gold]dazed[/gold] cards.",
-                new List<int> { 1, 0 }
+                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
             );
         }
 
@@ -51,7 +58,7 @@ public static class BlessedAntlerDazedPatch
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue]{1}[/blue] [gold]dazed[/gold] cards.",
-                new List<int> { 0, 3 }
+                new List<int> { 0, __instance.DynamicVars.Cards.IntValue }
             );
         }
     }

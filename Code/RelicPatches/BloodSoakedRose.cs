@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 public static class BloodSoakedRoseEnergyPatch
 {
     private static int roundCounter = 0;
+    private static int _lastCombatId = -1;
 
     static void Postfix(BloodSoakedRose __instance, Player player, decimal amount)
     {
@@ -18,13 +19,20 @@ public static class BloodSoakedRoseEnergyPatch
             return;
         }
 
+        if (CombatStartManager.IsNewCombat(ref _lastCombatId))
+        {
+            roundCounter = -1; // Reset for the new fight
+            _lastCombatId = CombatStartManager._currentCombatId;
+
+        }
+
         if (player.Creature.CombatState.RoundNumber != roundCounter)
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.",
-                new List<int> { 1, 0 }
+                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
             );
         }
     }

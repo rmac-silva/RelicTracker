@@ -16,7 +16,7 @@ public static class ChemicalXPatch
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Increased `[blue]X[/blue] value by [blue]{0}[/blue].",
-                new List<int> { 2 }
+                new List<int> { __instance.DynamicVars["Increase"].IntValue }
             );
         }
     }

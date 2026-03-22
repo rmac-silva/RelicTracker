@@ -11,9 +11,8 @@ public static class RelicFlashPatch
     // This "Prefix" runs BEFORE the actual Flash occurs
     static void Prefix(RelicModel __instance)
     {
-
         // Additional hail mary check
-        if (!__instance.IsMutable) 
+        if (!__instance.IsMutable)
         {
             return;
         }
@@ -44,9 +43,12 @@ public static class RelicTooltipPatch
 {
     public static void Postfix(RelicModel __instance, ref HoverTip __result)
     {
+        if (__instance?.Id == null || string.IsNullOrEmpty(__instance.Id.Entry))
+        {
+            return;
+        }
         string newDescription;
         //Fetch the amount of times it was triggered
-        ;
 
         if (RelicStatCache.HasStatsForRelic(__instance.Id.Entry))
         {

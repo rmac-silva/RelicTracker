@@ -7,9 +7,12 @@ using MegaCrit.Sts2.Core.Models.Relics;
 public static class BreadMaxEnergyPatch
 {
     private static int roundCounter = 0;
+    private static int _lastCombatId = -1;
+
     static void Postfix(Bread __instance, Player player, decimal amount)
     {
-        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
+        if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress)
+            return;
 
         if (player != __instance.Owner)
         {
@@ -19,13 +22,19 @@ public static class BreadMaxEnergyPatch
         CombatState? combatState = player.Creature.CombatState;
         int currentRound = combatState.RoundNumber;
 
+        if (CombatStartManager.IsNewCombat(ref _lastCombatId))
+        {
+            roundCounter = -1; // Reset for the new fight
+            _lastCombatId = CombatStartManager._currentCombatId;
+        }
+
         if (combatState != null && combatState.RoundNumber > 1 && currentRound != roundCounter)
         {
             roundCounter = currentRound;
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Lost [blue]{0}[/blue] [gold]energy[/gold].\nGained [blue]{1}[/blue] [gold]energy[/gold].",
-                new List<int> { 0, 2 }
+                new List<int> { 0, 1 }
             );
         }
     }
@@ -36,7 +45,6 @@ public static class BreadEnergyLossPatch
 {
     static void Postfix(Bread __instance, CombatSide side, CombatState combatState)
     {
-
         if (side != __instance.Owner.Creature.Side)
         {
             return;

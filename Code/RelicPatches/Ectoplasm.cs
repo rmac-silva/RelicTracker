@@ -6,8 +6,15 @@ using MegaCrit.Sts2.Core.Models.Relics;
 public static class EctoplasmPatch
 {
 private static int roundCounter = 0;
+    private static int _lastCombatId = -1;
     static void Postfix(Ectoplasm __instance, Player player, decimal amount)
     {
+
+        if (CombatStartManager.IsNewCombat(ref _lastCombatId))
+        {
+            roundCounter = -1; // Reset for the new fight
+            _lastCombatId = CombatStartManager._currentCombatId;
+        }
         
         if (player == __instance.Owner && player.Creature.CombatState.RoundNumber != roundCounter)
         {

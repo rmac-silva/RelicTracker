@@ -20,7 +20,7 @@ public static class BigMushroomPatch
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Drew [blue]{0}[/blue] less cards.",
-                new List<int> { 2 }
+                new List<int> { __instance.DynamicVars.Cards.IntValue }
             );
         }
     }

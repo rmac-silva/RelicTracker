@@ -31,16 +31,16 @@ public static class ConfusedPowerPatchForFakeSnecko
         {
             RelicStatCache.RecordCustomStat(
                 "FAKE_SNECKO_EYE",
-                "Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].",
-                new List<int> { 0, Math.Abs(energyDifference), 0 }
+                "Reduced card costs by [blue]{0}[/blue].\nIncreased card costs by [blue]{1}[/blue].",
+                new List<int> { Math.Abs(energyDifference), 0 }
             );
         }
         else
         {
             RelicStatCache.RecordCustomStat(
                 "FAKE_SNECKO_EYE",
-                "Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].",
-                new List<int> { 0, 0, Math.Abs(energyDifference) }
+                "Reduced card costs by [blue]{0}[/blue].\nIncreased card costs by [blue]{1}[/blue].",
+                new List<int> { 0, Math.Abs(energyDifference) }
             );
         }
     }

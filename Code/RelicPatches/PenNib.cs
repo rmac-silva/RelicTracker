@@ -28,12 +28,21 @@ public static class PenNibPatch
         if (AttacksPlayed == 0)
         {
 
-            CardModel? DoubledCard = (CardModel?)CardToDoubleField.GetValue(__instance);
+            CardModel? doubledCard = (CardModel?)CardToDoubleField.GetValue(__instance);
+
+            int damageValue = 0;
+            if (doubledCard != null && doubledCard.DynamicVars.ContainsKey("Damage"))
+            {
+                damageValue = doubledCard.DynamicVars.Damage.IntValue;
+            } else
+            {
+                ModLog.Warning("\nPenNibPatch: Could not find damage value for the card being doubled.");
+            }
 
             RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
             "Triggered [blue]{0}[/blue] times.\nIncreased overall damage by [blue]{1}[/blue].",
-            new List<int> { 1, DoubledCard?.DynamicVars.Damage.IntValue ?? 0 }
+            new List<int> { 1, damageValue }
         );
         }
 

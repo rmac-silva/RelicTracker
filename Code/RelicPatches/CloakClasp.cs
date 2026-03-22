@@ -19,7 +19,7 @@ public static class CloakClaspPatch
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
                 "Gained [blue]{0}[/blue] [gold]Block[/gold].",
-                new List<int> { 1 * cards.Count }
+                new List<int> { (int)(__instance.DynamicVars.Block.BaseValue * cards.Count ) }
             );
         }
     }

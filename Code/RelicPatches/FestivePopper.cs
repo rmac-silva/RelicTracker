@@ -20,7 +20,7 @@ public static class FestivePopperPatch
                 RelicStatCache.RecordCustomStat(
                     __instance.Id.Entry,
                     "Dealt [blue]{0}[/blue] [orange]damage[/orange].",
-                    new List<int> { 9 * numEnemies }
+                    new List<int> { (int)(__instance.DynamicVars.Damage.IntValue * numEnemies) }
                 );
             }
         }

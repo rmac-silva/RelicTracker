@@ -15,8 +15,22 @@ public static class FiddlePatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Drew [blue]{0}[/blue] additional cards.",
-            new List<int> { 2 }
+            "Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.",
+            new List<int> { __instance.DynamicVars.Cards.IntValue, 0 }
         );
     }
 }
+
+[HarmonyPatch(typeof(Fiddle), nameof(Fiddle.AfterPreventingDraw))]
+public static class FiddleReducedDrawPatch
+{
+    static void Postfix(Fiddle __instance)
+    {
+        RelicStatCache.RecordCustomStat(
+            __instance.Id.Entry,
+            "Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.",
+            new List<int> { 0, 1 }
+        );
+    }
+}
+
