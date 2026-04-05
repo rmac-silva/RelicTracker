@@ -1,4 +1,3 @@
-using BaseLib.Extensions;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
@@ -26,7 +25,7 @@ public static class MysticLighterPatch
 
         
 
-        if (!props.IsPoweredAttack_())
+        if (!props.IsPoweredAttackRelicTracker())
         {
             return;
         }

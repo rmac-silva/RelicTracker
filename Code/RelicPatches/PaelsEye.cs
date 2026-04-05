@@ -20,7 +20,7 @@ public static class PaelsEyePatch
         }
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Triggered [blue]{0}[/blue] times.`\nExhausted [blue]{1}[/blue] cards.",
+            "Triggered [blue]{0}[/blue] times.\nExhausted [blue]{1}[/blue] cards.",
             new List<int> { 1,0 }
         );
     }

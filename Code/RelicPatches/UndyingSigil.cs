@@ -1,4 +1,3 @@
-using BaseLib.Extensions;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
@@ -27,7 +26,7 @@ public static class UndyingSigilPatch
         {
             return;
         }
-        if (!props.IsPoweredAttack_())
+        if (!props.IsPoweredAttackRelicTracker())
         {
             return;
         }

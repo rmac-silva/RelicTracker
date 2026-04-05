@@ -1,10 +1,9 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Runs;
 
-[HarmonyPatch]
-
-[HarmonyPatch(typeof(CombatRoom), nameof(CombatRoom.Enter))]
+[HarmonyPatch(typeof(CombatRoom), "EnterInternal", new Type[] { typeof(IRunState), typeof(bool) })]
 public static class CombatStartPatch
 {
     static void Postfix()

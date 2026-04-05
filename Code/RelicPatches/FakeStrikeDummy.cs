@@ -1,4 +1,4 @@
-using BaseLib.Extensions;
+
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -23,7 +23,7 @@ public static class FakeStrikeDummyPatch
         CardModel? cardSource
     )
     {
-        if (!props.IsPoweredAttack_())
+        if (!props.IsPoweredAttackRelicTracker())
         {
             return;
         }

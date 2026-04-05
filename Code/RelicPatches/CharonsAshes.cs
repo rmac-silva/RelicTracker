@@ -19,7 +19,7 @@ public static class CharonsAshesPatch
 
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Dealt [blue]{0}[/blue] damage to enemies.",
+                "Dealt [blue]{0}[/blue] [orange]damage[/orange] to enemies.",
                 new List<int> { 3 * numEnemies }
             );
         }

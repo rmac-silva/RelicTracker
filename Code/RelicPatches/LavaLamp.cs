@@ -54,7 +54,7 @@ public static class LavaLampPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Upgraded [blue]{0}[/blue] cards.",
+                "Upgraded [blue]{0}[/blue] card rewards.",
                 new List<int> { cardRewards.Count }
             );
         }

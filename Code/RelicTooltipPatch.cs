@@ -38,7 +38,7 @@ public static class PlayerCreationPatch
     }
 }
 
-[HarmonyPatch(typeof(RelicModel), "get_HoverTip")] // Swapped to the singular getter!
+[HarmonyPatch(typeof(RelicModel), "get_HoverTip")]
 public static class RelicTooltipPatch
 {
     public static void Postfix(RelicModel __instance, ref HoverTip __result)
@@ -47,6 +47,12 @@ public static class RelicTooltipPatch
         {
             return;
         }
+
+        if (RelicExclusionManager.IsRelicExcluded(__instance.Id.Entry))
+        {
+            return;
+        }
+
         string newDescription;
         //Fetch the amount of times it was triggered
 
@@ -56,15 +62,33 @@ public static class RelicTooltipPatch
 
             if (detailedStats != null && detailedStats != "")
             {
+                //Has specific detailed stats to show. Display those.
                 newDescription =
                     __result.Description + "\n\n[red][Relic Tracker][/red]\n" + detailedStats;
             }
             else
             {
+                //Does not have any specific detailed stats to show. Let's go try and fetch a label
+
                 int triggerCount = RelicStatCache.GetTriggeredCount(__instance.Id.Entry);
-                string extraText =
-                    $"\n\n[red][Relic Tracker][/red]\n[gold]Times Triggered:[/gold] [blue]{triggerCount}[/blue]";
-                newDescription = __result.Description + extraText;
+                string alternateLabel = RelicLabelRenamer.GetAlternateLabel(
+                    __instance.Id.Entry,
+                    triggerCount
+                );
+                string extraText;
+                if (alternateLabel != "")
+                {
+                    //Has an alternate label to show. Show that instead of the raw trigger count.
+                    newDescription =
+                        __result.Description + "\n\n[red][Relic Tracker][/red]\n" + alternateLabel;
+                }
+                else
+                {
+                    //No alternate label. Just show the raw trigger count.
+                    newDescription =
+                        __result.Description
+                        + $"\n\n[red][Relic Tracker][/red]\n[gold]Times Triggered:[/gold] [blue]{triggerCount}[/blue]";
+                }
             }
         }
         else
