@@ -20,10 +20,9 @@ private static int roundCounter = 0;
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] gold.",
-                new List<int> { 1, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1, 0 }
+        );
         }
     }
 }
@@ -39,10 +38,9 @@ public static class EctoplasmMoneyPatch
         {
             
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] [gold]Gold[/gold].",
-                new List<int> { 0, (int)amount }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0, (int)amount }
+        );
         }
     }
 }

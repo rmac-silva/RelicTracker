@@ -21,10 +21,9 @@ public static class SelfFormingClayPatch
         if (target == __instance.Owner.Creature && result.UnblockedDamage > 0)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] Block.",
-                new List<int> { __instance.DynamicVars["BlockNextTurn"].IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars["BlockNextTurn"].IntValue }
+        );
         }
     }
 }

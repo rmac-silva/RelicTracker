@@ -25,7 +25,6 @@ public static class ThrowingAxePatch
         }
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Cards duplicated: [blue]{0}[/blue].",
             new List<int> { 1 }
         );
     }

@@ -32,10 +32,9 @@ public static class BreadMaxEnergyPatch
         {
             roundCounter = currentRound;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Lost [blue]{0}[/blue] [gold]energy[/gold].\nGained [blue]{1}[/blue] [gold]energy[/gold].",
-                new List<int> { 0, 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0, 1 }
+        );
         }
     }
 }
@@ -53,10 +52,9 @@ public static class BreadEnergyLossPatch
         if (combatState != null && combatState.RoundNumber == 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Lost [blue]{0}[/blue] energy.\nGained [blue]{1}[/blue] energy.",
-                new List<int> { 2, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 2, 0 }
+        );
         }
     }
 }

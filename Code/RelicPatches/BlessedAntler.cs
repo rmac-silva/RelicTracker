@@ -28,10 +28,9 @@ public static class BlessedAntlerEnergyPatch
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue]{1}[/blue] [gold]dazed[/gold] cards.",
-                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
+        );
         }
 
     }
@@ -56,10 +55,9 @@ public static class BlessedAntlerDazedPatch
         if (combatState.RoundNumber == 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue]{1}[/blue] [gold]dazed[/gold] cards.",
-                new List<int> { 0, __instance.DynamicVars.Cards.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0, __instance.DynamicVars.Cards.IntValue }
+        );
         }
     }
 }

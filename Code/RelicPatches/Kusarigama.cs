@@ -10,7 +10,6 @@ public static class KusarigamaPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Dealt [blue]{0}[/blue] damage.",
             new List<int> { 6 }
         );
 

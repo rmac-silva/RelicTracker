@@ -20,10 +20,9 @@ public static class BowlerHatPatch
         if (bonusGold >= 0)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] additional [gold]Gold[/gold].",
-                new List<int> { (int)Math.Floor(bonusGold) }
-            );
+            __instance.Id.Entry,
+            new List<int> { (int)Math.Floor(bonusGold) }
+        );
         }
     }
 }

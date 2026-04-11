@@ -14,13 +14,12 @@ public static class SealOfGoldPatch
 		{
 
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Lost [blue]{0}[/blue] [gold]Gold[/gold].\nGained [blue]{1}[/blue] energy.",
-                new List<int>
+            __instance.Id.Entry,
+            new List<int>
                 {
                     __instance.DynamicVars.Gold.IntValue, __instance.DynamicVars.Energy.IntValue
                 }
-            );
+        );
         }
         
         

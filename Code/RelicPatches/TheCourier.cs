@@ -11,10 +11,9 @@ public static class TheCourierPatch
         if (player == __instance.Owner)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Stock refilled: [blue]{0}[/blue].",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
         }
     }
 }

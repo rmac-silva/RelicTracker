@@ -15,10 +15,9 @@ namespace RelicTracker.Patches
             {
                 // Using your specific RecordCustomStat format
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Enchanted [blue]{0}[/blue] cards throughout the run.",
-                    new List<int> { 1 }
-                );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
 
             }
         }

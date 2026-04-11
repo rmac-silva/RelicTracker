@@ -99,30 +99,27 @@ public static class CardPileAddPatch
         if (EggTrackingHelper.MoltenEggCards.TryGetValue(card, out _))
         {
             RelicStatCache.RecordCustomStat(
-                "MOLTEN_EGG",
-                "Upgraded [blue]{0}[/blue] cards that were added.",
-                new List<int> { 1 }
-            );
+            "MOLTEN_EGG",
+            new List<int> { 1 }
+        );
 
             EggTrackingHelper.MoltenEggCards.Remove(card);
         }
         else if (EggTrackingHelper.ToxicEggCards.TryGetValue(card, out _))
         {
             RelicStatCache.RecordCustomStat(
-                "TOXIC_EGG",
-                "Upgraded [blue]{0}[/blue] cards that were added.",
-                new List<int> { 1 }
-            );
+            "TOXIC_EGG",
+            new List<int> { 1 }
+        );
 
             EggTrackingHelper.ToxicEggCards.Remove(card);
         }
         else if (EggTrackingHelper.FrozenEggCards.TryGetValue(card, out _))
         {
             RelicStatCache.RecordCustomStat(
-                "FROZEN_EGG",
-                "Upgraded [blue]{0}[/blue] cards that were added.",
-                new List<int> { 1 }
-            );
+            "FROZEN_EGG",
+            new List<int> { 1 }
+        );
 
             EggTrackingHelper.FrozenEggCards.Remove(card);
         }
@@ -156,7 +153,6 @@ public static class MoltenEggAddToDeckPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Upgraded [blue]{0}[/blue] cards that were added.",
             new List<int> { 1 }
         );
     }
@@ -253,7 +249,6 @@ public static class ToxicEggAddToDeckPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Upgraded [blue]{0}[/blue] cards that were added.",
             new List<int> { 1 }
         );
     }
@@ -350,7 +345,6 @@ public static class FrozenEggAddToDeckPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Upgraded [blue]{0}[/blue] cards that were added.",
             new List<int> { 1 }
         );
     }

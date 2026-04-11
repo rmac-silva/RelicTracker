@@ -13,7 +13,6 @@ public static class PaelsBloodPatch
         }
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Drew [blue]{0}[/blue] additional cards.",
             new List<int> { __instance.DynamicVars.Cards.IntValue }
         );
     }

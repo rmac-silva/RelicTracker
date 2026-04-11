@@ -21,10 +21,9 @@ public static class VeryHotCocoaEnergyPatch
         {
             
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained an additional [blue]{0}[/blue] [gold]energy[/gold].",
-                new List<int> { __instance.DynamicVars.Energy.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue }
+        );
         }
 
     }

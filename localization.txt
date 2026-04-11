@@ -1,0 +1,14 @@
+eng - English
+zhs - Simplified Chinese
+deu - German
+esp - Spanish (LatinAmerica)
+fra - French
+ita - Italian
+jpn - Japanese
+kor - Korean
+pol - Polish
+ptb - Brazilian Portuguese
+rus - Russian
+spa - Spanish (Castilian)
+tha - Thai
+tur - Turkish

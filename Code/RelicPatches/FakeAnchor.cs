@@ -8,7 +8,6 @@ public static class FakeAnchorPatch
     {
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Gained [blue]{0}[/blue] [gold]Armor[/gold].",
             new List<int> { __instance.DynamicVars.Block.IntValue }
         );
     }

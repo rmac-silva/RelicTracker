@@ -18,10 +18,9 @@ public static class FestivePopperPatch
                 int numEnemies = combatState.HittableEnemies.Count;
 
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Dealt [blue]{0}[/blue] [orange]damage[/orange].",
-                    new List<int> { (int)(__instance.DynamicVars.Damage.IntValue * numEnemies) }
-                );
+            __instance.Id.Entry,
+            new List<int> { (int)(__instance.DynamicVars.Damage.IntValue * numEnemies) }
+        );
             }
         }
     }

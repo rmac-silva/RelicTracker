@@ -16,14 +16,13 @@ public static class MercuryHourglassPatch
         if (player == __instance.Owner)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Dealt [blue]{0}[/blue] damage.",
-                new List<int>
+            __instance.Id.Entry,
+            new List<int>
                 {
                     __instance.DynamicVars.Damage.IntValue
                         * player.Creature.CombatState.HittableEnemies.Count,
                 }
-            );
+        );
         }
     }
 }

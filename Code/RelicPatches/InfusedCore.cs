@@ -11,10 +11,9 @@ public static class InfusedCorePatch
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Channeled [blue]{0}[/blue] [gold]Lightning[/gold].",
-                new List<int> { 3 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 3 }
+        );
         }
     }
 }

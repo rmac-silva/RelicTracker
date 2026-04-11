@@ -84,19 +84,17 @@ public static class VitruvianMinionDamagePatch
         if (_localInstance == null)
         {
             RelicStatCache.RecordCustomStat(
-                "VITRUVIAN_MINION",
-                "Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nGained an additional [blue]{2}[/blue] [red]damage[/red].",
-                new List<int> { 1, 0, (int)amount }
-            );
+            "VITRUVIAN_MINION",
+            new List<int> { 1, 0, (int)amount }
+        );
             return;
         }
         else
         {
             RelicStatCache.RecordCustomStat(
-                _localInstance.Id.Entry,
-                "Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nGained an additional [blue]{2}[/blue] [red]damage[/red].",
-                new List<int> { 1, 0, (int)amount }
-            );
+            _localInstance.Id.Entry,
+            new List<int> { 1, 0, (int)amount }
+        );
         }
     }
 }
@@ -179,19 +177,17 @@ public static class VitruvianMinionBlockPatch
         if (_localInstance == null)
         {
             RelicStatCache.RecordCustomStat(
-                "VITRUVIAN_MINION",
-                "Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra [red]damage[/red].",
-                new List<int> { 1, (int)amount, 0 }
-            );
+            "VITRUVIAN_MINION",
+            new List<int> { 1, (int)amount, 0 }
+        );
             return;
         }
         else
         {
             RelicStatCache.RecordCustomStat(
-                _localInstance.Id.Entry,
-                "Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra [red]damage[/red].",
-                new List<int> { 1, (int)amount, 0 }
-            );
+            _localInstance.Id.Entry,
+            new List<int> { 1, (int)amount, 0 }
+        );
         }
     }
 }

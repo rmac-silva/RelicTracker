@@ -38,7 +38,6 @@ public static class AmethystAuberginePatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Gained [blue]{0}[/blue] [gold]Gold[/gold].",
             new List<int> { __instance.DynamicVars.Gold.IntValue }
         );
     }

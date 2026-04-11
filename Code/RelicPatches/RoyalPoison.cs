@@ -11,10 +11,9 @@ public static class RoyalPoisonPatch
         if (player == __instance.Owner && player.Creature.CombatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Took [blue]{0}[/blue] [red]damage[/red].",
-                new List<int> { __instance.DynamicVars.Damage.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Damage.IntValue }
+        );
         }
     }
 }

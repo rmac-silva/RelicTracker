@@ -10,10 +10,9 @@ public static class SymbioticVirusPatch
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "[gold]Channeled[/gold] [blue]{0}[/blue] [purple]Dark[/purple].",
-                new List<int> { __instance.DynamicVars["Dark"].IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars["Dark"].IntValue }
+        );
         }
     }
 }

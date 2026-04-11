@@ -24,10 +24,9 @@ public static class PrayerWheelPatch
 		}
         
 			RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Added [blue]{0}[/blue] card rewards.",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
 		
 			
             

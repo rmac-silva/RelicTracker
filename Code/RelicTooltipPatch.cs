@@ -48,67 +48,78 @@ public static class RelicTooltipPatch
             return;
         }
 
-        if (RelicExclusionManager.IsRelicExcluded(__instance.Id.Entry))
-        {
-            return;
-        }
+        
 
         string newDescription;
-        //Fetch the amount of times it was triggered
 
         if (RelicStatCache.HasStatsForRelic(__instance.Id.Entry))
         {
-            string detailedStats = RelicStatCache.GetDetailedStats(__instance.Id.Entry);
+            List<int> customValues = RelicStatCache.GetCustomValues(__instance.Id.Entry);
 
-            if (detailedStats != null && detailedStats != "")
+            if (customValues != null && customValues.Count > 0)
             {
-                //Has specific detailed stats to show. Display those.
-                newDescription =
-                    __result.Description + "\n\n[red][Relic Tracker][/red]\n" + detailedStats;
-            }
-            else
-            {
-                //Does not have any specific detailed stats to show. Let's go try and fetch a label
+                // Has specific detailed stats. Fetch template from localization
+                string locText = LocalizationHelper.GetLocalizedString(__instance.Id.Entry);
 
-                int triggerCount = RelicStatCache.GetTriggeredCount(__instance.Id.Entry);
-                string alternateLabel = RelicLabelRenamer.GetAlternateLabel(
-                    __instance.Id.Entry,
-                    triggerCount
-                );
-                string extraText;
-                if (alternateLabel != "")
+                if (string.IsNullOrWhiteSpace(locText))
                 {
-                    //Has an alternate label to show. Show that instead of the raw trigger count.
-                    newDescription =
-                        __result.Description + "\n\n[red][Relic Tracker][/red]\n" + alternateLabel;
+                    // Fall back to a missing loc string
+                    newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n[gold]Missing Localization[/gold]";
                 }
                 else
                 {
-                    //No alternate label. Just show the raw trigger count.
-                    newDescription =
-                        __result.Description
-                        + $"\n\n[red][Relic Tracker][/red]\n[gold]Times Triggered:[/gold] [blue]{triggerCount}[/blue]";
+                    try
+                    {
+                        // Box the ints to objects so string.Format can process them
+                        object[] formattedValues = new object[customValues.Count];
+                        for (int i = 0; i < customValues.Count; i++) formattedValues[i] = customValues[i];
+
+                        string detailedStats = string.Format(locText, formattedValues);
+                        newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n" + detailedStats;
+                    }
+                    catch (System.FormatException)
+                    {
+                        newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n[gold]Format Error in .loc file[/gold]";
+                    }
+                }
+            }
+            else
+            {
+                // Does not have any
+                //  specific detailed stats to show. Let's go try and fetch a label
+                int triggerCount = RelicStatCache.GetTriggeredCount(__instance.Id.Entry);
+                string alternateLabel = RelicLabelRenamer.GetAlternateLabel(__instance.Id.Entry, triggerCount);
+
+                if (!string.IsNullOrEmpty(alternateLabel))
+                {
+                    // Has an alternate label to show. Show that instead of the raw trigger count.
+                    newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n" + alternateLabel;
+                }
+                else
+                {
+                    string defaultLabel = LocalizationHelper.GetLocalizedDefault(triggerCount);
+                    // No alternate label. Just show the raw trigger count.
+                    // Fallback trigger template
+                    newDescription = __result.Description + $"\n\n[red][Relic Tracker][/red]\n" + defaultLabel;
                 }
             }
         }
         else
         {
-            //No data yet. Just add a note about that.
-            newDescription =
-                __result.Description
-                + "\n\n[red][Relic Tracker][/red]\n[gold]No data to display...[/gold]";
+            // No data yet. Just add a note about that.
+            newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n" + LocalizationHelper.GetLocalizedNoDataYet();
         }
 
-        //Box the struct into an object so Reflection can modify it
+        // Box the struct into an object so Reflection can modify it
         object customHoverTip = __result;
 
-        //Grab the property using Harmony's AccessTools to bypass 'private set'
+        // Grab the property using Harmony's AccessTools to bypass 'private set'
         PropertyInfo descriptionProp = AccessTools.Property(typeof(HoverTip), "Description");
 
-        //Set the value directly on the property
+        // Set the value directly on the property
         descriptionProp.SetValue(customHoverTip, newDescription);
 
-        //Unbox it back into the HoverTip object
+        // Unbox it back into the HoverTip object
         __result = (HoverTip)customHoverTip;
     }
 }

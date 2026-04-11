@@ -38,10 +38,9 @@ public static class BurningSticksPatch
         {
            
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Duplicated [blue]{0}[/blue] cards.",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
         }
     }
 }

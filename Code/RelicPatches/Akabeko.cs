@@ -12,7 +12,6 @@ public static class AkabekoPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]Vigor[/gold].",
                 new List<int> { __instance.DynamicVars["VigorPower"].IntValue }
             );
         }

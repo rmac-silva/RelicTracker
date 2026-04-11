@@ -20,10 +20,9 @@ public static class HappyFlowerPatch
             if (turnsSeen == 0)
             {
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Generated [blue]{0}[/blue] [gold]energy[/gold].",
-                    new List<int> { 1 }
-                );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
             }
         }
     }

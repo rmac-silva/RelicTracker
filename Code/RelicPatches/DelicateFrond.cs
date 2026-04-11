@@ -10,7 +10,6 @@ public static class DelicateFrondPatch
         
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Generated [blue]{0}[/blue] potions.",
             new List<int> { -1 * freePotionSlots }
         );
     }

@@ -30,10 +30,9 @@ public static class BloodSoakedRoseEnergyPatch
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.",
-                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
+        );
         }
     }
 }
@@ -71,10 +70,9 @@ public static class EnthralledPatch
             _lastProcessedRound = currentRound;
 
             RelicStatCache.RecordCustomStat(
-                "BLOOD_SOAKED_ROSE",
-                "Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.",
-                new List<int> { 0, 1 }
-            );
+            "BLOOD_SOAKED_ROSE",
+            new List<int> { 0, 1 }
+        );
         }
     }
 }

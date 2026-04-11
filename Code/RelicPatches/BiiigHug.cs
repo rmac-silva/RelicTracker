@@ -16,7 +16,6 @@ public static class BiiigHugPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Added [blue]{0}[/blue] [gold]soot[/gold] cards.",
             new List<int> { 1 }
         );
     }

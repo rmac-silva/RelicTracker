@@ -13,10 +13,9 @@ public static class MawBankPatch
         if (__instance.Owner.RunState.BaseRoom == room && !__instance.HasItemBeenBought)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]Gold[/gold].",
-                new List<int> { __instance.DynamicVars.Gold.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Gold.IntValue }
+        );
         }
     }
 }

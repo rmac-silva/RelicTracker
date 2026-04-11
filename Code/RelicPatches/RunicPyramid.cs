@@ -15,7 +15,6 @@ public static class RunicPyramidPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Retained [blue]{0}[/blue] cards.",
             new List<int> { CardPile.GetCards(__instance.Owner, PileType.Hand).Count() }
         );
     }

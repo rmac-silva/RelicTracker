@@ -15,10 +15,9 @@ public static class PandorasBoxPatch
             
         
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Transformed [blue]{0}[/blue] cards.",
-                new List<int> { source.Count }
-            );
+            __instance.Id.Entry,
+            new List<int> { source.Count }
+        );
         
     }
 }

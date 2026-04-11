@@ -18,7 +18,7 @@ public static class BagOfMarblesPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Applied [gold]Vulnerable[/gold] to [blue]{0}[/blue] enemies.",
+
                 new List<int> { combatState.HittableEnemies.Count }
             );
         }

@@ -11,10 +11,9 @@ public static class MealTicketPatch
         if (!__instance.Owner.Creature.IsDead && room is MerchantRoom)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Healed [blue]{0}[/blue] [gold]HP[/gold].",
-                new List<int> { __instance.DynamicVars.Heal.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Heal.IntValue }
+        );
         }
     }
 }

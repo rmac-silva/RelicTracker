@@ -27,7 +27,6 @@ public static class TwistedFunnelPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Applied [blue]{0}[/blue] [gold]Poison[/gold].",
             new List<int>
             {
                 __instance.DynamicVars["PoisonPower"].IntValue

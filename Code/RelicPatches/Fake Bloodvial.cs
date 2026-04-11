@@ -12,10 +12,9 @@ public static class FakeBloodVialPatch
         if (player == __instance.Owner && player.Creature.CombatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Healed [blue]{0}[/blue] [gold]HP[/gold].",
-                new List<int> { __instance.DynamicVars.Heal.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Heal.IntValue }
+        );
         }
     }
 }

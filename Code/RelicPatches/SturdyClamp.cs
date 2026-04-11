@@ -18,18 +18,16 @@ public static class SturdyClampPatch
             if (block > 10)
             {
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Persisted [blue]{0}[/blue] [gold]Block[/gold].",
-                    new List<int> { 10 }
-                );
+            __instance.Id.Entry,
+            new List<int> { 10 }
+        );
             }
             else
             {
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Persisted [blue]{0}[/blue] [gold]Block[/gold].",
-                    new List<int> { block }
-                );
+            __instance.Id.Entry,
+            new List<int> { block }
+        );
             }
         }
     }

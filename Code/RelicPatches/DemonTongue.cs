@@ -36,10 +36,9 @@ public static class DemonTonguePatch
         )
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Healed [blue]{0}[/blue] HP.",
-                new List<int> { result.UnblockedDamage }
-            );
+            __instance.Id.Entry,
+            new List<int> { result.UnblockedDamage }
+        );
         }
     }
 }

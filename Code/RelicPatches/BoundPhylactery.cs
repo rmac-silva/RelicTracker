@@ -17,10 +17,9 @@ public static class BoundPhylacteryPatch
         {
             _lastCombatId = CombatStartManager._currentCombatId;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.",
-                new List<int> { __instance.DynamicVars.Summon.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Summon.IntValue }
+        );
         }
     }
 }

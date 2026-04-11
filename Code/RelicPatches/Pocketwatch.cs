@@ -31,10 +31,9 @@ public static class PocketwatchPatch
 		{
 			
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Drew [blue]{0}[/blue] additional cards.",
-                new List<int> { __instance.DynamicVars.Cards.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Cards.IntValue }
+        );
 		}
 
     }

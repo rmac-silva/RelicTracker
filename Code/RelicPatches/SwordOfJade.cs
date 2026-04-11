@@ -10,10 +10,9 @@ public static class SwordOfJadePatch
         if (room is CombatRoom)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "[gold]Times Triggered:[/gold] [blue]{0}[/blue]",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
         }
     }
 }

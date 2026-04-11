@@ -81,17 +81,15 @@ public static class StrikeDummyPatch
         {
             RelicStatCache.RecordCustomStat(
             "STRIKE_DUMMY",
-            "Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].",
             new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
         );
             return;
         } else
         {
             RelicStatCache.RecordCustomStat(
-                _localInstance.Id.Entry,
-                "Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].",
-                new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
-            );
+            _localInstance.Id.Entry,
+            new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
+        );
         }
 
     }

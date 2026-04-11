@@ -100,6 +100,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Content Include="Localization\**\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -117,8 +123,15 @@
 
     <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
         <Message Text="Copying .dll and manifest to mods folder." Importance="high" />
+        
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="RelicTracker.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
+        
+        <!-- ADD THESE LINES to copy the Localization folder -->
+        <ItemGroup>
+            <LocFiles Include="Localization\**\*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(LocFiles)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)\Localization\%(RecursiveDir)" />
     </Target>
 
     <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">

@@ -14,10 +14,9 @@ public static class PaelsTearsPatch
         if (side == __instance.Owner.Creature.Side && HadLeftoverEnergy)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] additional energy.",
-                new List<int> { __instance.DynamicVars.Energy.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue }
+        );
         }
     }
 }

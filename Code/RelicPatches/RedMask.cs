@@ -17,10 +17,9 @@ public static class RedMaskPatch
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Applied [gold]Weak[/gold] to [blue]{0}[/blue] enemies.",
-                new List<int> { combatState.HittableEnemies.Count() }
-            );
+            __instance.Id.Entry,
+            new List<int> { combatState.HittableEnemies.Count() }
+        );
         }
     }
 }

@@ -25,7 +25,6 @@ public static class RazorToothPatch
             
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Upgraded [blue]{0}[/blue] cards.",
             new List<int> { 1 }
         );
         

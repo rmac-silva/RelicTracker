@@ -19,10 +19,9 @@ public static class SozuPatch
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Added [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] potions.",
-                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
+        );
         }
 
     }
@@ -40,10 +39,9 @@ public static class SozuPotionPatch
 
             __instance.Flash();
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Added [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] potions.",
-                new List<int> { 0, 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0, 1 }
+        );
         
 
     }

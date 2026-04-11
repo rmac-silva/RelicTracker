@@ -20,7 +20,6 @@ public static class PhylacteryUnboundInitialSummonPatch
         _lastCombatId = CombatStartManager._currentCombatId;
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.",
             new List<int> { __instance.DynamicVars["StartOfCombat"].IntValue }
         );
     }
@@ -45,7 +44,6 @@ public static class PhylacteryUnboundPerTurnPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.",
             new List<int> { __instance.DynamicVars["StartOfTurn"].IntValue }
         );
     }

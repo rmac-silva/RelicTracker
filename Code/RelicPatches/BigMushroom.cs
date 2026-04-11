@@ -18,10 +18,9 @@ public static class BigMushroomPatch
         if (player.Creature.CombatState.RoundNumber == 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Drew [blue]{0}[/blue] less cards.",
-                new List<int> { __instance.DynamicVars.Cards.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Cards.IntValue }
+        );
         }
     }
 }

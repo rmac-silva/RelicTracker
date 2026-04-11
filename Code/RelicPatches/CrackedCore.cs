@@ -12,10 +12,9 @@ public static class CrackedCorePatch
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1)
 		{
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Channeled [blue]{0}[/blue] [gold]Lightning[/gold].",
-                new List<int> { __instance.DynamicVars["Lightning"].IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars["Lightning"].IntValue }
+        );
 		}
     }
 }

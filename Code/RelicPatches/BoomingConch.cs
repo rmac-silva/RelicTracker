@@ -19,10 +19,9 @@ public static class BoomingConchPatch
         if (player.Creature.CombatState.RoundNumber <= 1 && currentRoom.RoomType == RoomType.Elite)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Drew [blue]{0}[/blue] additional cards.",
-                new List<int> { __instance.DynamicVars.Cards.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Cards.IntValue }
+        );
         }
     }
 }

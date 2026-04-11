@@ -10,10 +10,9 @@ public static class BookOfFiveRingsPatch
     {
         
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Triggered [blue]{0}[/blue] times.\nHealed [blue]{1}[/blue] [gold]HP[/gold].",
-                new List<int> { 1, __instance.DynamicVars.Heal.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1, __instance.DynamicVars.Heal.IntValue }
+        );
         
     }
 }

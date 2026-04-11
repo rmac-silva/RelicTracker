@@ -48,9 +48,8 @@ public static class WingCharmPatch
         _currentCardRewards.AddRange(list);
 
         RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Enchanted [blue]{0}[/blue] cards.",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
     }
 }

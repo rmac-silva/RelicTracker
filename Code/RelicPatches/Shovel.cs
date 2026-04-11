@@ -8,7 +8,6 @@ public static class DigRestSiteOptionPatch
     {
         RelicStatCache.RecordCustomStat(
             "SHOVEL",
-            "Dug up [blue]{0}[/blue] relics.",
             new List<int> { 1 }
         );
     }

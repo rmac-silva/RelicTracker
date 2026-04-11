@@ -30,18 +30,16 @@ public static class ConfusedPowerPatchForFakeSnecko
         if (energyDifference < 0)
         {
             RelicStatCache.RecordCustomStat(
-                "FAKE_SNECKO_EYE",
-                "Reduced card costs by [blue]{0}[/blue].\nIncreased card costs by [blue]{1}[/blue].",
-                new List<int> { Math.Abs(energyDifference), 0 }
-            );
+            "FAKE_SNECKO_EYE",
+            new List<int> { Math.Abs(energyDifference), 0 }
+        );
         }
         else
         {
             RelicStatCache.RecordCustomStat(
-                "FAKE_SNECKO_EYE",
-                "Reduced card costs by [blue]{0}[/blue].\nIncreased card costs by [blue]{1}[/blue].",
-                new List<int> { 0, Math.Abs(energyDifference) }
-            );
+            "FAKE_SNECKO_EYE",
+            new List<int> { 0, Math.Abs(energyDifference) }
+        );
         }
     }
 }

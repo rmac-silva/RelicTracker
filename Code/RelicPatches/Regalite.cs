@@ -14,10 +14,9 @@ public static class RegalitePatch
 		{
 			
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] Block.",
-                new List<int> { __instance.DynamicVars.Block.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Block.IntValue }
+        );
 		}
         
     }

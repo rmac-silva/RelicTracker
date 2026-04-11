@@ -37,10 +37,9 @@ public static class VelvetChokerEnergyPatch
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained an additional [blue]{0}[/blue] [gold]energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.",
-                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
+        );
         }
 
     }
@@ -78,10 +77,9 @@ public static class VelvetChokerRegretPatch
         {
             roundCounter = __instance.Owner.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained an additional [blue]{0}[/blue] [gold]energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.",
-                new List<int> { 0, 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0, 1 }
+        );
         }
         
 

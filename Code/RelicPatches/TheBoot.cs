@@ -41,7 +41,6 @@ public static class TheBootPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "[gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage [gold]increased[/gold]: [blue]{1}[/blue].",
             new List<int> { 0, damageIncreased }
         );
     }
@@ -57,7 +56,6 @@ public static class TheBootTriggerCountPatch
     {
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "[gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage [gold]increased[/gold]: [blue]{1}[/blue].",
             new List<int> { 1, 0 }
         );
     }

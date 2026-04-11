@@ -19,7 +19,6 @@ public static class FakeOrichalcumPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Gained an additional [blue]{0}[/blue] [gold]Block[/gold].",
             new List<int> { __instance.DynamicVars.Block.IntValue }
         );
     }

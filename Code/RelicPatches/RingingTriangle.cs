@@ -17,10 +17,9 @@ public static class RingingTrianglePatch
 		}
 			
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Retained [blue]{0}[/blue] cards.",
-                new List<int> { CardPile.GetCards(__instance.Owner, PileType.Hand).Count() }
-            );
+            __instance.Id.Entry,
+            new List<int> { CardPile.GetCards(__instance.Owner, PileType.Hand).Count() }
+        );
 		
         
     }

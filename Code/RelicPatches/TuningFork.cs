@@ -9,7 +9,6 @@ public static class TuningForkPatch
     
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Gained [blue]{0}[/blue] [gold]Block[/gold].",
             new List<int> { __instance.DynamicVars.Block.IntValue }
         );
         

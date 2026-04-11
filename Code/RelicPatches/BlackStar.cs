@@ -22,10 +22,9 @@ public static class BlackStarPatch
         if (room != null && room.RoomType == RoomType.Elite)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Generated [blue]{0}[/blue] [gold]relics[/gold].",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
         }
     }
 }

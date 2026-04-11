@@ -42,10 +42,9 @@ public static class RuinedHelmetPatch
 		
 
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Added [blue]{0}[/blue] [gold]Strength[/gold].",
-                new List<int> { (int)amount }
-            );
+            __instance.Id.Entry,
+            new List<int> { (int)amount }
+        );
         
 			
 		

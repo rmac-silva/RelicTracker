@@ -58,10 +58,9 @@ public static class PenNibPatch
             }
 
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Triggered [blue]{0}[/blue] times.\nIncreased overall damage by [blue]{1}[/blue].",
-                new List<int> { 1, damageValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1, damageValue }
+        );
         }
     }
 }

@@ -19,10 +19,9 @@ public static class BookRepairKnifePatch
         if (num >= 0)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Healed [blue]{0}[/blue] [gold]HP[/gold].",
-                new List<int> { 3 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 3 }
+        );
         }
     }
 }

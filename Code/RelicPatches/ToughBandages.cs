@@ -17,10 +17,9 @@ public static class ToughBandagesPatch
         {
             
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Triggered [blue]{0}[/blue] times.\nAdded a total of [blue]{1}[/blue] [gold]Block[/gold].",
-                new List<int> { 1, __instance.DynamicVars.Block.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1, __instance.DynamicVars.Block.IntValue }
+        );
         }
     }
 }

@@ -16,16 +16,15 @@ public static class ScreamingFlagonPatch
         if (side == CombatSide.Player && PileType.Hand.GetPile(__instance.Owner).IsEmpty)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Dealt [blue]{0}[/blue] damage.",
-                new List<int>
+            __instance.Id.Entry,
+            new List<int>
                 {
                     (int)(
                         __instance.Owner.Creature.CombatState.HittableEnemies.Count
                         * __instance.DynamicVars.Damage.IntValue
                     ),
                 }
-            );
+        );
         }
     }
 }

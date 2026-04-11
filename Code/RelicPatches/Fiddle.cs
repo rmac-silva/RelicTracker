@@ -15,7 +15,6 @@ public static class FiddlePatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.",
             new List<int> { __instance.DynamicVars.Cards.IntValue, 0 }
         );
     }
@@ -28,7 +27,6 @@ public static class FiddleReducedDrawPatch
     {
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.",
             new List<int> { 0, 1 }
         );
     }

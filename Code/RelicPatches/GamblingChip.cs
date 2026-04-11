@@ -13,21 +13,16 @@ public static class GamblingChipHelper
 {
     public static ConditionalWeakTable<CardModel, object?> activeHandlers =
         new ConditionalWeakTable<CardModel, object?>();
+
     public static void RecordGamblingChipStat()
     {
-        RelicStatCache.RecordCustomStat(
-            "GAMBLING_CHIP",
-            "Discarded [blue]{0}[/blue] cards.",
-            new List<int>() { 1 }
-        );
+        RelicStatCache.RecordCustomStat("GAMBLING_CHIP", new List<int>() { 1 });
     }
 }
 
 [HarmonyPatch(typeof(GamblingChip), nameof(GamblingChip.AfterPlayerTurnStart))]
 public static class GamblingChipPatch
 {
-    
-
     static void Prefix(GamblingChip __instance, PlayerChoiceContext choiceContext, Player player)
     {
         if (player == __instance.Owner)
@@ -72,7 +67,6 @@ public static class GamblingChipDiscardPatch
             {
                 //If the card is in the list, we increase the count of the gambling chip
                 GamblingChipHelper.RecordGamblingChipStat();
-                ModLog.Info($"[Gambling Chip] Discarded card {card.Id.Entry}, increasing count.\n");
             }
         }
     }

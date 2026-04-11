@@ -14,10 +14,9 @@ public static class WhisperingEarringEnergyPatch
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Vakuu has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\nVakuu has played [blue]{2}[/blue] cards.",
-                new List<int> { 0, 1, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0, 1, 0 }
+        );
         }
     }
 }
@@ -48,7 +47,6 @@ public static class WhisperingEarringCardsPlayedPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Vakuu has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\nVakuu has played [blue]{2}[/blue] cards.",
             new List<int> { 1, 0, 0 }
         );
 
@@ -78,7 +76,6 @@ public static class WhisperingEarringCardsPlayedPatch
     {
         RelicStatCache.RecordCustomStat(
             "WHISPERING_EARRING",
-            "[red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.",
             new List<int> { 0, 0, 1 }
         );
     }

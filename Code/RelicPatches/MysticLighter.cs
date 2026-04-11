@@ -54,7 +54,6 @@ public static class MysticLighterPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Added [blue]{0}[/blue] damage to attacks (including not played).",
             new List<int> { __instance.DynamicVars.Damage.IntValue }
         );
     }

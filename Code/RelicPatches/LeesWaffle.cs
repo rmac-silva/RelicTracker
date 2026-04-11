@@ -11,10 +11,9 @@ public static class LeesWafflePatch
             Creature creature = __instance.Owner.Creature;
             int amountHealed = creature.MaxHp - creature.CurrentHp;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Healed [blue]{0}[/blue] [gold]HP[/gold].",
-                new List<int> { amountHealed }
-            );
+            __instance.Id.Entry,
+            new List<int> { amountHealed }
+        );
         
     }
 }

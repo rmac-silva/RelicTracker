@@ -18,10 +18,9 @@ public static class CharonsAshesPatch
             int numEnemies = __instance.Owner.Creature.CombatState.HittableEnemies.Count;
 
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Dealt [blue]{0}[/blue] [orange]damage[/orange] to enemies.",
-                new List<int> { 3 * numEnemies }
-            );
+            __instance.Id.Entry,
+            new List<int> { 3 * numEnemies }
+        );
         }
     }
 }

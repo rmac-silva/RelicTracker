@@ -18,7 +18,6 @@ public static class ArtOfWarPatch
         {
             RelicStatCache.RecordCustomStat(
                 __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]Energy[/gold].",
                 new List<int> { __instance.DynamicVars.Energy.IntValue }
             );
         }

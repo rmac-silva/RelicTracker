@@ -20,7 +20,6 @@ public static class PaelsEyePatch
         }
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Triggered [blue]{0}[/blue] times.\nExhausted [blue]{1}[/blue] cards.",
             new List<int> { 1,0 }
         );
     }
@@ -49,7 +48,6 @@ public static class PaelsEyeExhaustedCardsPatch
 		}
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Triggered [blue]{0}[/blue] times.\n[gold]Exhausted[/gold] [blue]{1}[/blue] cards.",
             new List<int> { 0,CardPile.GetCards(__instance.Owner, PileType.Hand).Count() }
         );
     }

@@ -17,10 +17,9 @@ public static class TingshaPatch
         {
             
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Triggered [blue]{0}[/blue] times.\nDealt a total of [blue]{1}[/blue] damage.",
-                new List<int> { 1, __instance.DynamicVars.Damage.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1, __instance.DynamicVars.Damage.IntValue }
+        );
         }
     }
 }

@@ -21,10 +21,9 @@ public static class ParryingShieldPatch
             if (numCreatures != 0)
             {
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Dealt [blue]{0}[/blue] damage.",
-                    new List<int> { __instance.DynamicVars.Damage.IntValue }
-                );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Damage.IntValue }
+        );
             }
         }
     }

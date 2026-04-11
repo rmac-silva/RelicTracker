@@ -20,14 +20,13 @@ public static class StoneCalendarPatch
             if (roundNumber == intValue)
             {
                 RelicStatCache.RecordCustomStat(
-                    __instance.Id.Entry,
-                    "Dealt [blue]{0}[/blue] damage.",
-                    new List<int>
+            __instance.Id.Entry,
+            new List<int>
                     {
                         __instance.Owner.Creature.CombatState.HittableEnemies.Count
                             * __instance.DynamicVars.Damage.IntValue,
                     }
-                );
+        );
             }
         }
     }

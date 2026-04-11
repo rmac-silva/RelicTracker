@@ -26,7 +26,6 @@ public static class MummifiedHandPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Triggered [blue]{0}[/blue] times.",
             new List<int> { 1 }
         );
 

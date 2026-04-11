@@ -11,10 +11,9 @@ public static class OrangeDoughPatch
         if (side == __instance.Owner.Creature.Side && combatState.RoundNumber <= 1)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Added [blue]{0}[/blue] colorless cards.",
-                new List<int> { __instance.DynamicVars.Cards.IntValue }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Cards.IntValue }
+        );
         }
     }
 }

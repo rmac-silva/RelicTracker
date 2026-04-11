@@ -16,10 +16,9 @@ public static class BoneFlutePatch
         if (command.Attacker?.Monster is Osty)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] [gold]Block[/gold].",
-                new List<int> { 2 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 2 }
+        );
         }
     }
 }

@@ -17,7 +17,6 @@ public static class SneckoEyePatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].",
             new List<int> { __instance.DynamicVars.Cards.IntValue, 0, 0 }
         );
     }
@@ -48,18 +47,16 @@ public static class ConfusedPowerPatch
         if (energyDifference < 0)
         {
             RelicStatCache.RecordCustomStat(
-                "SNECKO_EYE",
-                "Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].",
-                new List<int> { 0, Math.Abs(energyDifference), 0 }
-            );
+            "SNECKO_EYE",
+            new List<int> { 0, Math.Abs(energyDifference), 0 }
+        );
         }
         else
         {
             RelicStatCache.RecordCustomStat(
-                "SNECKO_EYE",
-                "Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].",
-                new List<int> { 0, 0, Math.Abs(energyDifference) }
-            );
+            "SNECKO_EYE",
+            new List<int> { 0, 0, Math.Abs(energyDifference) }
+        );
         }
     }
 }

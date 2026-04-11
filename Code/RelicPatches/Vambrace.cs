@@ -22,7 +22,6 @@ public static class VambracePatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Gained an additional [blue]{0}[/blue] [gold]Block[/gold].",
             new List<int> { (int)(modifiedAmount/2) }
         );
     }

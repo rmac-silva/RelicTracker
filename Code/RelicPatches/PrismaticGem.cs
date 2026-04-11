@@ -23,7 +23,6 @@ public static class PrismaticGemEnergyPatch
 
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Added [blue]{0}[/blue] [gold]Energy[/gold].",
             new List<int> { __instance.DynamicVars.Energy.IntValue }
         );
     }

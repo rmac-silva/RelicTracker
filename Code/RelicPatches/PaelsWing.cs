@@ -12,17 +12,15 @@ public static class PaelsWingPatch
         if (RewardsSacrificed % __instance.DynamicVars["Sacrifices"].IntValue == 0)
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] relics.",
-                new List<int> { 1 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
         } else
         {
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Gained [blue]{0}[/blue] relics.",
-                new List<int> { 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { 0 }
+        );
         }
     }
 }

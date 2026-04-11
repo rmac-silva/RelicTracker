@@ -19,10 +19,9 @@ public static class SpikedGauntletsEnergyPatch
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-                __instance.Id.Entry,
-                "Added [blue]{0}[/blue] energy.\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.",
-                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
-            );
+            __instance.Id.Entry,
+            new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
+        );
             
         }
 
@@ -71,7 +70,6 @@ public static class SpikedGauntletsPowerPatch
         // 5. Record the stat
         RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            "Added [blue]{0}[/blue] energy.\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.",
             new List<int> { 0, 1 }
         );
     }
