@@ -22,7 +22,7 @@ public static class WhisperingEarringEnergyPatch
     }
 }
 
-[HarmonyPatch(typeof(WhisperingEarring), nameof(WhisperingEarring.BeforePlayPhaseStart))]
+[HarmonyPatch(typeof(WhisperingEarring), nameof(WhisperingEarring.BeforePlayPhaseStartLate))]
 public static class WhisperingEarringCardsPlayedPatch
 {
     private static Dictionary<CardModel, Action> activeHandlers = new Dictionary<CardModel, Action>();
