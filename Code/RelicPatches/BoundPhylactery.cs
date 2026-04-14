@@ -15,7 +15,6 @@ public static class BoundPhylacteryPatch
             && CombatStartManager.IsNewCombat(ref _lastCombatId)
         )
         {
-            _lastCombatId = CombatStartManager._currentCombatId;
             RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
             new List<int> { __instance.DynamicVars.Summon.IntValue }

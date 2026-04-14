@@ -1,5 +1,6 @@
 //This is the THAI localization file. It contains the labels for each of the relics.
 //Replace the entries after the vertical bar '|', missing entries will be reverted back to ENGLISH
+//Avoid removing or replacing [gold][blue][red] tags to keep the look consistent across languages
 
 //Lines starting with a double forward slash '//' are ignored, use it at will.
 
@@ -36,7 +37,7 @@ IVORY_TILE | Gained [blue]{0}[/blue] [gold]Energy[/gold].
 JOSS_PAPER | Drew [blue]{0}[/blue] additional cards.
 KUNAI | Gained [blue]{0}[/blue] [gold]Dexterity[/gold].
 LANTERN | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-LASTING_CANDY | Gained [blue]{0}[/blue] [gold]Power[/gold] card rewards.
+LASTING_CANDY | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
 MUSIC_BOX | Created [blue]{0}[/blue] [gold]Ethereal[/gold] copies.
 NINJA_SCROLL | Created [blue]{0}[/blue] [gold]Shivs[/gold].
 NUNCHAKU | Gained [blue]{0}[/blue] [gold]Energy[/gold].

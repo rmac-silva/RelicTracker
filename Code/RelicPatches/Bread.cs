@@ -25,7 +25,6 @@ public static class BreadMaxEnergyPatch
         if (CombatStartManager.IsNewCombat(ref _lastCombatId))
         {
             roundCounter = -1; // Reset for the new fight
-            _lastCombatId = CombatStartManager._currentCombatId;
         }
 
         if (combatState != null && combatState.RoundNumber > 1 && currentRound != roundCounter)

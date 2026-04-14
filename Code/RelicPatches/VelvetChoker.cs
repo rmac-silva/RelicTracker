@@ -68,7 +68,6 @@ public static class VelvetChokerRegretPatch
         if (CombatStartManager.IsNewCombat(ref _lastCombatId))
         {
             roundCounter = -1; // Reset for the new fight
-            _lastCombatId = CombatStartManager._currentCombatId;
         }
 
         int CardsPlayedThisTurn = (int)CardsPlayedThisTurnField.GetValue(__instance);

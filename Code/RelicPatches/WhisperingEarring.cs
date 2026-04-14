@@ -35,7 +35,6 @@ public static class WhisperingEarringCardsPlayedPatch
         if(CombatStartManager.IsNewCombat(ref _lastCombatId))
         {
             hasExecutedThisCombat = false; // Reset for new combat
-            _lastCombatId = CombatStartManager._currentCombatId;
         }
 
         if (hasExecutedThisCombat) return; // Only execute once per combat

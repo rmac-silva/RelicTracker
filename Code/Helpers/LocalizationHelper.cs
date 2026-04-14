@@ -49,7 +49,7 @@ public static class LocalizationHelper
     {
         if (localizedStrings != null && localizedStrings.TryGetValue(key, out string value))
         {
-            return value;
+            return value.Replace("\\n", "\n");
         }
         return null;
     }
@@ -59,13 +59,13 @@ public static class LocalizationHelper
         string locText = GetLocalizedString("DEFAULT_LABEL");
         if (!string.IsNullOrWhiteSpace(locText))
         {
-            return string.Format(locText, value);
+            return string.Format(locText.Replace("\\n", "\n"), value);
         }
         return null;
     }
 
     public static string GetLocalizedNoDataYet() {
         string locText = GetLocalizedString("EMPTY_TOOLTIP");
-        return !string.IsNullOrWhiteSpace(locText) ? locText : "No data to display...";
+        return !string.IsNullOrWhiteSpace(locText) ? locText.Replace("\\n", "\n") : "No data to display...";
     }
 }

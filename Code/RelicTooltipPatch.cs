@@ -48,7 +48,12 @@ public static class RelicTooltipPatch
             return;
         }
 
-        
+        // If the localized string is explicitly empty, do not show any tooltip addition.
+        string locTest = LocalizationHelper.GetLocalizedString(__instance.Id.Entry);
+        if (locTest == "")
+        {
+            return;
+        }
 
         string newDescription;
 

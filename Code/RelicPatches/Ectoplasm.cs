@@ -13,7 +13,6 @@ private static int roundCounter = 0;
         if (CombatStartManager.IsNewCombat(ref _lastCombatId))
         {
             roundCounter = -1; // Reset for the new fight
-            _lastCombatId = CombatStartManager._currentCombatId;
         }
         
         if (player == __instance.Owner && player.Creature.CombatState.RoundNumber != roundCounter)
