@@ -4,7 +4,7 @@
 //Lines starting with a double forward slash '//' are ignored, use it at will.
 
 //DEFAULT TOOLTIP - When the relic doesn't have a custom patch, just shows:
-DEFAULT_TOOLTIP | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
+DEFAULT_TOOLTIP | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
 
 //EMPTY TOOLTIP - When the relic doesn't have data yet, just shows:
 EMPTY_TOOLTIP | [gold]No data to display...[/gold]
@@ -36,7 +36,6 @@ IVORY_TILE | Gained [blue]{0}[/blue] [gold]Energy[/gold].
 JOSS_PAPER | Drew [blue]{0}[/blue] additional cards.
 KUNAI | Gained [blue]{0}[/blue] [gold]Dexterity[/gold].
 LANTERN | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-LASTING_CANDY | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
 MUSIC_BOX | Created [blue]{0}[/blue] [gold]Ethereal[/gold] copies.
 NINJA_SCROLL | Created [blue]{0}[/blue] [gold]Shivs[/gold].
 NUNCHAKU | Gained [blue]{0}[/blue] [gold]Energy[/gold].
@@ -93,7 +92,7 @@ DEMON_TONGUE | Healed [blue]{0}[/blue] HP.
 DIVINE_RIGHT | Gained [blue]{0}[/blue] [gold]stars[/gold].
 ECTOPLASM | Gained [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] [gold]Gold[/gold].
 ETERNAL_FEATHER | Healed [blue]{0}[/blue] [gold]HP[/gold].
-FAKE _BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
+FAKE_BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
 FAKE_ANCHOR | Gained [blue]{0}[/blue] [gold]Armor[/gold].
 FAKE_HAPPY_FLOWER | Generated [blue]{0}[/blue] [gold]energy[/gold].
 FAKE_LEES_WAFFLE | Healed [blue]{0}[/blue] [gold]HP[/gold].
@@ -154,13 +153,13 @@ ROYAL_POISON | Took [blue]{0}[/blue] [red]damage[/red].
 RUINED_HELMET | Added [blue]{0}[/blue] [gold]Strength[/gold].
 RUNIC_PYRAMID | Retained [blue]{0}[/blue] cards.
 SCREAMING_FLAGON | Dealt [blue]{0}[/blue] damage.
-SEAL_OF_GOLD | Lost [blue]{0}[/blue] [gold]Gold[/gold].\nGained [blue]{1}[/blue] energy.
+SEAL_OF_GOLD | Lost [blue]{0}[/blue] [gold]Gold[/gold].\nGained [blue]{1}[/blue] [gold]Energy[/gold].
 SELF_FORMING_CLAY | Gained [blue]{0}[/blue] Block.
 SHOVEL | Dug up [blue]{0}[/blue] relics.
 SLING_OF_COURAGE | Gained [blue]{0}[/blue] [gold]Strength[/gold].
 SNECKO_EYE | Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].
-SOZU | Added [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] potions.
-SPIKED_GAUNTLETS | Added [blue]{0}[/blue] energy.\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.
+SOZU | Added [blue]{0}[/blue] [gold]Energy[/gold].\nLost [blue]{1}[/blue] potions.
+SPIKED_GAUNTLETS | Added [blue]{0}[/blue] [gold]Energy[/gold].\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.
 STONE_CALENDAR | Dealt [blue]{0}[/blue] damage.
 STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
 STURDY_CLAMP | Persisted [blue]{0}[/blue] [gold]Block[/gold].
@@ -175,11 +174,17 @@ TOUGH_BANDAGES | Triggered [blue]{0}[/blue] times.\nAdded a total of [blue]{1}[/
 TUNING_FORK | Gained [blue]{0}[/blue] [gold]Block[/gold].
 TWISTED_FUNNEL | Applied [blue]{0}[/blue] [gold]Poison[/gold].
 VAMBRACE | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
-VELVET_CHOKER | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.
-VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].
+VELVET_CHOKER | Gained an additional [blue]{0}[/blue] [gold]Energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.
+VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]Energy[/gold].
 VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra [red]damage[/red].
 WHISPERING_EARRING | [red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.
 WING_CHARM | Enchanted [blue]{0}[/blue] cards.
+BELLOWS | Upgraded [blue]{0}[/blue] cards.
+ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
+FUR_COAT | Reduced enemy health by [blue]{0}[/blue] [gold]HP[/gold].
+WONGO_CUSTOMER_APPRECIATION_BADGE | You have a total of [blue]{0}[blue] Wongo Points!
+BRILLIANT_SCARF | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
+LASTING_CANDY | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 ALCHEMICAL_COFFER |
@@ -196,7 +201,6 @@ DUSTY_TOME |
 ELECTRIC_SHRYMP | 
 EMPTY_CAGE | 
 FRAGRANT_MUSHROOM | 
-FUR_COAT | 
 GIRYA | 
 GLASS_EYE | 
 GLITTER | 
@@ -245,14 +249,11 @@ TOUCH_OF_OROBAS |
 TOY_BOX | 
 WAR_PAINT | 
 WHETSTONE | 
-WONGO_CUSTOMER_APPRECIATION_BADGE | 
 WONGOS_MYSTERY_TICKET | 
-FAKE_MANGO | 
 SILVER_CRUCIBLE | 
 CURSED_PEARL | 
 DINGY_RUG | 
 GHOST_SEED | 
-ICE_CREAM | 
 LORDS_PARASOL | 
 PAELS_LEGION | 
 RED_SKULL | 
@@ -263,3 +264,6 @@ NEOWS_BONES |
 PHIAL_HOLSTER | 
 NEOWS_TALISMAN | 
 HEFTY_TABLET | 
+FAKE_MERCHANTS_RUG |
+FAKE_MANGO |
+WINGED_BOOTS | 

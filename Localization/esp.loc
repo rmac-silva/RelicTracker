@@ -4,7 +4,7 @@
 //Lines starting with a double forward slash '//' are ignored, use it at will.
 
 //DEFAULT TOOLTIP - When the relic doesn't have a custom patch, just shows:
-DEFAULT_TOOLTIP | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
+DEFAULT_TOOLTIP | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
 
 //EMPTY TOOLTIP - When the relic doesn't have data yet, just shows:
 EMPTY_TOOLTIP | [gold]No data to display...[/gold]
@@ -180,6 +180,12 @@ VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].
 VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra [red]damage[/red].
 WHISPERING_EARRING | [red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.
 WING_CHARM | Enchanted [blue]{0}[/blue] cards.
+FAKE_BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
+BELLOWS | Upgraded [blue]{0}[/blue] cards.
+ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
+BRILLIANT_SCARF | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
+FUR_COAT | Reduced enemy health by [blue]{0}[/blue] [gold]HP[/gold].
+WONGO_CUSTOMER_APPRECIATION_BADGE | You have a total of [blue]{0}[blue] Wongo Points!
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 ALCHEMICAL_COFFER |
@@ -196,7 +202,6 @@ DUSTY_TOME |
 ELECTRIC_SHRYMP | 
 EMPTY_CAGE | 
 FRAGRANT_MUSHROOM | 
-FUR_COAT | 
 GIRYA | 
 GLASS_EYE | 
 GLITTER | 
@@ -245,14 +250,12 @@ TOUCH_OF_OROBAS |
 TOY_BOX | 
 WAR_PAINT | 
 WHETSTONE | 
-WONGO_CUSTOMER_APPRECIATION_BADGE | 
 WONGOS_MYSTERY_TICKET | 
 FAKE_MANGO | 
 SILVER_CRUCIBLE | 
 CURSED_PEARL | 
 DINGY_RUG | 
 GHOST_SEED | 
-ICE_CREAM | 
 LORDS_PARASOL | 
 PAELS_LEGION | 
 RED_SKULL | 
@@ -263,3 +266,5 @@ NEOWS_BONES |
 PHIAL_HOLSTER | 
 NEOWS_TALISMAN | 
 HEFTY_TABLET | 
+FAKE_MERCHANTS_RUG |
+WINGED_BOOTS |
