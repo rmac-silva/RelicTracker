@@ -180,7 +180,7 @@ VERY_HOT_COCOA | 额外获得了 [blue]{0}[/blue] 点 [gold]能量[/gold]。
 VITRUVIAN_MINION | 受影响卡牌：[blue]{0}[/blue]。额外获得了 [blue]{1}[/blue] 点 [gold]格挡[/gold]。额外造成了 [blue]{2}[/blue] 点 [red]伤害[/red]。
 WHISPERING_EARRING | [red]瓦库[/red] 为你接管了 [blue]{0}[/blue] 次。获得了 [blue]{1}[/blue] 点 [gold]能量[/gold]。[red]瓦库[/red] 打出了 [blue]{2}[/blue] 张牌。
 WING_CHARM | 附魔了 [blue]{0}[/blue] 张牌。
-LASTING_CANDY | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
+LASTING_CANDY | [gold]触发次数：[/gold] [blue]{0}[/blue]。 
 FAKE_BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
 BELLOWS | Upgraded [blue]{0}[/blue] cards.
 ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
