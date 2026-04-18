@@ -181,12 +181,20 @@ VITRUVIAN_MINION | 受影响卡牌：[blue]{0}[/blue]。额外获得了 [blue]{1
 WHISPERING_EARRING | [red]瓦库[/red] 为你接管了 [blue]{0}[/blue] 次。获得了 [blue]{1}[/blue] 点 [gold]能量[/gold]。[red]瓦库[/red] 打出了 [blue]{2}[/blue] 张牌。
 WING_CHARM | 附魔了 [blue]{0}[/blue] 张牌。
 LASTING_CANDY | [gold]触发次数：[/gold] [blue]{0}[/blue]。 
-FAKE_BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
-BELLOWS | Upgraded [blue]{0}[/blue] cards.
-ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
-BRILLIANT_SCARF | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
-FUR_COAT | Reduced enemy health by [blue]{0}[/blue] [gold]HP[/gold].
-WONGO_CUSTOMER_APPRECIATION_BADGE | You have a total of [blue]{0}[blue] Wongo Points!
+FAKE_BLOODVIAL | 回复了 [blue]{0}[/blue] 点 [gold]生命值[/gold]。
+BELLOWS | 升级了 [blue]{0}[/blue] 张卡牌。
+ICE_CREAM | 累计获得了 [blue]{0}[/blue] 点 [gold]能量[/gold]。
+BRILLIANT_SCARF | [gold]触发次数：[/gold] [blue]{0}[/blue]。
+FUR_COAT | 使敌人的 [gold]生命值[/gold] 降低了 [blue]{0}[/blue] 点。
+WONGO_CUSTOMER_APPRECIATION_BADGE | 你总共拥有 [blue]{0}[/blue] 点 [gold]Wongo 积分[/gold]！
+
+
+BRIMSTONE | You gained [blue]{0}[/blue] [gold]Strength[/gold].\nEnemies gained [blue]{1}[/blue] [gold]Strength[/gold].
+DRIFTWOOD | You rerolled [blue]{0}[/blue] card rewards.
+PAELS_GROWTH | You have duplicated [blue]{0}[/blue] cards.
+PAELS_LEGION | Gained [blue]{0}[/blue] additional block.
+PHILOSOPHERS_STONE | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nGave [blue]{1}[/blue] [gold]Strength[/gold] to enemies.
+BING_BONG | Duplicated [blue]{0}[/blue] cards. 
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 ALCHEMICAL_COFFER |
@@ -258,7 +266,6 @@ CURSED_PEARL |
 DINGY_RUG | 
 GHOST_SEED | 
 LORDS_PARASOL | 
-PAELS_LEGION | 
 RED_SKULL | 
 STRAWBERRY | 
 STORYBOOK | 
@@ -269,3 +276,7 @@ NEOWS_TALISMAN |
 HEFTY_TABLET | 
 FAKE_MERCHANTS_RUG |
 WINGED_BOOTS |
+UNSETTLING_LAMP |
+PAPER_KRANE |
+PAPER_PHROG |
+UNDYING_SIGIL |

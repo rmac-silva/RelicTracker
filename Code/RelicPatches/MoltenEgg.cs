@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Enchantments;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Runs;
 
@@ -19,6 +20,8 @@ public static class EggTrackingHelper
     public static ConditionalWeakTable<CardModel, object?> ToxicEggCards =
         new ConditionalWeakTable<CardModel, object?>();
     public static ConditionalWeakTable<CardModel, object?> FrozenEggCards =
+        new ConditionalWeakTable<CardModel, object?>();
+    public static ConditionalWeakTable<CardModel, object?> FresnelLensCards =
         new ConditionalWeakTable<CardModel, object?>();
 
     public static void RegisterHook(Action<CardModel> hook) { }
@@ -56,9 +59,15 @@ public static class CardRewardPatch
             else if (modifyingRelic.Id.Entry == "FROZEN_EGG")
             {
                 EggTrackingHelper.FrozenEggCards.Add(card, null);
+            } else if( modifyingRelic.Id.Entry == "FRESNEL_LENS")
+            {
+                EggTrackingHelper.FresnelLensCards.Add(card, null);
             }
-
-            EggTrackingHelper.CardRewards.Remove(__instance);
+            else
+            {
+                //Some other relic modified this card, remove it from the tracking list as we cant be sure about the final result anymore
+                EggTrackingHelper.CardRewards.Remove(__instance);
+            }
         }
     }
 }
@@ -122,6 +131,14 @@ public static class CardPileAddPatch
         );
 
             EggTrackingHelper.FrozenEggCards.Remove(card);
+        } else if (EggTrackingHelper.FresnelLensCards.TryGetValue(card, out _))
+        {
+            RelicStatCache.RecordCustomStat(
+            "FRESNEL_LENS",
+            new List<int> { 1 }
+        );
+
+            EggTrackingHelper.FresnelLensCards.Remove(card);
         }
     }
 }
@@ -411,6 +428,93 @@ public static class FrozenEggMerchantPatch
                 //Frozen egg will upgrade this card. Mark it
                 EggTrackingHelper.CardRewards.Add(c, null);
             }
+        }
+    }
+}
+#endregion
+
+#region - Fresnel Lens
+[HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.TryModifyCardBeingAddedToDeck))]
+public static class FresnelLensAddToDeckPatch
+{
+    static void Prefix(FresnelLens __instance, CardModel card, out CardModel? newCard)
+    {
+        newCard = null;
+		if (card.Owner != __instance.Owner)
+		{
+			return;
+		}
+		if (!ModelDb.Enchantment<Nimble>().CanEnchant(card))
+		{
+			return;
+		}
+
+        RelicStatCache.RecordCustomStat(
+            __instance.Id.Entry,
+            new List<int> { 1 }
+        );
+    }
+}
+
+[HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.TryModifyCardRewardOptionsLate))]
+public static class FresnelLensCardRewardPatch
+{
+    static void Prefix(
+        FresnelLens __instance,
+        Player player,
+        List<CardCreationResult> cardRewards,
+        CardCreationOptions options
+    )
+    {
+       if (player != __instance.Owner)
+		{
+			return;
+		}
+
+        foreach (CardCreationResult c in cardRewards)
+        {
+            if (EggTrackingHelper.CardRewards.TryGetValue(c, out _))
+            {
+                continue;
+            }
+
+            CardModel card = c.Card;
+
+            if (card.Type == CardType.Power && card.IsUpgradable)
+            {
+                //Frozen egg will upgrade this card. Mark it
+                EggTrackingHelper.CardRewards.Add(c, null);
+            }
+        }
+    }
+}
+
+[HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.ModifyMerchantCardCreationResults))]
+public static class FresnelLensMerchantPatch
+{
+    static void Prefix(FresnelLens __instance, Player player, List<CardCreationResult> cards)
+    {
+        if (player != __instance.Owner)
+        {
+            return;
+        }
+
+        Nimble nimble = ModelDb.Enchantment<Nimble>();
+        foreach (CardCreationResult c in cards)
+        {
+            if (EggTrackingHelper.CardRewards.TryGetValue(c, out _))
+            {
+                continue;
+            }
+
+            CardModel card = c.Card;
+
+            if (nimble.CanEnchant(card))
+			{
+                //Frozen egg will upgrade this card. Mark it
+                EggTrackingHelper.CardRewards.Add(c, null);
+            }
+            
         }
     }
 }

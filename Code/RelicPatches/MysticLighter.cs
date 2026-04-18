@@ -7,8 +7,10 @@ using MegaCrit.Sts2.Core.ValueProps;
 [HarmonyPatch(typeof(MysticLighter), nameof(MysticLighter.ModifyDamageAdditive))]
 public static class MysticLighterPatch
 {
-    private static List<string> upgradedCardsThisRound = new List<string>();
-    private static int roundCounter = -1;
+    private static Dictionary<CardModel, Action> activeHandlers =
+        new Dictionary<CardModel, Action>();
+    private static MysticLighter? _localInstance;
+    private static int currentRound = -1;
 
     static void Postfix(
         MysticLighter __instance,
@@ -20,10 +22,6 @@ public static class MysticLighterPatch
 
     )
     {
-
-
-
-        
 
         if (!props.IsPoweredAttackRelicTracker())
         {
@@ -38,23 +36,56 @@ public static class MysticLighterPatch
             return;
         }
 
-        if(__instance.Owner.Creature.CombatState.RoundNumber != roundCounter)
-        {
-            roundCounter = __instance.Owner.Creature.CombatState.RoundNumber;
-            upgradedCardsThisRound.Clear();
-        }
-
-        if(__instance.Owner.Creature.CombatState.RoundNumber == roundCounter && upgradedCardsThisRound.Contains(cardSource.Id.Entry))
+        if (__instance.Owner?.Creature?.CombatState == null)
         {
             return;
         }
 
-        roundCounter = __instance.Owner.Creature.CombatState.RoundNumber;
-        upgradedCardsThisRound.Add(cardSource.Id.Entry);
+        if (_localInstance == null)
+        {
+            _localInstance = __instance;
+        }
+
+        if (__instance.Owner.Creature.CombatState.RoundNumber != currentRound)
+        {
+            foreach (var kvp in activeHandlers)
+            {
+                kvp.Key.Played -= kvp.Value;
+            }
+            activeHandlers.Clear();
+            currentRound = __instance.Owner.Creature.CombatState.RoundNumber;
+        }
+
+         //If already handled, ignore it
+        if (activeHandlers.ContainsKey(cardSource))
+            return;
+
+        ModLog.Info($"Registering Mystic Lighter handler for card: {cardSource.Id.Entry}");
+
+        Action handler = null;
+        handler = () =>
+        {
+            cardSource.Played -= handler; // Unsubscribe to itself
+            activeHandlers.Remove(cardSource); // Self-remove from active handlers
+            RegisterCardDamage(); //Call the function to register the damage increase
+        };
+
+        activeHandlers.Add(cardSource, handler);
+        cardSource.Played += handler;
+
+    }
+
+    private static void RegisterCardDamage()
+    {
+        ModLog.Info("Registering Mystic Lighter damage for card play");
+        if (_localInstance == null)
+        {
+            return;
+        }
 
         RelicStatCache.RecordCustomStat(
-            __instance.Id.Entry,
-            new List<int> { __instance.DynamicVars.Damage.IntValue }
+            _localInstance.Id.Entry,
+            new List<int> { _localInstance.DynamicVars.Damage.IntValue }
         );
     }
 }
