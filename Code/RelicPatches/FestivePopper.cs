@@ -12,7 +12,7 @@ public static class FestivePopperPatch
         if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (player == __instance.Owner)
         {
-            CombatState combatState = player.Creature.CombatState;
+            ICombatState combatState = player.Creature.CombatState;
             if (combatState.RoundNumber == 1)
             {
                 int numEnemies = combatState.HittableEnemies.Count;

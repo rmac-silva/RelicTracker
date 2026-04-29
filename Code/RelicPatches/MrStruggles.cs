@@ -11,7 +11,7 @@ public static class MrStrugglesPatch
     {
         if (player == __instance.Owner)
         {
-            CombatState combatState = player.Creature.CombatState;
+            ICombatState combatState = player.Creature.CombatState;
 
             RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,

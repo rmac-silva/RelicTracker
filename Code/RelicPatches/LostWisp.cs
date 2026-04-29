@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 [HarmonyPatch(typeof(LostWisp), nameof(LostWisp.AfterCardPlayed))]
 public static class LostWispPatch
 {
-    static void Postfix(LostWisp __instance, PlayerChoiceContext context, CardPlay cardPlay)
+    static void Postfix(LostWisp __instance, PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (

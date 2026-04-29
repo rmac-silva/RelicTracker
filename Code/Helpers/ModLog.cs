@@ -15,6 +15,13 @@ public static class ModLog
     {
         try
         {
+            string? directory = Path.GetDirectoryName(LogPath);
+            if (directory != null && !Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+
             File.WriteAllText(
                 LogPath,
                 $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] RelicTracker log started\n  OS: {OS.GetName()} / {OS.GetDistributionName()}\n  Godot: {Engine.GetVersionInfo()["string"]}\n"

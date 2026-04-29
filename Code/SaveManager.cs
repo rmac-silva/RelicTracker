@@ -25,14 +25,12 @@ public static class LoadMultiplayerPatch
     }
 }
 
-[HarmonyPatch(typeof(RunSaveManager),nameof(RunSaveManager.SaveRun))]
+[HarmonyPatch(typeof(RunSaveManager), nameof(RunSaveManager.SaveRun), new Type[] { typeof(SerializableRun), typeof(bool) })]
 public static class SaveRunPatch
 {
-    static void Prefix(Task __result, AbstractRoom? preFinishedRoom)
+    static void Prefix(Task __result, SerializableRun save, bool isMultiplayer)
     {
         ModLog.Info("Saving run, saving relic stat cache...");
-        bool multiplayerSave = RunManager.Instance.NetService.Type.IsMultiplayer() ? true : false;
-        
-        RelicStatCache.SaveCache(multiplayerSave);
+        RelicStatCache.SaveCache(isMultiplayer);
     }
 }

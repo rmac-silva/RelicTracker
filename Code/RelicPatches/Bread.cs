@@ -19,7 +19,7 @@ public static class BreadMaxEnergyPatch
             return;
         }
 
-        CombatState? combatState = player.Creature.CombatState;
+        ICombatState? combatState = player.Creature.CombatState;
         int currentRound = combatState.RoundNumber;
 
         if (CombatStartManager.IsNewCombat(ref _lastCombatId))

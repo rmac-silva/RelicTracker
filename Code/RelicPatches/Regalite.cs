@@ -1,16 +1,17 @@
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-[HarmonyPatch(typeof(Regalite), nameof(Regalite.AfterCardEnteredCombat))]
+[HarmonyPatch(typeof(Regalite), nameof(Regalite.AfterCardGeneratedForCombat))]
 public static class RegalitePatch
 {
     static void Postfix(
         Regalite __instance,
-        CardModel card
+        CardModel card, Player? creator
     )
     {
-        if (card.Owner == __instance.Owner && card.VisualCardPool.IsColorless)
+        if (creator != null && creator == __instance.Owner)
 		{
 			
             RelicStatCache.RecordCustomStat(

@@ -1,5 +1,6 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 
@@ -21,14 +22,14 @@ public static class WhisperingEarringEnergyPatch
     }
 }
 
-[HarmonyPatch(typeof(WhisperingEarring), nameof(WhisperingEarring.BeforePlayPhaseStartLate))]
+[HarmonyPatch(typeof(WhisperingEarring), nameof(WhisperingEarring.AfterAutoPrePlayPhaseEnteredLate))]
 public static class WhisperingEarringCardsPlayedPatch
 {
     private static Dictionary<CardModel, Action> activeHandlers = new Dictionary<CardModel, Action>();
     private static bool hasExecutedThisCombat = false;
 
     private static int _lastCombatId = -1;
-    static void Prefix(WhisperingEarring __instance, Player player)
+    static void Prefix(WhisperingEarring __instance, PlayerChoiceContext choiceContext, Player player)
     {
         if (player != __instance.Owner) return;
 
@@ -38,9 +39,6 @@ public static class WhisperingEarringCardsPlayedPatch
         }
 
         if (hasExecutedThisCombat) return; // Only execute once per combat
-       
-
-        //Reset how many cards have been played
 
         Action handler = null;
 

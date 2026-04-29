@@ -7,7 +7,7 @@ public static class BrilliantScarfHelper
     private static bool _hasTriggeredThisRound = false;
 }
 
-[HarmonyPatch(typeof(BrilliantScarf), nameof(BrilliantScarf.TryModifyEnergyCostInCombat))]
+[HarmonyPatch(typeof(BrilliantScarf), nameof(BrilliantScarf.TryModifyEnergyCostInCombatLate))]
 public static class BrilliantScarfPatch
 {
     private static readonly System.Reflection.FieldInfo? _numCardsPlayedField = AccessTools.Field(typeof(BrilliantScarf), "_cardsPlayedThisTurn");

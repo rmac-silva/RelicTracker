@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 [HarmonyPatch(typeof(MummifiedHand), nameof(MummifiedHand.AfterCardPlayed))]
 public static class MummifiedHandPatch
 {
-    static void Postfix(MummifiedHand __instance, PlayerChoiceContext context, CardPlay cardPlay)
+    static void Postfix(MummifiedHand __instance, PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress)
         {

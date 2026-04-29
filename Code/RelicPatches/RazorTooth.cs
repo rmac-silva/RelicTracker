@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 public static class RazorToothPatch
 {
 
-    static void Prefix(RazorTooth __instance,PlayerChoiceContext context, CardPlay cardPlay)
+    static void Prefix(RazorTooth __instance,PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner != __instance.Owner)
 		{

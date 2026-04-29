@@ -10,7 +10,7 @@ public static class LetterOpenerPatch
     private static readonly System.Reflection.FieldInfo? SkillsPlayedField = 
         AccessTools.Field(typeof(LetterOpener), "_skillsPlayedThisTurn") ?? 
         AccessTools.Field(typeof(LetterOpener), "SkillsPlayedThisTurn");
-    static void Postfix(LetterOpener __instance, PlayerChoiceContext context, CardPlay cardPlay)
+    static void Postfix(LetterOpener __instance, PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (
