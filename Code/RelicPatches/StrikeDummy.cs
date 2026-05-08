@@ -39,7 +39,7 @@ public static class StrikeDummyPatch
             return;
         }
 
-        if(__instance.Owner?.Creature?.CombatState == null)
+        if (__instance.Owner?.Creature?.CombatState == null)
         {
             return;
         }
@@ -77,20 +77,20 @@ public static class StrikeDummyPatch
 
     private static void RegisterCardDamage()
     {
-        if(_localInstance == null)
+        if (_localInstance == null)
         {
             RelicStatCache.RecordCustomStat(
-            "STRIKE_DUMMY",
-            new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
-        );
+                "STRIKE_DUMMY",
+                new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
+            );
             return;
-        } else
+        }
+        else
         {
             RelicStatCache.RecordCustomStat(
-            _localInstance.Id.Entry,
-            new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
-        );
+                _localInstance.Id.Entry,
+                new List<int> { _localInstance.DynamicVars["ExtraDamage"].IntValue }
+            );
         }
-
     }
 }

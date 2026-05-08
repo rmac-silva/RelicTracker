@@ -4,20 +4,22 @@ using System.Reflection;
 
 public static class LocalizationHelper
 {
-
-    //Assigns a key to the 
+    //Assigns a key to the
     private static Dictionary<string, string> localizedStrings = new Dictionary<string, string>();
+
     public static void SetLanguage(string language)
     {
         localizedStrings.Clear();
-        
+
         // Find the folder where the mod assembly is loaded
         string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         string locFilePath = Path.Combine(assemblyFolder, "Localization", $"{language}.loc");
 
         if (!File.Exists(locFilePath))
         {
-            ModLog.Info($"[RelicTracker] Localization file not found for {language}, falling back to eng.loc");
+            ModLog.Info(
+                $"[RelicTracker] Localization file not found for {language}, falling back to eng.loc"
+            );
             locFilePath = Path.Combine(assemblyFolder, "Localization", "eng.loc");
         }
 
@@ -37,11 +39,16 @@ public static class LocalizationHelper
                     localizedStrings[key] = value;
                 }
             }
-            ModLog.Info($"[RelicTracker] Loaded {localizedStrings.Count} localized strings for {language}.");
+            ModLog.Info(
+                $"[RelicTracker] Loaded {localizedStrings.Count} localized strings for {language}."
+            );
         }
         else
         {
-            ModLog.Error($"[RelicTracker] Base eng.loc not found at {locFilePath}!", new FileNotFoundException("Base localization file not found"));
+            ModLog.Error(
+                $"[RelicTracker] Base eng.loc not found at {locFilePath}!",
+                new FileNotFoundException("Base localization file not found")
+            );
         }
     }
 
@@ -64,8 +71,11 @@ public static class LocalizationHelper
         return null;
     }
 
-    public static string GetLocalizedNoDataYet() {
+    public static string GetLocalizedNoDataYet()
+    {
         string locText = GetLocalizedString("EMPTY_TOOLTIP");
-        return !string.IsNullOrWhiteSpace(locText) ? locText.Replace("\\n", "\n") : "No data to display...";
+        return !string.IsNullOrWhiteSpace(locText)
+            ? locText.Replace("\\n", "\n")
+            : "No data to display...";
     }
 }

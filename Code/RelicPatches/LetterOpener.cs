@@ -28,6 +28,7 @@ public static class LetterOpenerPatch
             if (skillsPlayedThisTurn % intValue == 0)
             {
                 RelicStatCache.RecordCustomStat(
+                    
             __instance.Id.Entry,
             new List<int> { __instance.DynamicVars.Damage.IntValue * numEnemies }
         );

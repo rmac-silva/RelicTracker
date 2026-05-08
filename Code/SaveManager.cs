@@ -34,3 +34,23 @@ public static class SaveRunPatch
         RelicStatCache.SaveCache(isMultiplayer);
     }
 }
+
+[HarmonyPatch(typeof(SaveManager), nameof(SaveManager.SaveRunHistory))]
+public static class RunHistorySaver
+{
+    static void Prefix(RunHistory history)
+    {
+        ModLog.Info("Saving run history, saving relic stat cache...");
+        RelicStatCache.SaveRunHistory(history.StartTime);
+    }
+}
+
+[HarmonyPatch(typeof(SaveManager), nameof(SaveManager.LoadRunHistory))]
+public static class RunHistoryLoader
+{
+    static void Postfix(string fileName)
+    {
+        ModLog.Info("Loading run history, loading relic stat cache...");
+        RelicStatCache.LoadRunHistory(fileName);
+    }
+}

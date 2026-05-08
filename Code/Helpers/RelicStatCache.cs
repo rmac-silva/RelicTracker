@@ -13,8 +13,14 @@ public static class RelicStatCache
 {
     private static int _currentRunId = 0; // You can increment this at the start of each run to keep separate files
     private static readonly string SavePath = Path.Combine(OS.GetUserDataDir(), "RelicTracker");
+    private static readonly string RunHistoryPath = Path.Combine(
+        OS.GetUserDataDir(),
+        "RelicTracker",
+        "RunHistory"
+    );
     private static Dictionary<string, RelicStatData> _cache;
     private static readonly object _lock = new();
+    private static int _ignoreNextCreation = 0;
 
     // Ensures we don't crash even if someone forgets to call Initialize()
     private static void EnsureInitialized()
@@ -165,7 +171,10 @@ public static class RelicStatCache
         }
         catch (System.Exception)
         {
-            ModLog.Error($"Error loading singleplayer save file. Starting with an empty cache.", new System.Exception("Error loading save file"));
+            ModLog.Error(
+                $"Error loading singleplayer save file. Starting with an empty cache.",
+                new System.Exception("Error loading save file")
+            );
             _cache = new Dictionary<string, RelicStatData>();
         }
     }
@@ -193,7 +202,10 @@ public static class RelicStatCache
         }
         catch (System.Exception)
         {
-            ModLog.Error($"Error loading multiplayer save file. Starting with an empty cache.", new System.Exception("Error loading save file"));
+            ModLog.Error(
+                $"Error loading multiplayer save file. Starting with an empty cache.",
+                new System.Exception("Error loading save file")
+            );
             _cache = new Dictionary<string, RelicStatData>();
         }
     }
@@ -204,6 +216,60 @@ public static class RelicStatCache
         Directory.CreateDirectory(SavePath);
         string json = JsonSerializer.Serialize(_cache);
         File.WriteAllText(Path.Combine(SavePath, fileName), json);
+    }
+
+    public static void SaveRunHistory(long runStartTime)
+    {
+        string fileName = $"{runStartTime}.json";
+        Directory.CreateDirectory(RunHistoryPath);
+        string json = JsonSerializer.Serialize(_cache);
+        File.WriteAllText(Path.Combine(RunHistoryPath, fileName), json);
+    }
+
+    public static void LoadRunHistory(string fileName)
+    {
+        try
+        {
+            var runID = fileName.Replace(".run",".json");
+            string filePath = Path.Combine(RunHistoryPath, runID);
+
+            _ignoreNextCreation = 2; //Ignore next two cache initializations which happen when loading run history.
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                _cache =
+                    JsonSerializer.Deserialize<Dictionary<string, RelicStatData>>(json)
+                    ?? new Dictionary<string, RelicStatData>();
+
+            }
+            else
+            {
+                ModLog.Error(
+                    $"Run history file not found at {filePath}. Starting with an empty cache.",
+                    new FileNotFoundException("Run history file not found")
+                );
+                _cache = new Dictionary<string, RelicStatData>();
+            }
+        }
+        catch (System.Exception)
+        {
+            ModLog.Error(
+                $"Error loading run history file. Starting with an empty cache.",
+                new System.Exception("Error loading run history file")
+            );
+            _cache = new Dictionary<string, RelicStatData>();
+        }
+    }
+
+    public static bool ShouldIgnoreNextCreation()
+    {
+        if (_ignoreNextCreation > 0)
+        {
+            _ignoreNextCreation--;
+            return true;
+        }
+        return false;
     }
 
     #endregion

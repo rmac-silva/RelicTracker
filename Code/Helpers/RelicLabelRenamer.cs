@@ -43,20 +43,20 @@ public static class RelicLabelRenamer
             return ""; // Hide tooltip strings that are intentionally left blank or missing
         }
 
-        int multiplier = relicMultipliers.TryGetValue(relicId, out int storedMultiplier) ? storedMultiplier : 1;
+        int multiplier = relicMultipliers.TryGetValue(relicId, out int storedMultiplier)
+            ? storedMultiplier
+            : 1;
         int displayValue = DefaultValueFormatter(value, multiplier);
 
-        try 
+        try
         {
             return string.Format(locText, displayValue);
         }
         catch (System.FormatException)
         {
-            return ""; 
+            return "";
         }
     }
-
-    
 
     private static int DefaultValueFormatter(int rawValue, int factor)
     {

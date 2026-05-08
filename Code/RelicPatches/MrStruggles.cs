@@ -14,9 +14,9 @@ public static class MrStrugglesPatch
             ICombatState combatState = player.Creature.CombatState;
 
             RelicStatCache.RecordCustomStat(
-            __instance.Id.Entry,
-            new List<int> { combatState.HittableEnemies.Count * combatState.RoundNumber }
-        );
+                __instance.Id.Entry,
+                new List<int> { combatState.HittableEnemies.Count * combatState.RoundNumber }
+            );
         }
     }
 }

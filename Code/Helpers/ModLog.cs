@@ -21,7 +21,6 @@ public static class ModLog
                 Directory.CreateDirectory(directory);
             }
 
-
             File.WriteAllText(
                 LogPath,
                 $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] RelicTracker log started\n  OS: {OS.GetName()} / {OS.GetDistributionName()}\n  Godot: {Engine.GetVersionInfo()["string"]}\n"

@@ -19,10 +19,8 @@ public static class MysticLighterPatch
         ValueProp props,
         Creature? dealer,
         CardModel? cardSource
-
     )
     {
-
         if (!props.IsPoweredAttackRelicTracker())
         {
             return;
@@ -56,7 +54,7 @@ public static class MysticLighterPatch
             currentRound = __instance.Owner.Creature.CombatState.RoundNumber;
         }
 
-         //If already handled, ignore it
+        //If already handled, ignore it
         if (activeHandlers.ContainsKey(cardSource))
             return;
 
@@ -72,7 +70,6 @@ public static class MysticLighterPatch
 
         activeHandlers.Add(cardSource, handler);
         cardSource.Played += handler;
-
     }
 
     private static void RegisterCardDamage()

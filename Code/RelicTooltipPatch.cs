@@ -28,13 +28,17 @@ public static class RelicFlashPatch
 [HarmonyPatch(
     typeof(Player),
     "CreateForNewRun",
+    
     new Type[] { typeof(CharacterModel), typeof(UnlockState), typeof(ulong) }
 )]
 public static class PlayerCreationPatch
 {
     static void Postfix(Player __result)
     {
-        RelicStatCache.InitializeForNewRun();
+        if(!RelicStatCache.ShouldIgnoreNextCreation())
+        {
+            RelicStatCache.InitializeForNewRun();
+        }
     }
 }
 

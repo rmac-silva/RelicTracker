@@ -186,14 +186,13 @@ ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
 BRILLIANT_SCARF | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
 FUR_COAT | Reduced enemy health by [blue]{0}[/blue] [gold]HP[/gold].
 WONGO_CUSTOMER_APPRECIATION_BADGE | You have a total of [blue]{0}[blue] Wongo Points!
-
-
 BRIMSTONE | You gained [blue]{0}[/blue] [gold]Strength[/gold].\nEnemies gained [blue]{1}[/blue] [gold]Strength[/gold].
 DRIFTWOOD | You rerolled [blue]{0}[/blue] card rewards.
 PAELS_GROWTH | You have duplicated [blue]{0}[/blue] cards.
 PAELS_LEGION | Gained [blue]{0}[/blue] additional block.
 PHILOSOPHERS_STONE | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nGave [blue]{1}[/blue] [gold]Strength[/gold] to enemies.
 BING_BONG | Duplicated [blue]{0}[/blue] cards. 
+FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 ALCHEMICAL_COFFER |
