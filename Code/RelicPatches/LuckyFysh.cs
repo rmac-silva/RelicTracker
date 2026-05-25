@@ -10,7 +10,7 @@ public static class LuckyFyshPatch
         LuckyFysh __instance,
         CardModel card,
         PileType oldPileType,
-        AbstractModel? source
+        AbstractModel? clonedBy
     )
     {
         CardPile? pile = card.Pile;

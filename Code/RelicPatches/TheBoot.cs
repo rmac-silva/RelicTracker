@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 /// <summary>
 /// Registers the damage gained from The Boot. Takes the original damage value and calculates the difference between that and the maximum The Boot value.
 /// </summary>
-[HarmonyPatch(typeof(TheBoot), nameof(TheBoot.ModifyHpLostBeforeOsty))]
+[HarmonyPatch(typeof(TheBoot), nameof(TheBoot.ModifyHpLostAfterOstyLate))]
 public static class TheBootPatch
 {
     static void Postfix(
@@ -49,7 +49,7 @@ public static class TheBootPatch
 /// <summary>
 /// Increases the generic trigger counter
 /// </summary>
-[HarmonyPatch(typeof(TheBoot), nameof(TheBoot.AfterModifyingHpLostBeforeOsty))]
+[HarmonyPatch(typeof(TheBoot), nameof(TheBoot.AfterModifyingHpLostAfterOsty))]
 public static class TheBootTriggerCountPatch
 {
     static void Postfix(TheBoot __instance)

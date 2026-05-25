@@ -1,6 +1,7 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Relics;
@@ -20,7 +21,7 @@ public static class PaelsEyePatch
     }
 }
 
-[HarmonyPatch(typeof(PaelsEye), nameof(PaelsEye.BeforeTurnEndEarly))]
+[HarmonyPatch(typeof(PaelsEye), "BeforeSideTurnEndEarly")]
 public static class PaelsEyeExhaustedCardsPatch
 {
     private static readonly System.Reflection.FieldInfo UsedThisCombatField = AccessTools.Field(
@@ -30,7 +31,7 @@ public static class PaelsEyeExhaustedCardsPatch
     private static readonly System.Reflection.MethodInfo CardsPlayedThisTurnField =
         AccessTools.Method(typeof(PaelsEye), "AnyCardsPlayedThisTurn");
 
-    static void Prefix(PaelsEye __instance, PlayerChoiceContext choiceContext, CombatSide side)
+    static void Prefix(PaelsEye __instance, PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress)
             return;
@@ -39,7 +40,7 @@ public static class PaelsEyeExhaustedCardsPatch
             bool UsedThisCombat = (bool)UsedThisCombatField.GetValue(__instance);
             bool AnyCardsPlayedThisTurn = (bool)CardsPlayedThisTurnField.Invoke(__instance, null);
 
-            if (UsedThisCombat || AnyCardsPlayedThisTurn || side != CombatSide.Player)
+            if (UsedThisCombat || AnyCardsPlayedThisTurn || side != CombatSide.Player || !participants.Contains(__instance.Owner.Creature))
             {
                 return;
             }

@@ -1,12 +1,13 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-[HarmonyPatch(typeof(Orichalcum), nameof(Orichalcum.BeforeTurnEndVeryEarly))]
+[HarmonyPatch(typeof(Orichalcum), "BeforeSideTurnEndVeryEarly")]
 public static class OrichalcumPatch
 {
-    static void Postfix(Orichalcum __instance, PlayerChoiceContext choiceContext, CombatSide side)
+    static void Postfix(Orichalcum __instance, PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side != __instance.Owner.Creature.Side)
 		{

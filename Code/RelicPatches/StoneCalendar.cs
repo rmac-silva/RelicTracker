@@ -1,15 +1,17 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-[HarmonyPatch(typeof(StoneCalendar), nameof(StoneCalendar.BeforeTurnEnd))]
+[HarmonyPatch(typeof(StoneCalendar), "BeforeSideTurnEnd")]
 public static class StoneCalendarPatch
 {
     static void Prefix(
         StoneCalendar __instance,
         PlayerChoiceContext choiceContext,
-        CombatSide side
+        CombatSide side,
+        IEnumerable<Creature> participants
     )
     {
         if (side == __instance.Owner.Creature.Side)

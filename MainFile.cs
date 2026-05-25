@@ -15,6 +15,7 @@ public partial class MainFile
         Harmony harmony = new(ModId);
 
         harmony.PatchAll();
+        RelicStatCache.CleanupOldHistory();
 
         ModLog.Init();
         ModLog.Info("RelicTracker initialized successfully!");

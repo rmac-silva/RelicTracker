@@ -262,6 +262,40 @@ public static class RelicStatCache
         }
     }
 
+    /// <summary>
+    /// Checks the filenames which are in Epoch time format, and deletes those older than a month.
+    /// </summary>
+    public static void CleanupOldHistory()
+    {
+        
+        try
+        {
+            if (!Directory.Exists(RunHistoryPath))
+                return;
+
+            var files = Directory.GetFiles(RunHistoryPath);
+            long currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            long oneMonthInSeconds = 30L * 24 * 60 * 60;
+
+            foreach (var file in files)
+            {
+                var fileName = Path.GetFileNameWithoutExtension(file);
+                if (long.TryParse(fileName, out long fileTime))
+                {
+                    if (currentTime - fileTime > oneMonthInSeconds)
+                    {
+                        File.Delete(file);
+                        ModLog.Info($"Deleted old run history file: {file}");
+                    }
+                }
+            }
+        }
+        catch (System.Exception e)
+        {
+            ModLog.Error("Error during cleanup of old run history files.", e);
+        }
+    }
+
     public static bool ShouldIgnoreNextCreation()
     {
         if (_ignoreNextCreation > 0)

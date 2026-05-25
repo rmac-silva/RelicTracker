@@ -1,12 +1,13 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-[HarmonyPatch(typeof(LunarPastry), nameof(LunarPastry.AfterTurnEnd))]
+[HarmonyPatch(typeof(LunarPastry), "AfterSideTurnEnd")]
 public static class LunarPastryPatch
 {
-    static void Postfix(LunarPastry __instance, PlayerChoiceContext choiceContext, CombatSide side)
+    static void Postfix(LunarPastry __instance, PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (CombatManager.Instance == null || !CombatManager.Instance.IsInProgress) return;
         if (side == __instance.Owner.Creature.Side)

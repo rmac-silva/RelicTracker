@@ -92,7 +92,7 @@ public static class CardPileAddPatch
         CardModel card,
         PileType newPileType,
         CardPilePosition position,
-        AbstractModel source,
+        AbstractModel clonedBy,
         bool skipVisuals
     )
     {

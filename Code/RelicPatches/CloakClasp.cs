@@ -1,16 +1,17 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-[HarmonyPatch(typeof(CloakClasp), nameof(CloakClasp.BeforeTurnEnd))]
+[HarmonyPatch(typeof(CloakClasp), "BeforeSideTurnEnd")]
 public static class CloakClaspPatch
 {
     static void Postfix(
         CloakClasp __instance,
-        PlayerChoiceContext choiceContext, CombatSide side
+        PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants
     )
     {
         if (side == __instance.Owner.Creature.Side)

@@ -1,19 +1,22 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-[HarmonyPatch(typeof(ParryingShield), nameof(ParryingShield.AfterTurnEnd))]
+[HarmonyPatch(typeof(ParryingShield), "AfterSideTurnEnd")]
 public static class ParryingShieldPatch
 {
     static void Postfix(
         ParryingShield __instance,
         PlayerChoiceContext choiceContext,
-        CombatSide side
+        CombatSide side,
+        IEnumerable<Creature> participants
     )
     {
+
         if (
-            side == CombatSide.Player
+            participants.Contains(__instance.Owner.Creature)
             && !((decimal)__instance.Owner.Creature.Block < __instance.DynamicVars.Block.BaseValue)
         )
         {
