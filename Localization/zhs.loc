@@ -195,6 +195,7 @@ PHILOSOPHERS_STONE | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nGave [blue]{1
 BING_BONG | Duplicated [blue]{0}[/blue] cards. 
 FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
 
+
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 ALCHEMICAL_COFFER |
 ARCANE_SCROLL | 
@@ -279,3 +280,4 @@ UNSETTLING_LAMP |
 PAPER_KRANE |
 PAPER_PHROG |
 UNDYING_SIGIL |
+BRONZE_SCALES |

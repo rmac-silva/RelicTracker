@@ -22,7 +22,7 @@ DAUGHTER_OF_THE_WIND | Gained [blue]{0}[/blue] [gold]Block[/gold].
 DRAGON_FRUIT | Maximum [gold]HP[/gold] increased by [blue]{0}[/blue].
 DREAM_CATCHER | Added [blue]{0}[/blue] cards.
 EMBER_TEA | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-FORGOTTEN_SOUL | Dealt [blue]{0}[/blue] [orange]damage[/orange].
+FORGOTTEN_SOUL | Dealt [blue]{0}[/blue] damage.
 FUNERARY_MASK | Gained [blue]{0}[/blue] [gold]Souls[/gold].
 GAME_PIECE | Drew [blue]{0}[/blue] cards.
 GORGET | Gained [blue]{0}[/blue] [gold]Plating[/gold].
@@ -54,7 +54,7 @@ RUNIC_CAPACITOR | Gained [blue]{0}[/blue] [gold]Orb[/gold] slots.
 SAI | Gained [blue]{0}[/blue] [gold]Block[/gold].
 SHURIKEN | Gained [blue]{0}[/blue] [gold]Strength[/gold].
 SWORD_OF_JADE | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-TUNGSTEN_ROD | Reduced [orange]damage[/orange] by [blue]{0}[/blue] [gold]HP[/gold].
+TUNGSTEN_ROD | Reduced damage by [blue]{0}[/blue] [gold]HP[/gold].
 VENERABLE_TEA_SET | Gained [blue]{0}[/blue] [gold]Energy[/gold].
 VEXING_PUZZLEBOX | Created [blue]{0}[/blue] colorless cards.
 FAKE_VENERABLE_TEA_SET | Gained [blue]{0}[/blue] [gold]Energy[/gold].
@@ -83,7 +83,7 @@ BOUND_PHYLACTERY | Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.
 BOWLER_HAT | Gained [blue]{0}[/blue] additional [gold]Gold[/gold].
 BREAD | Lost [blue]{0}[/blue] energy.\nGained [blue]{1}[/blue] energy.
 BURNING_STICKS | Duplicated [blue]{0}[/blue] cards.
-CHARONS_ASHES | Dealt [blue]{0}[/blue] [orange]damage[/orange] to enemies.
+CHARONS_ASHES | Dealt [blue]{0}[/blue] damage to enemies.
 CHEMICAL_X | Increased `[blue]X[/blue] value by [blue]{0}[/blue].
 CLOAK_CLASP | Gained [blue]{0}[/blue] [gold]Block[/gold].
 CRACKED_CORE | Channeled [blue]{0}[/blue] [gold]Lightning[/gold].
@@ -99,7 +99,7 @@ FAKE_LEES_WAFFLE | Healed [blue]{0}[/blue] [gold]HP[/gold].
 FAKE_ORICHALCUM | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
 FAKE_SNECKO_EYE | Reduced card costs by [blue]{0}[/blue].\nIncreased card costs by [blue]{1}[/blue].
 FAKE_STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
-FESTIVE_POPPER | Dealt [blue]{0}[/blue] [orange]damage[/orange].
+FESTIVE_POPPER | Dealt [blue]{0}[/blue] damage.
 FIDDLE | Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.
 FRESNEL_LENS | Enchanted [blue]{0}[/blue] added cards throughout the run.
 GAMBLING_CHIP | Discarded [blue]{0}[/blue] cards.
@@ -149,7 +149,7 @@ REGAL_PILLOW | Healed [blue]{0}[/blue] [gold]HP[/gold].
 RINGING_TRIANGLE | Retained [blue]{0}[/blue] cards.
 RING_OF_THE_DRAKE | Drew [blue]{0}[/blue] additional cards.
 RING_OF_THE_SNAKE | Drew [blue]{0}[/blue] additional cards.
-ROYAL_POISON | Took [blue]{0}[/blue] [red]damage[/red].
+ROYAL_POISON | Took [blue]{0}[/blue] damage.
 RUINED_HELMET | Added [blue]{0}[/blue] [gold]Strength[/gold].
 RUNIC_PYRAMID | Retained [blue]{0}[/blue] cards.
 SCREAMING_FLAGON | Dealt [blue]{0}[/blue] damage.
@@ -166,7 +166,7 @@ STURDY_CLAMP | Persisted [blue]{0}[/blue] [gold]Block[/gold].
 SWORD_OF_JADE | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
 SYMBIOTIC_VIRUS | [gold]Channeled[/gold] [blue]{0}[/blue] [purple]Dark[/purple].
 THE_ABACUS | Gained [blue]{0}[/blue] [gold]Block[/gold].
-THE_BOOT | [gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage [gold]increased[/gold]: [blue]{1}[/blue].
+THE_BOOT | [gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage increased: [blue]{1}[/blue].
 THE_COURIER | Stock refilled: [blue]{0}[/blue].
 THROWING_AXE | Cards duplicated: [blue]{0}[/blue].
 TINGSHA | Triggered [blue]{0}[/blue] times.\nDealt a total of [blue]{1}[/blue] damage.
@@ -176,7 +176,7 @@ TWISTED_FUNNEL | Applied [blue]{0}[/blue] [gold]Poison[/gold].
 VAMBRACE | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
 VELVET_CHOKER | Gained an additional [blue]{0}[/blue] [gold]Energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.
 VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]Energy[/gold].
-VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra [red]damage[/red].
+VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra damage.
 WHISPERING_EARRING | [red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.
 WING_CHARM | Enchanted [blue]{0}[/blue] cards.
 BELLOWS | Upgraded [blue]{0}[/blue] cards.
@@ -277,3 +277,4 @@ UNSETTLING_LAMP |
 PAPER_KRANE |
 PAPER_PHROG |
 UNDYING_SIGIL |
+BRONZE_SCALES |

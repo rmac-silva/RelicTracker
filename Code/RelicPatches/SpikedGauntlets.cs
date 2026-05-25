@@ -1,4 +1,5 @@
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
@@ -8,6 +9,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 public static class SpikedGauntletsEnergyPatch
 {
     private static int roundCounter = 0;
+
     static void Postfix(SpikedGauntlets __instance, Player player, decimal amount)
     {
         if (player != __instance.Owner)
@@ -15,24 +17,26 @@ public static class SpikedGauntletsEnergyPatch
             return;
         }
 
-        if(player.Creature.CombatState.RoundNumber != roundCounter)
+        if (
+            player.Creature.CombatState != null
+            && player.Creature.CombatState.RoundNumber != roundCounter
+        )
         {
             roundCounter = player.Creature.CombatState.RoundNumber;
             RelicStatCache.RecordCustomStat(
-            __instance.Id.Entry,
-            new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
-        );
-            
+                __instance.Id.Entry,
+                new List<int> { __instance.DynamicVars.Energy.IntValue, 0 }
+            );
         }
-
     }
 }
 
 [HarmonyPatch(typeof(SpikedGauntlets), nameof(SpikedGauntlets.TryModifyEnergyCostInCombat))]
 public static class SpikedGauntletsPowerPatch
 {
-    private static List<string> modifiedCardIdsThisTurn = new List<string>();
-    private static int roundCounter = 0;
+    private static List<string> modifiedCardIdsThisCombat = new List<string>();
+
+    private static int combatID = 0;
 
     static void Postfix(
         SpikedGauntlets __instance,
@@ -42,35 +46,31 @@ public static class SpikedGauntletsPowerPatch
     )
     {
         // 1. Safety Checks
-        if (__instance?.Owner?.Creature?.CombatState == null || card?.Owner == null) return;
-        if (card.Owner.Creature != __instance.Owner.Creature) return;
-        if (card.Type != CardType.Power) return;
+        if (__instance?.Owner?.Creature?.CombatState == null || card?.Owner == null)
+            return;
+        if (card.Owner.Creature != __instance.Owner.Creature)
+            return;
+        if (card.Type != CardType.Power)
+            return;
 
         // 2. Round Tracking
         int currentRound = __instance.Owner.Creature.CombatState.RoundNumber;
-        if (currentRound != roundCounter)
+        if (CombatStartManager.IsNewCombat(ref combatID))
         {
-            roundCounter = currentRound;
-            modifiedCardIdsThisTurn.Clear();
+            modifiedCardIdsThisCombat.Clear();
         }
-
-        // 3. Logic: Check if we already processed this specific card instance this turn
-        // Use a unique ID or hash if possible, or the instance if it remains stable
-        if (modifiedCardIdsThisTurn.Contains(card.Id.Entry)) 
+        if (modifiedCardIdsThisCombat.Contains(card.Id.Entry))
         {
-             // We still want the cost to be modified even if we already recorded the stat!
-             modifiedCost = originalCost + 1m; 
-             return;
+            // We still want the cost to be modified even if we already recorded the stat!
+            modifiedCost = originalCost + 1m;
+            return;
         }
 
         // 4. Apply the cost increase
         modifiedCost = originalCost + 1m;
-        modifiedCardIdsThisTurn.Add(card.Id.Entry);
+        modifiedCardIdsThisCombat.Add(card.Id.Entry);
 
         // 5. Record the stat
-        RelicStatCache.RecordCustomStat(
-            __instance.Id.Entry,
-            new List<int> { 0, 1 }
-        );
+        RelicStatCache.RecordCustomStat(__instance.Id.Entry, new List<int> { 0, 1 });
     }
 }
