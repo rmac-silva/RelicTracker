@@ -26,20 +26,22 @@ private static int roundCounter = 0;
     }
 }
 
-[HarmonyPatch(typeof(Ectoplasm), nameof(Ectoplasm.ShouldGainGold))]
+[HarmonyPatch(typeof(Ectoplasm), nameof(Ectoplasm.ModifyGoldGained))]
 public static class EctoplasmMoneyPatch
 {
 
-    static void Postfix(Ectoplasm __instance, decimal amount, Player player)
+    static void Prefix(Ectoplasm __instance, Player player, decimal amount)
     {
         
-        if (player == __instance.Owner)
-        {
-            
-            RelicStatCache.RecordCustomStat(
+        if (player != __instance.Owner)
+		{
+			return;
+		}
+		
+        //Loses all gold amount
+        RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
             new List<int> { 0, (int)amount }
         );
-        }
     }
 }

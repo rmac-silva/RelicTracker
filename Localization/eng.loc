@@ -194,6 +194,8 @@ BING_BONG | Duplicated [blue]{0}[/blue] cards.
 FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
+KALEIDOSCOPE |
+SILKEN_TRESS |
 ALCHEMICAL_COFFER |
 ARCANE_SCROLL | 
 ARCHAIC_TOOTH | 

@@ -126,7 +126,7 @@ TOXIC_EGG | 升级了 [blue]{0}[/blue] 张加入的卡牌。
 FROZEN_EGG | 升级了 [blue]{0}[/blue] 张加入的卡牌。
 MR_STRUGGLES | 造成了 [blue]{0}[/blue] 点伤害。
 MUMMIFIED_HAND | 触发了 [blue]{0}[/blue] 次。
-MYSTIC_LIGHTER | 增加了 [blue]{0}[/blue] 点攻击伤害（包含未打出的）。
+MYSTIC_LIGHTER | 攻击伤害增加了 [blue]{0}[/blue] 点。
 ORANGE_DOUGH | 添加了 [blue]{0}[/blue] 张无色牌。
 ORICHALCUM | 额外获得了 [blue]{0}[/blue] 点 [gold]格挡[/gold]。
 PAELS_BLOOD | 额外抽了 [blue]{0}[/blue] 张牌。
@@ -187,16 +187,18 @@ ICE_CREAM | 累计获得了 [blue]{0}[/blue] 点 [gold]能量[/gold]。
 BRILLIANT_SCARF | [gold]触发次数：[/gold] [blue]{0}[/blue]。
 FUR_COAT | 使敌人的 [gold]生命值[/gold] 降低了 [blue]{0}[/blue] 点。
 WONGO_CUSTOMER_APPRECIATION_BADGE | 你总共拥有 [blue]{0}[/blue] 点 [gold]Wongo 积分[/gold]！
-BRIMSTONE | You gained [blue]{0}[/blue] [gold]Strength[/gold].\nEnemies gained [blue]{1}[/blue] [gold]Strength[/gold].
-DRIFTWOOD | You rerolled [blue]{0}[/blue] card rewards.
-PAELS_GROWTH | You have duplicated [blue]{0}[/blue] cards.
-PAELS_LEGION | Gained [blue]{0}[/blue] additional block.
-PHILOSOPHERS_STONE | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nGave [blue]{1}[/blue] [gold]Strength[/gold] to enemies.
-BING_BONG | Duplicated [blue]{0}[/blue] cards. 
-FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
+BRIMSTONE | 你获得了 [blue]{0}[/blue] 点 [gold]力量[/gold]。\n敌人获得了 [blue]{1}[/blue] 点 [gold]力量[/gold]。
+DRIFTWOOD | 你重掷了 [blue]{0}[/blue] 次卡牌奖励。
+PAELS_GROWTH | 你已经复制了 [blue]{0}[/blue] 张卡牌。
+PAELS_LEGION | 获得 [blue]{0}[/blue] 点额外格挡。
+PHILOSOPHERS_STONE | 获得了 [blue]{0}[/blue] 点 [gold]能量[/gold]。\n给予敌人 [blue]{1}[/blue] 点 [gold]力量[/gold]。
+BING_BONG | 复制了 [blue]{0}[/blue] 张卡牌。
+FISHING_ROD | 升级了 [blue]{0}[/blue] 张卡牌。
 
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
+KALEIDOSCOPE |
+SILKEN_TRESS |
 ALCHEMICAL_COFFER |
 ARCANE_SCROLL | 
 ARCHAIC_TOOTH | 
