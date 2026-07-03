@@ -10,9 +10,9 @@ public static class SwordOfJadePatch
         if (room is CombatRoom)
         {
             RelicStatCache.RecordCustomStat(
-            __instance.Id.Entry,
-            new List<int> { 1 }
-        );
+                __instance.Id.Entry,
+                new List<int> { __instance.DynamicVars.Strength.IntValue }
+            );
         }
     }
 }

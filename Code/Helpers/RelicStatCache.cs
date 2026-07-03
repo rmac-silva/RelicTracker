@@ -7,6 +7,7 @@ public class RelicStatData
 {
     public int UsageCount { get; set; }
     public List<int> CustomValues { get; set; } = new List<int>();
+    public List<string> AdditionalData { get; set; } = new List<string>();
 }
 
 public static class RelicStatCache
@@ -94,6 +95,42 @@ public static class RelicStatCache
         }
     }
 
+    public static void RecordAdditionalStat(string id, List<string> values)
+    {
+        ModLog.Info(
+            $"[Custom Stat] \nRecording additional data for {id} with values {string.Join(", ", values)}\n"
+        );
+        EnsureInitialized();
+
+        lock (_lock)
+        {
+            if (!_cache.TryGetValue(id, out var data))
+            {
+                data = new RelicStatData();
+                _cache[id] = data;
+            }
+
+            if (data.AdditionalData == null || data.AdditionalData.Count == 0)
+            {
+                data.AdditionalData = new List<string>(values);
+            }
+            else
+            {
+                for (int i = 0; i < values.Count; i++)
+                {
+                    if (i < data.CustomValues.Count)
+                    {
+                        data.AdditionalData[i] += values[i];
+                    }
+                    else
+                    {
+                        data.AdditionalData.Add(values[i]);
+                    }
+                }
+            }
+        }
+    }
+
     public static bool HasStatsForRelic(string id)
     {
         EnsureInitialized();
@@ -118,6 +155,17 @@ public static class RelicStatCache
         lock (_lock)
         {
             return _cache.TryGetValue(id, out var data) ? data.CustomValues : null;
+        }
+    }
+
+    public static List<string>? GetAdditionalValues(string id)
+    {
+        EnsureInitialized();
+        lock (_lock)
+        {
+            return _cache.TryGetValue(id, out var data)
+                ? (data.AdditionalData.Count > 0 ? data.AdditionalData : null)
+                : null;
         }
     }
 
@@ -230,7 +278,7 @@ public static class RelicStatCache
     {
         try
         {
-            var runID = fileName.Replace(".run",".json");
+            var runID = fileName.Replace(".run", ".json");
             string filePath = Path.Combine(RunHistoryPath, runID);
 
             _ignoreNextCreation = 2; //Ignore next two cache initializations which happen when loading run history.
@@ -241,7 +289,6 @@ public static class RelicStatCache
                 _cache =
                     JsonSerializer.Deserialize<Dictionary<string, RelicStatData>>(json)
                     ?? new Dictionary<string, RelicStatData>();
-
             }
             else
             {
@@ -267,7 +314,6 @@ public static class RelicStatCache
     /// </summary>
     public static void CleanupOldHistory()
     {
-        
         try
         {
             if (!Directory.Exists(RunHistoryPath))

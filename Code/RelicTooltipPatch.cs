@@ -64,6 +64,7 @@ public static class RelicTooltipPatch
         if (RelicStatCache.HasStatsForRelic(__instance.Id.Entry))
         {
             List<int> customValues = RelicStatCache.GetCustomValues(__instance.Id.Entry);
+            List<string> additionalValues = RelicStatCache.GetAdditionalValues(__instance.Id.Entry);
 
             if (customValues != null && customValues.Count > 0)
             {
@@ -84,7 +85,17 @@ public static class RelicTooltipPatch
                         for (int i = 0; i < customValues.Count; i++) formattedValues[i] = customValues[i];
 
                         string detailedStats = string.Format(locText, formattedValues);
-                        newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n" + detailedStats;
+
+                        if(additionalValues != null)
+                        {
+                            string additionalText = string.Join("\n",additionalValues);
+                            newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n" + detailedStats + "\n\n" + additionalText;
+                        } else
+                        {
+                            newDescription = __result.Description + "\n\n[red][Relic Tracker][/red]\n" + detailedStats;
+                        }
+
+                        
                     }
                     catch (System.FormatException)
                     {

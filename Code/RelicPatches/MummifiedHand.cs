@@ -1,14 +1,17 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 
 [HarmonyPatch(typeof(MummifiedHand), nameof(MummifiedHand.AfterCardPlayed))]
 public static class MummifiedHandPatch
 {
-    static void Postfix(
+    public static bool mummifiedHandRunning = false;
+
+    static void Prefix(
         MummifiedHand __instance,
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay
@@ -28,7 +31,31 @@ public static class MummifiedHandPatch
         {
             return;
         }
+        mummifiedHandRunning = true;
+        RelicStatCache.RecordCustomStat(__instance.Id.Entry, new List<int> { 1, 0 });
+    }
 
-        RelicStatCache.RecordCustomStat(__instance.Id.Entry, new List<int> { 1 });
+    static void Postfix(
+        MummifiedHand __instance,
+        PlayerChoiceContext choiceContext,
+        CardPlay cardPlay
+    )
+    {
+        mummifiedHandRunning = false;
+    }
+}
+
+[HarmonyPatch(typeof(CardModel), nameof(CardModel.SetToFreeThisTurn))]
+public static class MummifiedHandFreeCardPatch
+{
+    static void Prefix(CardModel __instance)
+    {
+        if (MummifiedHandPatch.mummifiedHandRunning)
+        {
+            RelicStatCache.RecordCustomStat(
+                "MUMMIFIED_HAND",
+                new List<int> { 0, __instance.EnergyCost.Canonical }
+            );
+        }
     }
 }

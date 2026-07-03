@@ -77,7 +77,7 @@ BLESSED_ANTLER | Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue
 BLOOD_SOAKED_ROSE | Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.
 BLOOD_VIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
 BONE_FLUTE | Gained [blue]{0}[/blue] [gold]Block[/gold].
-BOOK_OF_FIVE_RINGS | Triggered [blue]{0}[/blue] times.\nHealed [blue]{1}[/blue] [gold]HP[/gold].
+BOOK_OF_FIVE_RINGS | Healed [blue]{0}[/blue] [gold]HP[/gold].
 BOOK_REPAIR_KNIFE | Healed [blue]{0}[/blue] [gold]HP[/gold].
 BOOMING_CONCH | Drew [blue]{0}[/blue] additional cards.
 BOUND_PHYLACTERY | Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.
@@ -125,7 +125,7 @@ MOLTEN_EGG | Upgraded [blue]{0}[/blue] cards that were added.
 TOXIC_EGG | Upgraded [blue]{0}[/blue] cards that were added.
 FROZEN_EGG | Upgraded [blue]{0}[/blue] cards that were added.
 MR_STRUGGLES | Dealt [blue]{0}[/blue] damage.
-MUMMIFIED_HAND | Triggered [blue]{0}[/blue] times.
+MUMMIFIED_HAND | Triggered [blue]{0}[/blue] times.\nReduced total card cost by [blue]{1}[/blue].
 MYSTIC_LIGHTER | Added [blue]{0}[/blue] damage to attacks (including not played).
 ORANGE_DOUGH | Added [blue]{0}[/blue] colorless cards.
 ORICHALCUM | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
@@ -141,7 +141,7 @@ POCKETWATCH | Drew [blue]{0}[/blue] additional cards.
 POLLINOUS_CORE | Drew [blue]{0}[/blue] additional cards.
 PRAYER_WHEEL | Added [blue]{0}[/blue] card rewards.
 PRISMATIC_GEM | Added [blue]{0}[/blue] [gold]Energy[/gold].
-PUMPKIN_CANDLE | Added [blue]{0}[/blue] [gold]Energy[/gold].
+PUMPKIN_CANDLE | Added [blue]{0}[/blue] [gold]Energy[/gold].\nRekindled [blue]{1}[/blue] times.
 RADIANT_PEARL | Generated [blue]{0}[/blue] [gold]Luminesce[/gold].
 RAZOR_TOOTH | Upgraded [blue]{0}[/blue] cards.
 RED_MASK | Applied [gold]Weak[/gold] to [blue]{0}[/blue] enemies.
@@ -164,7 +164,6 @@ SPIKED_GAUNTLETS | Added [blue]{0}[/blue] energy.\nMade [blue]{1}[/blue] [gold]P
 STONE_CALENDAR | Dealt [blue]{0}[/blue] damage.
 STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
 STURDY_CLAMP | Persisted [blue]{0}[/blue] [gold]Block[/gold].
-SWORD_OF_JADE | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
 SYMBIOTIC_VIRUS | [gold]Channeled[/gold] [blue]{0}[/blue] [purple]Dark[/purple].
 THE_ABACUS | Gained [blue]{0}[/blue] [gold]Block[/gold].
 THE_BOOT | [gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage [gold]increased[/gold]: [blue]{1}[/blue].
@@ -193,7 +192,7 @@ PAELS_LEGION | Gained [blue]{0}[/blue] additional block.
 PHILOSOPHERS_STONE | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nGave [blue]{1}[/blue] [gold]Strength[/gold] to enemies.
 BING_BONG | Duplicated [blue]{0}[/blue] cards. 
 FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
-
+STONE_HUMIDIFIER | Increased MaxHP by [blue]{0}[/blue].
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 KALEIDOSCOPE |
@@ -282,3 +281,11 @@ PAPER_KRANE |
 PAPER_PHROG |
 UNDYING_SIGIL |
 BRONZE_SCALES |
+// Missing excluded entries added by sync script
+BEATING_REMNANT | Prevented [blue]{0}[/blue] damage. 
+
+
+// Missing active entries added by sync script
+STONE_HUMIDIFIER | Increased MaxHP by [blue]{0}[/blue].
+
+// EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.

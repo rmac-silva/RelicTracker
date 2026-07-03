@@ -10,190 +10,191 @@ DEFAULT_TOOLTIP | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
 EMPTY_TOOLTIP | [gold]No data to display...[/gold]
 
 //RELIC PATCHES - Ensure you maintain the same formatting, you must have the same number of {0}, {1}, {2}... 
-BLACK_BLOOD | Gained [blue]{0}[/blue] [gold]HP[/gold].
-BOOKMARK | Reduced cost of [blue]{0}[/blue] cards.
-BURNING_BLOOD | Gained [blue]{0}[/blue] [gold]HP[/gold].
-CAPTAINS_WHEEL | Gained [blue]{0}[/blue] [gold]Block[/gold].
-CHANDELIER | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-CHOICES_PARADOX | Generated [blue]{0}[/blue] cards.
-CROSSBOW | Generated [blue]{0}[/blue] attacks.
-DARKSTONE_PERIAPT | Maximum [gold]HP[/gold] increased by [blue]{0}[/blue].
-DAUGHTER_OF_THE_WIND | Gained [blue]{0}[/blue] [gold]Block[/gold].
-DRAGON_FRUIT | Maximum [gold]HP[/gold] increased by [blue]{0}[/blue].
-DREAM_CATCHER | Added [blue]{0}[/blue] cards.
-EMBER_TEA | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-FORGOTTEN_SOUL | Dealt [blue]{0}[/blue] damage.
-FUNERARY_MASK | Gained [blue]{0}[/blue] [gold]Souls[/gold].
-GAME_PIECE | Drew [blue]{0}[/blue] cards.
-GORGET | Gained [blue]{0}[/blue] [gold]Plating[/gold].
-GREMLIN_HORN | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nDrew [blue]{0}[/blue] cards.
-HAND_DRILL | Applied [blue]{0}[/blue] [gold]Vulnerable[/gold].
-HELICAL_DART | Gained [blue]{0}[/blue] [gold]Dexterity[/gold].
-HISTORY_COURSE | Played [blue]{0}[/blue] copies.
-HORN_CLEAT | Gained [blue]{0}[/blue] [gold]Block[/gold].
-IRON_CLUB | Drew [blue]{0}[/blue] additional cards.
-IVORY_TILE | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-JOSS_PAPER | Drew [blue]{0}[/blue] additional cards.
-KUNAI | Gained [blue]{0}[/blue] [gold]Dexterity[/gold].
-LANTERN | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-LASTING_CANDY | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
-MUSIC_BOX | Created [blue]{0}[/blue] [gold]Ethereal[/gold] copies.
-NINJA_SCROLL | Created [blue]{0}[/blue] [gold]Shivs[/gold].
-NUNCHAKU | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-ODDLY_SMOOTH_STONE | Gained [blue]{0}[/blue] [gold]Dexterity[/gold].
-ORNAMENTAL_FAN | Gained [blue]{0}[/blue] [gold]Block[/gold].
-PAELS_FLESH | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-PANTOGRAPH | Healed [blue]{0}[/blue] [gold]HP[/gold].
-PENDULUM | Drew [blue]{0}[/blue] additional cards.
-PERMAFROST | Gained [blue]{0}[/blue] [gold]Block[/gold].
-PETRIFIED_TOAD | Procured [blue]{0}[/blue] [gold]Potion-Shaped Rocks[/gold].
-PLANISPHERE | Healed [blue]{0}[/blue] [gold]HP[/gold].
-RAINBOW_RING | Gained [blue]{0}[/blue] [gold]Strength[/gold].\nGained [blue]{0}[/blue] [gold]Dexterity[/gold].
-REPTILE_TRINKET | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-RIPPLE_BASIN | Gained [blue]{0}[/blue] [gold]Block[/gold].
-RUNIC_CAPACITOR | Gained [blue]{0}[/blue] [gold]Orb[/gold] slots.
-SAI | Gained [blue]{0}[/blue] [gold]Block[/gold].
-SHURIKEN | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-SWORD_OF_JADE | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-TUNGSTEN_ROD | Reduced damage by [blue]{0}[/blue] [gold]HP[/gold].
-VENERABLE_TEA_SET | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-VEXING_PUZZLEBOX | Created [blue]{0}[/blue] colorless cards.
-FAKE_VENERABLE_TEA_SET | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-SPARKLING_ROUGE | Gained [blue]{0}[/blue] [gold]Strength[/gold].\nGained [blue]{0}[/blue] [gold]Dexterity[/gold].
-CENTENNIAL_PUZZLE | Drew [blue]{0}[/blue] cards.
-STONE_CRACKER | Upgraded [blue]{0}[/blue] cards.
-VAJRA | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-UNCEASING_TOP | Drew [blue]{0}[/blue] cards.
-AKABEKO | Gained [blue]{0}[/blue] [gold]Vigor[/gold].
-AMETHYST_AUBERGINE | Gained [blue]{0}[/blue] [gold]Gold[/gold].
-ANCHOR | Gained [blue]{0}[/blue] [gold]Armor[/gold].
-ART_OF_WAR | Gained [blue]{0}[/blue] [gold]Energy[/gold].
-BAG_OF_MARBLES | Applied [gold]Vulnerable[/gold] to [blue]{0}[/blue] enemies.
-BAG_OF_PREPARATION | Drew [blue]{0}[/blue] more cards.
-BIG_MUSHROOM | Drew [blue]{0}[/blue] less cards.
-BIIIG_HUG | Added [blue]{0}[/blue] [gold]soot[/gold] cards.
-BLACK_STAR | Generated [blue]{0}[/blue] [gold]relics[/gold].
-BLESSED_ANTLER | Generated [blue]{0}[/blue] [gold]energy[/gold].\nShuffled [blue]{1}[/blue] [gold]dazed[/gold] cards.
-BLOOD_SOAKED_ROSE | Generated [blue]{0}[/blue] [gold]energy[/gold].\nBlocked by [red]Enthralled[/red] [blue]{1}[/blue] times.
-BLOOD_VIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
-BONE_FLUTE | Gained [blue]{0}[/blue] [gold]Block[/gold].
-BOOK_OF_FIVE_RINGS | Triggered [blue]{0}[/blue] times.\nHealed [blue]{1}[/blue] [gold]HP[/gold].
-BOOK_REPAIR_KNIFE | Healed [blue]{0}[/blue] [gold]HP[/gold].
-BOOMING_CONCH | Drew [blue]{0}[/blue] additional cards.
-BOUND_PHYLACTERY | Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.
-BOWLER_HAT | Gained [blue]{0}[/blue] additional [gold]Gold[/gold].
-BREAD | Lost [blue]{0}[/blue] energy.\nGained [blue]{1}[/blue] energy.
-BURNING_STICKS | Duplicated [blue]{0}[/blue] cards.
-CHARONS_ASHES | Dealt [blue]{0}[/blue] damage to enemies.
-CHEMICAL_X | Increased `[blue]X[/blue] value by [blue]{0}[/blue].
-CLOAK_CLASP | Gained [blue]{0}[/blue] [gold]Block[/gold].
-CRACKED_CORE | Channeled [blue]{0}[/blue] [gold]Lightning[/gold].
-DELICATE_FROND | Generated [blue]{0}[/blue] potions.
-DEMON_TONGUE | Healed [blue]{0}[/blue] HP.
-DIVINE_RIGHT | Gained [blue]{0}[/blue] [gold]stars[/gold].
-ECTOPLASM | Gained [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] [gold]Gold[/gold].
-ETERNAL_FEATHER | Healed [blue]{0}[/blue] [gold]HP[/gold].
-FAKE _BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
-FAKE_ANCHOR | Gained [blue]{0}[/blue] [gold]Armor[/gold].
-FAKE_HAPPY_FLOWER | Generated [blue]{0}[/blue] [gold]energy[/gold].
-FAKE_LEES_WAFFLE | Healed [blue]{0}[/blue] [gold]HP[/gold].
-FAKE_ORICHALCUM | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
-FAKE_SNECKO_EYE | Reduced card costs by [blue]{0}[/blue].\nIncreased card costs by [blue]{1}[/blue].
-FAKE_STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
-FESTIVE_POPPER | Dealt [blue]{0}[/blue] damage.
-FIDDLE | Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.
-FRESNEL_LENS | Enchanted [blue]{0}[/blue] cards throughout the run.
-GAMBLING_CHIP | Discarded [blue]{0}[/blue] cards.
-HAPPY_FLOWER | Generated [blue]{0}[/blue] [gold]energy[/gold].
-INFUSED_CORE | Channeled [blue]{0}[/blue] [gold]Lightning[/gold].
-INTIMIDATING_HELMET | Gained [blue]{0}[/blue] [gold]Block[/gold].
-KUSARIGAMA | Dealt [blue]{0}[/blue] damage.
-LAVA_LAMP | Upgraded [blue]{0}[/blue] card rewards.
-LEES_WAFFLE | Healed [blue]{0}[/blue] [gold]HP[/gold].
-LETTER_OPENER | Dealt [blue]{0}[/blue] damage.
-LOST_WISP | Dealt [blue]{0}[/blue] damage.
-LUCKY_FYSH | Gained [blue]{0}[/blue] [gold]gold[/gold].
-LUNAR_PASTRY | Gained [blue]{0}[/blue] [gold]stars[/gold].
-MAW_BANK | Gained [blue]{0}[/blue] [gold]Gold[/gold].
-MEAL_TICKET | Healed [blue]{0}[/blue] [gold]HP[/gold].
-MEAT_ON_THE_BONE | Healed [blue]{0}[/blue] [gold]HP[/gold].
-MERCURY_HOURGLASS | Dealt [blue]{0}[/blue] damage.
-METRONOME | Dealt [blue]{0}[/blue] damage.
-MINIATURE_CANON | Added [blue]{0}[/blue] damage to attacks (including not played).
-MINI_REGENT | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-MOLTEN_EGG | Upgraded [blue]{0}[/blue] cards that were added.
-TOXIC_EGG | Upgraded [blue]{0}[/blue] cards that were added.
-FROZEN_EGG | Upgraded [blue]{0}[/blue] cards that were added.
-MR_STRUGGLES | Dealt [blue]{0}[/blue] damage.
-MUMMIFIED_HAND | Triggered [blue]{0}[/blue] times.
-MYSTIC_LIGHTER | Added [blue]{0}[/blue] damage to attacks (including not played).
-ORANGE_DOUGH | Added [blue]{0}[/blue] colorless cards.
-ORICHALCUM | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
-PAELS_BLOOD | Drew [blue]{0}[/blue] additional cards.
-PAELS_EYE | Triggered [blue]{0}[/blue] times.\n[gold]Exhausted[/gold] [blue]{1}[/blue] cards.
-PAELS_TEARS | Gained [blue]{0}[/blue] additional energy.
-PAELS_WING | Gained [blue]{0}[/blue] relics.
-PANDORAS_BOX | Transformed [blue]{0}[/blue] cards.
-PARRYING_SHIELD | Dealt [blue]{0}[/blue] damage.
-PEN_NIB | Triggered [blue]{0}[/blue] times.\nIncreased overall damage by [blue]{1}[/blue].
-PHILACTERY_UNBOUND | Summoned [orange]Osty[/orange] [blue]{0}[/blue] times.
-POCKETWATCH | Drew [blue]{0}[/blue] additional cards.
-POLLINOUS_CORE | Drew [blue]{0}[/blue] additional cards.
-PRAYER_WHEEL | Added [blue]{0}[/blue] card rewards.
-PRISMATIC_GEM | Added [blue]{0}[/blue] [gold]Energy[/gold].
-PUMPKIN_CANDLE | Added [blue]{0}[/blue] [gold]Energy[/gold].
-RADIANT_PEARL | Generated [blue]{0}[/blue] [gold]Luminesce[/gold].
-RAZOR_TOOTH | Upgraded [blue]{0}[/blue] cards.
-RED_MASK | Applied [gold]Weak[/gold] to [blue]{0}[/blue] enemies.
-REGALITE | Gained [blue]{0}[/blue] Block.
-REGAL_PILLOW | Healed [blue]{0}[/blue] [gold]HP[/gold].
-RINGING_TRIANGLE | Retained [blue]{0}[/blue] cards.
-RING_OF_THE_DRAKE | Drew [blue]{0}[/blue] additional cards.
-RING_OF_THE_SNAKE | Drew [blue]{0}[/blue] additional cards.
-ROYAL_POISON | Took [blue]{0}[/blue] damage.
-RUINED_HELMET | Added [blue]{0}[/blue] [gold]Strength[/gold].
-RUNIC_PYRAMID | Retained [blue]{0}[/blue] cards.
-SCREAMING_FLAGON | Dealt [blue]{0}[/blue] damage.
-SEAL_OF_GOLD | Lost [blue]{0}[/blue] [gold]Gold[/gold].\nGained [blue]{1}[/blue] energy.
-SELF_FORMING_CLAY | Gained [blue]{0}[/blue] Block.
-SHOVEL | Dug up [blue]{0}[/blue] relics.
-SLING_OF_COURAGE | Gained [blue]{0}[/blue] [gold]Strength[/gold].
-SNECKO_EYE | Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].
-SOZU | Added [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] potions.
-SPIKED_GAUNTLETS | Added [blue]{0}[/blue] energy.\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.
-STONE_CALENDAR | Dealt [blue]{0}[/blue] damage.
-STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
-STURDY_CLAMP | Persisted [blue]{0}[/blue] [gold]Block[/gold].
-SWORD_OF_JADE | [gold]Times Triggered:[/gold] [blue]{0}[/blue]
-SYMBIOTIC_VIRUS | [gold]Channeled[/gold] [blue]{0}[/blue] [purple]Dark[/purple].
-THE_ABACUS | Gained [blue]{0}[/blue] [gold]Block[/gold].
-THE_BOOT | [gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage [gold]increased[/gold]: [blue]{1}[/blue].
-THE_COURIER | Stock refilled: [blue]{0}[/blue].
-THROWING_AXE | Cards duplicated: [blue]{0}[/blue].
-TINGSHA | Triggered [blue]{0}[/blue] times.\nDealt a total of [blue]{1}[/blue] damage.
-TOUGH_BANDAGES | Triggered [blue]{0}[/blue] times.\nAdded a total of [blue]{1}[/blue] [gold]Block[/gold].
-TUNING_FORK | Gained [blue]{0}[/blue] [gold]Block[/gold].
-TWISTED_FUNNEL | Applied [blue]{0}[/blue] [gold]Poison[/gold].
-VAMBRACE | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
-VELVET_CHOKER | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.
-VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].
-VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra damage.
-WHISPERING_EARRING | [red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.
-WING_CHARM | Enchanted [blue]{0}[/blue] cards.
-FAKE_BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
-BELLOWS | Upgraded [blue]{0}[/blue] cards.
-ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
-BRILLIANT_SCARF | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
-FUR_COAT | Reduced enemy health by [blue]{0}[/blue] [gold]HP[/gold].
-WONGO_CUSTOMER_APPRECIATION_BADGE | You have a total of [blue]{0}[blue] Wongo Points!
-BRIMSTONE | You gained [blue]{0}[/blue] [gold]Strength[/gold].\nEnemies gained [blue]{1}[/blue] [gold]Strength[/gold].
-DRIFTWOOD | You rerolled [blue]{0}[/blue] card rewards.
-PAELS_GROWTH | You have duplicated [blue]{0}[/blue] cards.
-PAELS_LEGION | Gained [blue]{0}[/blue] additional block.
-PHILOSOPHERS_STONE | Gained [blue]{0}[/blue] [gold]Energy[/gold].\nGave [blue]{1}[/blue] [gold]Strength[/gold] to enemies.
-BING_BONG | Duplicated [blue]{0}[/blue] cards. 
-FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
-
+BLACK_BLOOD |	[gold]체력[/gold]을 [blue]{0}[/blue] 얻었습니다.
+BOOKMARK |	카드 [blue]{0}[/blue]장의 비용을 감소시켰습니다.
+BURNING_BLOOD |	[gold]체력[/gold]을 [blue]{0}[/blue] 얻었습니다.
+CAPTAINS_WHEEL |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+CHANDELIER |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+CHOICES_PARADOX |	카드를 [blue]{0}[/blue]장 생성했습니다.
+CROSSBOW |	공격 카드를 [blue]{0}[/blue]장 생성했습니다.
+DARKSTONE_PERIAPT |	최대 [gold]체력[/gold]을 [blue]{0}[/blue] 증가시켰습니다.
+DAUGHTER_OF_THE_WIND |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+DRAGON_FRUIT |	최대 [gold]체력[/gold]을 [blue]{0}[/blue] 증가시켰습니다.
+DREAM_CATCHER	 |카드를 [blue]{0}[/blue]장 추가했습니다.
+EMBER_TEA |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+FORGOTTEN_SOUL |	[orange]피해[/orange]를 [blue]{0}[/blue] 주었습니다.
+FUNERARY_MASK |	[gold]영혼[/gold]을 [blue]{0}[/blue]장 얻었습니다.
+GAME_PIECE |	카드를 [blue]{0}[/blue]장 뽑았습니다.
+GORGET |	[gold]판금[/gold]을 [blue]{0}[/blue] 얻었습니다.
+GREMLIN_HORN |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다. 카드를 [blue]{0}[/blue]장 뽑았습니다.
+HAND_DRILL |	[gold]취약[/gold]을 [blue]{0}[/blue] 부여했습니다.
+HELICAL_DART |	[gold]민첩[/gold]을 [blue]{0}[/blue] 얻었습니다.
+HISTORY_COURSE |	복사본을 [blue]{0}[/blue]장 사용했습니다.
+HORN_CLEAT |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+IRON_CLUB |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+IVORY_TILE |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+JOSS_PAPER |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+KUNAI |	[gold]민첩[/gold]을 [blue]{0}[/blue] 얻었습니다.
+LANTERN	 |[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+MUSIC_BOX |	[gold]휘발성[/gold] 복사본을 [blue]{0}[/blue]장 생성했습니다.
+NINJA_SCROLL	 |[gold]단도[/gold]를 [blue]{0}[/blue]장 생성했습니다.
+NUNCHAKU	 |[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+ODDLY_SMOOTH_STONE	 |[gold]민첩[/gold]을 [blue]{0}[/blue] 얻었습니다.
+ORNAMENTAL_FAN |[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+PAELS_FLESH	 |[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+PANTOGRAPH |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+PENDULUM  |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+PERMAFROST 	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+PETRIFIED_TOAD |Procured [blue]{0}[/blue] [gold]Potion-Shaped Rocks[/gold].
+PLANISPHERE |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+RAINBOW_RING |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다. [gold]민첩[/gold]을 [blue]{0}[/blue] 얻었습니다.
+REPTILE_TRINKET |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+RIPPLE_BASIN |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+RUNIC_CAPACITOR |	Gained [blue]{0}[/blue] [gold]Orb[/gold] slots.
+SAI |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+SHURIKEN |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+SWORD_OF_JADE |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+TUNGSTEN_ROD |	[orange]피해[/orange]로 인한 [gold]체력[/gold]을 [blue]{0}[/blue] 덜 잃었습니다.
+VENERABLE_TEA_SET |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+VEXING_PUZZLEBOX |	카드를 [blue]{0}[/blue]장 생성했습니다.
+FAKE_VENERABLE_TEA_SET |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+SPARKLING_ROUGE	 |[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다. [gold]민첩[/gold]을 [blue]{0}[/blue] 얻었습니다.
+CENTENNIAL_PUZZLE |	카드를 [blue]{0}[/blue]장 뽑았습니다.
+STONE_CRACKER |	카드를 [blue]{0}[/blue]장 강화했습니다.
+VAJRA |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+UNCEASING_TOP |	카드를 [blue]{0}[/blue]장 뽑았습니다.
+AKABEKO |	[gold]활력[/gold]을 [blue]{0}[/blue] 획득했습니다.
+AMETHYST_AUBERGINE |	[gold]골드[/gold]를 [blue]{0}[/blue] 획득했습니다.
+ANCHOR |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+ART_OF_WAR |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+BAG_OF_MARBLES |	적 [blue]{0}[/blue] 마리에게 [gold]취약[/gold]을 부여했습니다.
+BAG_OF_PREPARATION |	카드를 [blue]{0}[/blue]장 더 뽑았습니다
+BIG_MUSHROOM |	카드를 [blue]{0}[/blue]장 덜 뽑았습니다
+BIIIG_HUG |	[gold]그을음[/gold]을 [blue]{0}[/blue]장 추가했습니다.
+BLACK_STAR |	[gold]유물[/gold]을 [blue]{0}[/blue]개 얻었습니다.
+BLESSED_ANTLER |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.\n[gold]어지러움[/gold]을 [blue]{1}[/blue]장 섞어 넣었습니다.
+BLOOD_SOAKED_ROSE |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.\n[red]매료됨[/red]에 의해 [blue]{1}[/blue]번 막혔습니다.
+BLOOD_VIAL |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+BONE_FLUTE |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+BOOK_OF_FIVE_RINGS |	[blue]{0}[/blue]번 발동했습니다. [gold]체력[/gold]을 [blue]{1}[/blue] 회복했습니다.
+BOOK_REPAIR_KNIFE |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+BOOMING_CONCH |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+BOUND_PHYLACTERY |	[orange]골골이[/orange]를 [blue]{0}[/blue] 소환했습니다.
+BOWLER_HAT |	[gold]골드[/gold]를 추가로 [blue]{0}[/blue] 획득했습니다.
+BREAD |	에너지를 [blue]{0}[/blue] 잃었습니다. 에너지를 [blue]{1}[/blue] 얻었습니다.
+BURNING_STICKS |	카드를 [blue]{0}[/blue]장 복제했습니다.
+CHARONS_ASHES |	적에게 [orange]피해[/orange]를 [blue]{0}[/blue] 주었습니다.
+CHEMICAL_X |	[blue]X[/blue] 카드의 효과가 [blue]{0}[/blue]만큼 증가했습니다.
+CLOAK_CLASP	 |[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+CRACKED_CORE |	[gold]전기[/gold]를 [blue]{0}[/blue]번 영창했습니다.
+DELICATE_FROND |	포션을 [blue]{0}[/blue]개 채웠습니다.
+DEMON_TONGUE |	체력을 [blue]{0}[/blue] 회복했습니다.
+DIVINE_RIGHT |	[gold]별[/gold]을 [blue]{0}[/blue] 얻었습니다.
+ECTOPLASM |	에너지를 [blue]{0}[/blue] 얻었습니다.\n[gold]골드[/gold]를 [blue]{1}[/blue] 잃었습니다.
+ETERNAL_FEATHER |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+FAKE _BLOODVIAL |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+FAKE_ANCHOR |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+FAKE_HAPPY_FLOWER |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+FAKE_LEES_WAFFLE |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+FAKE_ORICHALCUM	 |[gold]방어도[/gold]를 추가로 [blue]{0}[/blue] 얻었습니다.
+FAKE_SNECKO_EYE |	카드의 비용을 [blue]{0}[/blue]만큼 감소시켰습니다. 카드의 비용을 [blue]{1}[/blue]만큼 증가시켰습니다.
+FAKE_STRIKE_DUMMY |	[gold]타격[/gold]의 피해를 [blue]{0}[/blue] 증가시켰습니다.
+FESTIVE_POPPER |	[orange]피해[/orange]를 [blue]{0}[/blue] 주었습니다.
+FIDDLE	 |카드를 [blue]{0}[/blue]장 더 뽑았습니다. 카드를 [blue]{1}[/blue]번 뽑지 못했습니다.
+FRESNEL_LENS |	[blue]{0}[/blue]장의 카드에 기민함을 인챈트했습니다.
+GAMBLING_CHIP |	카드를 [blue]{0}[/blue]장 버렸습니다.
+HAPPY_FLOWER |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+INFUSED_CORE |	[gold]전기[/gold]를 [blue]{0}[/blue]번 영창했습니다.
+INTIMIDATING_HELMET |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+KUSARIGAMA |	피해를 [blue]{0}[/blue] 주었습니다.
+LAVA_LAMP |	[blue]{0}[/blue]장의 카드 보상을 강화했습니다.
+LEES_WAFFLE |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+LETTER_OPENER |	피해를 [blue]{0}[/blue] 주었습니다.
+LOST_WISP |	피해를 [blue]{0}[/blue] 주었습니다.
+LUCKY_FYSH |	[gold]골드[/gold]를 [blue]{0}[/blue] 획득했습니다.
+LUNAR_PASTRY |	[gold]별[/gold]을 [blue]{0}[/blue] 얻었습니다.
+MAW_BANK |	[gold]골드[/gold]를 [blue]{0}[/blue] 획득했습니다.
+MEAL_TICKET |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+MEAT_ON_THE_BONE |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+MERCURY_HOURGLASS |	피해를 [blue]{0}[/blue] 주었습니다.
+METRONOME |	피해를 [blue]{0}[/blue] 주었습니다.
+MINIATURE_CANON |	공격에 피해를 [blue]{0}[/blue] 추가했습니다 (사용되지 않은것도 포함).
+MINI_REGENT |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+MOLTEN_EGG |	추가된 카드 [blue]{0}[/blue]장을 강화했습니다.
+TOXIC_EGG |	추가된 카드 [blue]{0}[/blue]장을 강화했습니다.
+FROZEN_EGG |	추가된 카드 [blue]{0}[/blue]장을 강화했습니다.
+MR_STRUGGLES |	피해를 [blue]{0}[/blue] 주었습니다.
+MUMMIFIED_HAND |	[blue]{0}[/blue]번 발동했습니다.\n카드의 비용을 [blue]{1}[/blue] 감소시켰습니다.
+MYSTIC_LIGHTER |	공격에 피해를 [blue]{0}[/blue]만큼 추가했습니다.
+ORANGE_DOUGH |	무색 카드를 [blue]{0}[/blue]장 얻었습니다.
+ORICHALCUM |	[gold]방어도[/gold]를 추가로 [blue]{0}[/blue] 얻었습니다.
+PAELS_BLOOD |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+PAELS_EYE |	[blue]{0}[/blue]번 발동했습니다. 카드를 [blue]{1}[/blue]장 [gold]소멸[/gold]시켰습니다.
+PAELS_TEARS |	에너지를 추가로 [blue]{0}[/blue] 얻었습니다.
+PAELS_WING |	유물을 [blue]{0}[/blue]개 얻었습니다.
+PANDORAS_BOX |	카드를 [blue]{0}[/blue]장 변화시켰습니다.
+PARRYING_SHIELD |	피해를 [blue]{0}[/blue] 주었습니다.
+PEN_NIB |	[blue]{0}[/blue]번 발동했습니다. 전체 피해를 [blue]{1}[/blue] 증가시켜습니다.
+PHILACTERY_UNBOUND |	[orange]골골이[/orange]를 [blue]{0}[/blue] 소환했습니다.
+POCKETWATCH |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+POLLINOUS_CORE |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+PRAYER_WHEEL |	카드 보상을 [blue]{0}[/blue] 추가했습니다.
+PRISMATIC_GEM |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+PUMPKIN_CANDLE |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.\n[blue]{1}[/blue]번 불을 붙혔습니다.
+RADIANT_PEARL | |	[gold]발광[/gold]을 [blue]{0}[/blue]장 얻었습니다.
+RAZOR_TOOTH |	카드를 [blue]{0}[/blue]장 강화했습니다.
+RED_MASK |	적 [blue]{0}[/blue] 마리에게 [gold]약화[/gold]를 부여했습니다.
+REGALITE |	방어도를 [blue]{0}[/blue] 얻었습니다.
+REGAL_PILLOW |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
+RINGING_TRIANGLE |	카드를 [blue]{0}[/blue]장 보존했습니다.
+RING_OF_THE_DRAKE |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+RING_OF_THE_SNAKE |	카드를 [blue]{0}[/blue]장 더 뽑았습니다.
+ROYAL_POISON |	[red]피해[/red]를 [blue]{0}[/blue] 받았습니다.
+RUINED_HELMET | |	[gold]힘[/gold]을 추가로 [blue]{0}[/blue] 얻었습니다.
+RUNIC_PYRAMID |	카드를 [blue]{0}[/blue]장 보존했습니다.
+SCREAMING_FLAGON |	피해를 [blue]{0}[/blue] 주었습니다.
+SEAL_OF_GOLD |	[gold]골드[/gold]를 [blue]{0}[/blue] 잃었습니다. 에너지를 [blue]{1}[/blue] 얻었습니다.
+SELF_FORMING_CLAY |	방어도를 [blue]{0}[/blue] 얻었습니다.
+SHOVEL |	유물을 [blue]{0}[/blue]개 파냈습니다.
+SLING_OF_COURAGE |	[gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.
+SNECKO_EYE |	카드를 [blue]{0}[/blue]장 더 뽑았습니다. 카드의 비용을 [blue]{1}[/blue]만큼 감소시켰습니다. 카드의 비용을 [blue]{2}[/blue]만큼 증가시켰습니다.
+SOZU |	에너지를 [blue]{0}[/blue] 얻었습니다. 포션을 [blue]{1}[/blue]개 잃었습니다.
+SPIKED_GAUNTLETS |	에너지를 [blue]{0}[/blue] 얻었습니다. [gold]파워[/gold] 카드 [blue]{1}[/blue]장의  비용을 증가시켰습니다.
+STONE_CALENDAR |	피해를 [blue]{0}[/blue] 주었습니다.
+STRIKE_DUMMY |	[gold]타격[/gold]의 피해를 [blue]{0}[/blue] 증가시켰습니다.
+STURDY_CLAMP |	[gold]방어도[/gold]를 [blue]{0}[/blue] 유지했습니다.
+SWORD_OF_JADE |	[gold]발동 횟수:[/gold] [blue]{0}[/blue]
+SYMBIOTIC_VIRUS |	[purple]암흑[/purple]을 [blue]{0}[/blue] [gold]영창[/gold]했습니다.
+THE_ABACUS |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+THE_BOOT |	[gold]발동 횟수:[/gold] [blue]{0}[/blue]. [gold]증가한[/gold]피해: [blue]{1}[/blue].
+THE_COURIER |	재입고된 품목: [blue]{0}[/blue].
+THROWING_AXE |	복제된 카드: [blue]{0}[/blue].
+TINGSHA |	[blue]{0}[/blue]번 발동했습니다. 피해를 총합 [blue]{1}[/blue] 주었습니다.
+TOUGH_BANDAGES |	[blue]{0}[/blue]번 발동했습니다.  [gold]방어도[/gold]를 총합 [blue]{1}[/blue] 얻었습니다.
+TUNING_FORK |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
+TWISTED_FUNNEL |	[gold]중독[/gold]을 [blue]{0}[/blue] 부여했습니다.
+VAMBRACE |	[gold]방어도[/gold]를 추가로 [blue]{0}[/blue] 얻었습니다.
+VELVET_CHOKER |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다. [blue]{1}[/blue]번 [red]막혔습니다[/red].
+VERY_HOT_COCOA |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
+VITRUVIAN_MINION |	[blue]{0}[/blue]장의 카드가 [gold]방어도[/gold]를 추가로 [blue]{1}[/blue] 얻었습니다. [red]피해[/red]를 추가로 [blue]{2}[/blue] 주었습니다.
+WHISPERING_EARRING |	[red]바쿠[/red]가 당신의 턴을 [blue]{0}[/blue]번 대신 플레이했습니다. [gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다. [red]바쿠[/red]가 [blue]{2}[/blue]장의 카드를 플레이했습니다.
+WING_CHARM |	카드 [blue]{0}[/blue]장을 인챈트했습니다.
+BELLOWS |	카드를 [blue]{0}[/blue]장 강화했습니다.
+ICE_CREAM |	[gold]에너지[/gold]를 [blue]{0}[/blue] 유지했습니다.
+FUR_COAT |	적의 [gold]체력[/gold]을 [blue]{0}[/blue] 만큼 감소시켰습니다.
+WONGO_CUSTOMER_APPRECIATION_BADGE |	당신은 총합 [blue]{0}[blue]의 웡고스 포인트를 갖고 있습니다!
+BRILLIANT_SCARF	 |[gold]발동 횟수:[/gold] [blue]{0}[/blue]
+LASTING_CANDY |	[gold]발동 횟수:[/gold] [blue]{0}[/blue]
+BRIMSTONE |	당신은 [gold]힘[/gold]을 [blue]{0}[/blue] 얻었습니다.\n적은 [gold]힘[/gold]을 [blue]{1}[/blue] 얻었습니다.
+DRIFTWOOD |	카드 보상을 [blue]{0}[/blue]번 다시 뽑았습니다.
+PAELS_GROWTH |	카드를 [blue]{0}[/blue]장 복제했습니다.
+PAELS_LEGION |	방어도를 추가로 [blue]{0}[/blue] 얻었습니다.
+PHILOSOPHERS_STONE |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.\n적에게 [gold]힘[/gold]을 [blue]{1}[/blue] 추가로 얻었습니다.
+BING_BONG |	[blue]{0}[/blue]장의 카드를 복제했습니다.
+STONE_HUMIDIFIER |	최대 체력을 [blue]{0}[/blue] 증가시켰습니다.
+FISHING_ROD | 카드를 [blue]{0}[/blue]장 강화했습니다.
+BEATING_REMNANT | 피해를 [blue]{0}[/blue] 막았습니다.
+STONE_HUMIDIFIER | 최대 체력을 [blue]{0}[/blue] 증가시켰습니다.
 
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 KALEIDOSCOPE |

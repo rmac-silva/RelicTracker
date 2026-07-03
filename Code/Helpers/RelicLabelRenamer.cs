@@ -10,8 +10,6 @@ public static class RelicLabelRenamer
     private static Dictionary<string, int> relicMultipliers = new Dictionary<string, int>()
     {
         { "ANCHOR", 10 },
-        { "BLACK_BLOOD", 12 },
-        { "BURNING_BLOOD", 6 },
         { "CAPTAINS_WHEEL", 18 },
         { "CHANDELIER", 3 },
         { "EMBER_TEA", 2 },
@@ -21,9 +19,7 @@ public static class RelicLabelRenamer
         { "HORN_CLEAT", 14 },
         { "NINJA_SCROLL", 3 },
         { "ORNAMENTAL_FAN", 4 },
-        { "PANTOGRAPH", 25 },
         { "PERMAFROST", 7 },
-        { "PLANISPHERE", 5 },
         { "REPTILE_TRINKET", 3 },
         { "RIPPLE_BASIN", 4 },
         { "RUNIC_CAPACITOR", 3 },
@@ -32,6 +28,7 @@ public static class RelicLabelRenamer
         { "VENERABLE_TEA_SET", 2 },
         { "CENTENNIAL_PUZZLE", 3 },
         { "STONE_CRACKER", 2 },
+        { "STONE_HUMIDIFIER", 5},
     };
 
     public static string GetAlternateLabel(string relicId, int value)
