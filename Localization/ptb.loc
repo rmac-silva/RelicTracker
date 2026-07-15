@@ -179,7 +179,6 @@ VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].
 VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra damage.
 WHISPERING_EARRING | [red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.
 WING_CHARM | Enchanted [blue]{0}[/blue] cards.
-FAKE_BLOODVIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
 BELLOWS | Upgraded [blue]{0}[/blue] cards.
 ICE_CREAM | Accumulated [blue]{0}[/blue] [gold]Energy[/gold].
 BRILLIANT_SCARF | [gold]Times Triggered:[/gold] [blue]{0}[/blue].
@@ -194,6 +193,8 @@ BING_BONG | Duplicated [blue]{0}[/blue] cards.
 FISHING_ROD | Upgraded [blue]{0}[/blue] cards.
 STONE_HUMIDIFIER | Increased MaxHP by [blue]{0}[/blue].
 BEATING_REMNANT | Prevented [blue]{0}[/blue] damage. 
+FAKE_BLOOD_VIAL | Healed [blue]{0}[/blue] [gold]HP[/gold].
+CHOSEN_CHEESE | Gained [blue]{0}[/blue] MaxHP.
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 KALEIDOSCOPE |
 SILKEN_TRESS |
@@ -281,9 +282,3 @@ PAPER_KRANE |
 PAPER_PHROG |
 UNDYING_SIGIL |
 BRONZE_SCALES |
-
-
-// Missing active entries added by sync script
-STONE_HUMIDIFIER | Increased MaxHP by [blue]{0}[/blue].
-
-// EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.

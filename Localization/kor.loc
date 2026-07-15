@@ -92,7 +92,6 @@ DEMON_TONGUE |	체력을 [blue]{0}[/blue] 회복했습니다.
 DIVINE_RIGHT |	[gold]별[/gold]을 [blue]{0}[/blue] 얻었습니다.
 ECTOPLASM |	에너지를 [blue]{0}[/blue] 얻었습니다.\n[gold]골드[/gold]를 [blue]{1}[/blue] 잃었습니다.
 ETERNAL_FEATHER |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
-FAKE _BLOODVIAL |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
 FAKE_ANCHOR |	[gold]방어도[/gold]를 [blue]{0}[/blue] 얻었습니다.
 FAKE_HAPPY_FLOWER |	[gold]에너지[/gold]를 [blue]{0}[/blue] 얻었습니다.
 FAKE_LEES_WAFFLE |	[gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
@@ -195,7 +194,8 @@ STONE_HUMIDIFIER |	최대 체력을 [blue]{0}[/blue] 증가시켰습니다.
 FISHING_ROD | 카드를 [blue]{0}[/blue]장 강화했습니다.
 BEATING_REMNANT | 피해를 [blue]{0}[/blue] 막았습니다.
 STONE_HUMIDIFIER | 최대 체력을 [blue]{0}[/blue] 증가시켰습니다.
-
+CHOSEN_CHEESE | Gained [blue]{0}[/blue] MaxHP.
+FAKE_BLOOD_VIAL | [gold]체력[/gold]을 [blue]{0}[/blue] 회복했습니다.
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 KALEIDOSCOPE |
 SILKEN_TRESS |

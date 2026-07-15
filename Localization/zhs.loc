@@ -180,7 +180,7 @@ VITRUVIAN_MINION | 受影响卡牌：[blue]{0}[/blue]。额外获得了 [blue]{1
 WHISPERING_EARRING | [red]瓦库[/red] 为你接管了 [blue]{0}[/blue] 次。获得了 [blue]{1}[/blue] 点 [gold]能量[/gold]。[red]瓦库[/red] 打出了 [blue]{2}[/blue] 张牌。
 WING_CHARM | 附魔了 [blue]{0}[/blue] 张牌。
 LASTING_CANDY | [gold]触发次数：[/gold] [blue]{0}[/blue]。 
-FAKE_BLOODVIAL | 回复了 [blue]{0}[/blue] 点 [gold]生命值[/gold]。
+FAKE_BLOOD_VIAL | 回复了 [blue]{0}[/blue] 点 [gold]生命值[/gold]。
 BELLOWS | 升级了 [blue]{0}[/blue] 张卡牌。
 ICE_CREAM | 累计获得了 [blue]{0}[/blue] 点 [gold]能量[/gold]。
 BRILLIANT_SCARF | [gold]触发次数：[/gold] [blue]{0}[/blue]。
@@ -195,7 +195,7 @@ BING_BONG | 复制了 [blue]{0}[/blue] 张卡牌。
 FISHING_ROD | 升级了 [blue]{0}[/blue] 张卡牌。
 STONE_HUMIDIFIER | 最大生命值增加 [blue]{0}[/blue]点。
 BEATING_REMNANT | Prevented [blue]{0}[/blue] damage. 
-
+CHOSEN_CHEESE | Gained [blue]{0}[/blue] MaxHP.
 // EXCLUDED RELICS - These relics do not have a label, they will be ignored. I recommend leaving it as is.
 KALEIDOSCOPE |
 SILKEN_TRESS |

@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.Rooms;
 [HarmonyPatch(typeof(Planisphere), nameof(Planisphere.AfterRoomEntered))]
 public static class PlanispherePatch
 {
-    static void Prefix(Pantograph __instance, AbstractRoom _)
+    static void Prefix(Planisphere __instance, AbstractRoom room)
     {
         //My relic + Not dead + Boss room
         if (LocalContext.IsMe(__instance.Owner) && !__instance.Owner.Creature.IsDead)
