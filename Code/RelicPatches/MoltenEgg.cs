@@ -21,8 +21,8 @@ public static class EggTrackingHelper
         new ConditionalWeakTable<CardModel, object?>();
     public static ConditionalWeakTable<CardModel, object?> FrozenEggCards =
         new ConditionalWeakTable<CardModel, object?>();
-    public static ConditionalWeakTable<CardModel, object?> FresnelLensCards =
-        new ConditionalWeakTable<CardModel, object?>();
+    // public static ConditionalWeakTable<CardModel, object?> FresnelLensCards =
+    //     new ConditionalWeakTable<CardModel, object?>();
 
     public static void RegisterHook(Action<CardModel> hook) { }
 }
@@ -47,6 +47,7 @@ public static class CardRewardPatch
         if (EggTrackingHelper.CardRewards.TryGetValue(__instance, out _))
         {
             //This card reward was marked, meaning it came from a relic that upgrades cards.
+            ModLog.Info($"[MoltenEgg.cs] [CardRewardPatch] card reward got modified by: {modifyingRelic}");
 
             if (modifyingRelic.Id.Entry == "MOLTEN_EGG")
             {
@@ -59,10 +60,6 @@ public static class CardRewardPatch
             else if (modifyingRelic.Id.Entry == "FROZEN_EGG")
             {
                 EggTrackingHelper.FrozenEggCards.Add(card, null);
-            }
-            else if (modifyingRelic.Id.Entry == "FRESNEL_LENS")
-            {
-                EggTrackingHelper.FresnelLensCards.Add(card, null);
             }
             else
             {
@@ -106,29 +103,30 @@ public static class CardPileAddPatch
             return;
         }
 
+        ModLog.Info($"[MoltenEgg.cs] [CardRewardPatch] Card got added to the deck: {card.Title} with Enchant {card.Enchantment}");
+
         if (EggTrackingHelper.MoltenEggCards.TryGetValue(card, out _))
         {
             RelicStatCache.RecordCustomStat("MOLTEN_EGG", new List<int> { 1 });
 
             EggTrackingHelper.MoltenEggCards.Remove(card);
         }
-        else if (EggTrackingHelper.ToxicEggCards.TryGetValue(card, out _))
+        if (EggTrackingHelper.ToxicEggCards.TryGetValue(card, out _))
         {
             RelicStatCache.RecordCustomStat("TOXIC_EGG", new List<int> { 1 });
 
             EggTrackingHelper.ToxicEggCards.Remove(card);
         }
-        else if (EggTrackingHelper.FrozenEggCards.TryGetValue(card, out _))
+        if (EggTrackingHelper.FrozenEggCards.TryGetValue(card, out _))
         {
             RelicStatCache.RecordCustomStat("FROZEN_EGG", new List<int> { 1 });
 
             EggTrackingHelper.FrozenEggCards.Remove(card);
         }
-        else if (EggTrackingHelper.FresnelLensCards.TryGetValue(card, out _))
+        if (card.Enchantment is Nimble)
         {
+            ModLog.Info($"[MoltenEgg.cs] [CardRewardPatch] Card got added to the deck: {card.Title} with Enchant {card.Enchantment}");
             RelicStatCache.RecordCustomStat("FRESNEL_LENS", new List<int> { 1 });
-
-            EggTrackingHelper.FresnelLensCards.Remove(card);
         }
     }
 }
@@ -425,74 +423,79 @@ public static class FresnelLensAddToDeckPatch
         {
             return;
         }
+
         if (!ModelDb.Enchantment<Nimble>().CanEnchant(card))
         {
             return;
         }
 
         RelicStatCache.RecordCustomStat(__instance.Id.Entry, new List<int> { 1 });
+        return;
     }
 }
 
-[HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.TryModifyCardRewardOptionsLate))]
-public static class FresnelLensCardRewardPatch
-{
-    static void Prefix(
-        FresnelLens __instance,
-        Player player,
-        List<CardCreationResult> cardRewards,
-        CardCreationOptions options
-    )
-    {
-        if (player != __instance.Owner)
-        {
-            return;
-        }
+// [HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.TryModifyCardRewardOptionsLate))]
+// public static class FresnelLensCardRewardPatch
+// {
+//     static void Prefix(
+//         FresnelLens __instance,
+//         Player player,
+//         List<CardCreationResult> cardRewards,
+//         CardCreationOptions options
+//     )
+//     {
+//         if (player != __instance.Owner)
+//         {
+//             return;
+//         }
 
-        foreach (CardCreationResult c in cardRewards)
-        {
-            if (EggTrackingHelper.CardRewards.TryGetValue(c, out _))
-            {
-                continue;
-            }
+//         foreach (CardCreationResult c in cardRewards)
+//         {
+//             if (EggTrackingHelper.CardRewards.TryGetValue(c, out _))
+//             {
+//                 continue;
+//             }
 
-            CardModel card = c.Card;
+//             CardModel card = c.Card;
 
-            if (card.Type == CardType.Power && card.IsUpgradable)
-            {
-                //Frozen egg will upgrade this card. Mark it
-                EggTrackingHelper.CardRewards.Add(c, null);
-            }
-        }
-    }
-}
+//             if (ModelDb.Enchantment<Nimble>().CanEnchant(card))
+//             {
+//                 ModLog.Info($"[MoltenEgg.cs] [FresnelLensCardRewardPatch] Registered {c.Card.Title} in helper dictionary!");
+//                     //Frozen egg will upgrade this card. Mark it
+//                     EggTrackingHelper.CardRewards.Add(c, null);
+//             }
+                 
+//             }
+//         }
+    
+// }
 
-[HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.ModifyMerchantCardCreationResults))]
-public static class FresnelLensMerchantPatch
-{
-    static void Prefix(FresnelLens __instance, Player player, List<CardCreationResult> cards)
-    {
-        if (player != __instance.Owner)
-        {
-            return;
-        }
+// [HarmonyPatch(typeof(FresnelLens), nameof(FresnelLens.ModifyMerchantCardCreationResults))]
+// public static class FresnelLensMerchantPatch
+// {
+//     static void Prefix(FresnelLens __instance, Player player, List<CardCreationResult> cards)
+//     {
+//         if (player != __instance.Owner)
+//         {
+//             return;
+//         }
 
-        Nimble nimble = ModelDb.Enchantment<Nimble>();
-        foreach (CardCreationResult c in cards)
-        {
-            if (EggTrackingHelper.CardRewards.TryGetValue(c, out _))
-            {
-                continue;
-            }
+//         Nimble nimble = ModelDb.Enchantment<Nimble>();
+//         foreach (CardCreationResult c in cards)
+//         {
+//             if (EggTrackingHelper.CardRewards.TryGetValue(c, out _))
+//             {
+//                 continue;
+//             }
 
-            CardModel card = c.Card;
+//             CardModel card = c.Card;
 
-            if (nimble.CanEnchant(card))
-            {
-                //Frozen egg will upgrade this card. Mark it
-                EggTrackingHelper.CardRewards.Add(c, null);
-            }
-        }
-    }
-}
+//             if (nimble.CanEnchant(card))
+//             {
+//                 //Frozen egg will upgrade this card. Mark it
+//                 EggTrackingHelper.CardRewards.Add(c, null);
+//             }
+//         }
+//     }
+// }
 #endregion

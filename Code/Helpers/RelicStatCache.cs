@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using Godot;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.GameInfo.Objects;
 
 public class RelicStatData
 {
@@ -42,6 +44,10 @@ public static class RelicStatCache
     {
         ModLog.Info($"[Trigger] \nRecording trigger stat for {id}\n");
         EnsureInitialized();
+
+        if(exclusions.Contains(id)) {
+            return;
+        }
 
         lock (_lock)
         {
@@ -352,5 +358,11 @@ public static class RelicStatCache
         return false;
     }
 
+    #endregion
+
+    #region - Exceptions
+    public static HashSet<string> exclusions = new HashSet<string>(){
+        "FRESNEL_LENS"
+    };
     #endregion
 }

@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 [HarmonyPatch(typeof(RegalPillow), nameof(RegalPillow.AfterRestSiteHeal))]
 public static class RegalPillowPatch
 {
-    static void Postfix(
+    static void Prefix(
         RegalPillow __instance,
         Player player, bool isMimicked
     )
@@ -15,9 +15,11 @@ public static class RegalPillowPatch
 			return;
 		}
 			
+            var amountToHeal = player.Creature.MaxHp - player.Creature.CurrentHp;
+
             RelicStatCache.RecordCustomStat(
             __instance.Id.Entry,
-            new List<int> { __instance.DynamicVars.Heal.IntValue }
+            new List<int> { Math.Min(__instance.DynamicVars.Heal.IntValue,amountToHeal) }
         );
 		
         
