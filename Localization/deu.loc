@@ -1,4 +1,4 @@
-//This is the GERMAN localization file. It contains the labels for each of the relics.
+//This is the ENGLISH localization file. It contains the labels for each of the relics.
 //Replace the entries after the vertical bar '|', missing entries will be reverted back to ENGLISH
 
 //Lines starting with a double forward slash '//' are ignored, use it at will.
@@ -101,7 +101,7 @@ FAKE_SNECKO_EYE | Reduced card costs by [blue]{0}[/blue].\nIncreased card costs 
 FAKE_STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
 FESTIVE_POPPER | Dealt [blue]{0}[/blue] damage.
 FIDDLE | Drew [blue]{0}[/blue] additional cards.\nPrevented drawing [blue]{1}[/blue] times.
-FRESNEL_LENS | Enchanted [blue]{0}[/blue] cards throughout the run.
+FRESNEL_LENS | Enchanted [blue]{0}[/blue] added cards throughout the run.
 GAMBLING_CHIP | Discarded [blue]{0}[/blue] cards.
 HAPPY_FLOWER | Generated [blue]{0}[/blue] [gold]energy[/gold].
 INFUSED_CORE | Channeled [blue]{0}[/blue] [gold]Lightning[/gold].
@@ -125,7 +125,7 @@ TOXIC_EGG | Upgraded [blue]{0}[/blue] cards that were added.
 FROZEN_EGG | Upgraded [blue]{0}[/blue] cards that were added.
 MR_STRUGGLES | Dealt [blue]{0}[/blue] damage.
 MUMMIFIED_HAND | Triggered [blue]{0}[/blue] times.\nReduced total card cost by [blue]{1}[/blue].
-MYSTIC_LIGHTER | Added [blue]{0}[/blue] damage to attacks (including not played).
+MYSTIC_LIGHTER | Added [blue]{0}[/blue] damage to attacks.
 ORANGE_DOUGH | Added [blue]{0}[/blue] colorless cards.
 ORICHALCUM | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
 PAELS_BLOOD | Drew [blue]{0}[/blue] additional cards.
@@ -153,19 +153,19 @@ ROYAL_POISON | Took [blue]{0}[/blue] damage.
 RUINED_HELMET | Added [blue]{0}[/blue] [gold]Strength[/gold].
 RUNIC_PYRAMID | Retained [blue]{0}[/blue] cards.
 SCREAMING_FLAGON | Dealt [blue]{0}[/blue] damage.
-SEAL_OF_GOLD | Lost [blue]{0}[/blue] [gold]Gold[/gold].\nGained [blue]{1}[/blue] energy.
+SEAL_OF_GOLD | Lost [blue]{0}[/blue] [gold]Gold[/gold].\nGained [blue]{1}[/blue] [gold]Energy[/gold].
 SELF_FORMING_CLAY | Gained [blue]{0}[/blue] Block.
 SHOVEL | Dug up [blue]{0}[/blue] relics.
 SLING_OF_COURAGE | Gained [blue]{0}[/blue] [gold]Strength[/gold].
 SNECKO_EYE | Drew [blue]{0}[/blue] additional cards.\nReduced card costs by [blue]{1}[/blue].\nIncreased card costs by [blue]{2}[/blue].
-SOZU | Added [blue]{0}[/blue] energy.\nLost [blue]{1}[/blue] potions.
-SPIKED_GAUNTLETS | Added [blue]{0}[/blue] energy.\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.
+SOZU | Added [blue]{0}[/blue] [gold]Energy[/gold].\nLost [blue]{1}[/blue] potions.
+SPIKED_GAUNTLETS | Added [blue]{0}[/blue] [gold]Energy[/gold].\nMade [blue]{1}[/blue] [gold]Power[/gold] cards more expensive.
 STONE_CALENDAR | Dealt [blue]{0}[/blue] damage.
 STRIKE_DUMMY | Increased [gold]Strike[/gold] damage by [blue]{0}[/blue].
 STURDY_CLAMP | Persisted [blue]{0}[/blue] [gold]Block[/gold].
 SYMBIOTIC_VIRUS | [gold]Channeled[/gold] [blue]{0}[/blue] [purple]Dark[/purple].
 THE_ABACUS | Gained [blue]{0}[/blue] [gold]Block[/gold].
-THE_BOOT | [gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage [gold]increased[/gold]: [blue]{1}[/blue].
+THE_BOOT | [gold]Times Triggered:[/gold] [blue]{0}[/blue].\nDamage increased: [blue]{1}[/blue].
 THE_COURIER | Stock refilled: [blue]{0}[/blue].
 THROWING_AXE | Cards duplicated: [blue]{0}[/blue].
 TINGSHA | Triggered [blue]{0}[/blue] times.\nDealt a total of [blue]{1}[/blue] damage.
@@ -173,8 +173,8 @@ TOUGH_BANDAGES | Triggered [blue]{0}[/blue] times.\nAdded a total of [blue]{1}[/
 TUNING_FORK | Gained [blue]{0}[/blue] [gold]Block[/gold].
 TWISTED_FUNNEL | Applied [blue]{0}[/blue] [gold]Poison[/gold].
 VAMBRACE | Gained an additional [blue]{0}[/blue] [gold]Block[/gold].
-VELVET_CHOKER | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.
-VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]energy[/gold].
+VELVET_CHOKER | Gained an additional [blue]{0}[/blue] [gold]Energy[/gold].\n[red]Blocked[/red] [blue]{1}[/blue] times.
+VERY_HOT_COCOA | Gained an additional [blue]{0}[/blue] [gold]Energy[/gold].
 VITRUVIAN_MINION | Cards affected: [blue]{0}[/blue]\nGained an additional [blue]{1}[/blue] [gold]Block[/gold].\nDealt [blue]{2}[/blue] extra damage.
 WHISPERING_EARRING | [red]Vakuu[/red] has played [blue]{0}[/blue] times for you.\nGained [blue]{1}[/blue] [gold]energy[/gold].\n[red]Vakuu[/red] has played [blue]{2}[/blue] cards.
 WING_CHARM | Enchanted [blue]{0}[/blue] cards.
@@ -278,8 +278,8 @@ PHIAL_HOLSTER |
 NEOWS_TALISMAN | 
 HEFTY_TABLET | 
 FAKE_MERCHANTS_RUG |
-FAKE_MANGO | 
-WINGED_BOOTS |
+FAKE_MANGO |
+WINGED_BOOTS | 
 UNSETTLING_LAMP |
 PAPER_KRANE |
 PAPER_PHROG |

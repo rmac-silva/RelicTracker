@@ -63,12 +63,12 @@ public static class LocalizationHelper
 
     public static string GetLocalizedDefault(int value)
     {
-        string locText = GetLocalizedString("DEFAULT_LABEL");
+        string locText = GetLocalizedString("DEFAULT_TOOLTIP");
         if (!string.IsNullOrWhiteSpace(locText))
         {
             return string.Format(locText.Replace("\\n", "\n"), value);
         }
-        return null;
+        return $"[gold]Times Triggered:[/gold] [blue]{value}[/blue].";
     }
 
     public static string GetLocalizedNoDataYet()
